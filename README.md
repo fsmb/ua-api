@@ -7,13 +7,9 @@ If you are interested in learning more about this API, using it in your applicat
 
 ## Authentication 
 
-The UA API uses OAuth2 credentialing authentication.
-
-A client id and client secret are necessary for authentication. Contact FSMB for access to a client id and client secret. 
+The UA API uses [OAuth2](https://oauth.net/2/) credentialing authentication. A client id and client secret are necessary for authentication. Contact FSMB for access to a client id and client secret. 
 
 Using the client id and client secret execute the authentication request. You will receive a bearer token containing the access token. All subsequent requests will require the token for authentication. The token will expire periodically and it will be necessary to get another token.
-
-For more information regarding OAuth2 go to the website: https://oauth.net/2/
 
 ## HTTP Status Codes
 
