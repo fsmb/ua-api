@@ -1,7 +1,8 @@
 # Uniform Application API 
 
-This is the source for technical information for the Federation of State Medical Boards' Uniform Application (UA) [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer). 
-The UA API can be used by state medical boards (SMBs) to retrieve information about UA applications submitted to the board. 
+This is the source for technical information for the Federation of State Medical Boards' Uniform Application (UA) API. The UA API can be used by state medical boards (SMBs) to retrieve information about UA applications submitted to the board. 
+
+To learn more about FSMB APIs refer to the [Getting Started](https://github.com/fsmb/api-docs) guide.
 
 If you are interested in learning more about this API, using it in your application or accessing the [Postman]( https://www.getpostman.com/) collection,  please contact [FSMB](mailto:ua@fsmb.org).
 
