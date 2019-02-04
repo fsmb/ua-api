@@ -232,15 +232,6 @@ Medical education.
 | ecfmg | [Ecfmg](#ecfmg) | ECFMG information. |
 | fifthPathway | [FifthPathway](#fifthpathway) | 5th Pathway information. |
 
-## Names
-
-Names information.
-
-| Name | Type | Description |
-| - | - | - |
-| legalName | [Name](#name) | Required. Legal name. |
-| other | [Name[]](#name) | Other names. |
-
 # Name
 
 Name of a person.
@@ -252,6 +243,14 @@ Name of a person.
 | lastName | string | Required. Last name. |
 | suffix | string | Suffix. |
 
+## Names
+
+Names information.
+
+| Name | Type | Description |
+| - | - | - |
+| legalName | [Name](#name) | Required. Legal name. |
+| other | [Name[]](#name) | Other names. |
 
 # OtherTraining
 
@@ -268,16 +267,6 @@ Non-accredited postgraduate training.
 | percentageClinical | integer | Percentage of training that was Clinical. |
 | percentageAdministrative | integer | Percentage of training that was Administrative. |
 
-## Phones
-
-Phone information.
-
-| Name | Type | Description |
-| - | - | - |
-| forPublic | [Phone](#phone) | Public phone. |
-| forBoard | [Phone](#phone) | Board phone. |
-| other | [Phone[]](#phone) | Other phone numbers. |
-
 ## Phone
 
 Phone number.
@@ -287,6 +276,16 @@ Phone number.
 | phoneType | string | Required. Type of home (e.g. Business, Home, Mobile). |
 | phoneNumber | string | Required. Phone number. |
 | extension | string | Phone extension. |
+
+## Phones
+
+Phone information.
+
+| Name | Type | Description |
+| - | - | - |
+| forPublic | [Phone](#phone) | Public phone. |
+| forBoard | [Phone](#phone) | Board phone. |
+| other | [Phone[]](#phone) | Other phone numbers. |
 
 ## PostGraduateTraining
 
