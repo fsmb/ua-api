@@ -18,7 +18,7 @@ GET {baseUrl}/v1/practitioners/{board}/{fid}/current
 
 | Name | Description | Type |
 | - |-|-|
-| 200 | OK | [Submission](definition-submission) |
+| 200 | OK | [Submission](definition-submission.md) |
 
 ## Security
 
