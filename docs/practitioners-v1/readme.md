@@ -1,7 +1,7 @@
 # Practitioners
 
-#### URL: /v1/practitioners
-#### API Version: 1.0
+###### URL: /v1/practitioners
+###### API Version: 1.0
 
 The practitioners resource provides access to submissions for a specific physician.
 
