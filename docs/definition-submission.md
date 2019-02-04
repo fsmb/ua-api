@@ -232,7 +232,7 @@ Medical education.
 | ecfmg | [Ecfmg](#ecfmg) | ECFMG information. |
 | fifthPathway | [FifthPathway](#fifthpathway) | 5th Pathway information. |
 
-# Name
+## Name
 
 Name of a person.
 
@@ -252,7 +252,7 @@ Names information.
 | legalName | [Name](#name) | Required. Legal name. |
 | other | [Name[]](#name) | Other names. |
 
-# OtherTraining
+## OtherTraining
 
 Non-accredited postgraduate training.
 
