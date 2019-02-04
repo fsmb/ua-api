@@ -26,7 +26,7 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 | Name | Description | Type |
 | - |-|-|
-| 200 | OK | [Submission[]](definition-submission.md) |
+| 200 | OK | [Submission[]](../definition-submission.md) |
 
 ## Security
 
