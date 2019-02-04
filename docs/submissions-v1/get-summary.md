@@ -51,4 +51,28 @@ GET {baseUrl}/v1/submissions/me/summary?fromDate=01/04/2019&toDate=01/05/2019
 Output:
 
 ```json
+[
+    {
+        "id": 123,
+        "fid": "999999956",
+        "name": {
+            "firstName": "Jess",
+            "middleName": "Chris",
+            "lastName": "Samphone",
+            "suffix": ""
+        },
+        "submitDate": "2018-01-23T16:13:17.98"
+    },
+    {
+        "id": 789,
+        "fid": "999999915",
+        "name": {
+            "firstName": "Philip",
+            "middleName": "James",
+            "lastName": "Testman",
+            "suffix": ""
+        },
+        "submitDate": "2018-01-04T11:02:58.587"
+    }
+]
 ```
