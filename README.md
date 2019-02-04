@@ -4,8 +4,9 @@ This is the source for technical information for the Uniform Application (UA) AP
 
 To learn more about FSMB APIs refer to the [Getting Started](https://github.com/fsmb/api-docs) guide. To learn more about this API and to begin using it in your code please contact [FSMB](mailto:ua@fsmb.org).
 
-- Demo URL: https://demo-services.fsmb.org/ua/
-- Production URL: https://services.fsmb.org/ua/
+- URL
+  - Demo: https://demo-services.fsmb.org/ua/
+  - Production: https://services.fsmb.org/ua/
 - Postman Collection: https://www.getpostman.com/collections/98586f4987694d146125
 - OpenAPI Specification: https://demo-services.fsmb.org/ua/_swagger/v1
 
