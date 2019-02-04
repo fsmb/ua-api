@@ -50,5 +50,169 @@ GET {baseUrl}/v1/submissions/me?fromDate=01/04/2019&toDate=01/05/2019
 
 Output:
 
+Output is ellided.
+
 ```json
+[
+  {
+      "id": 1234,
+      "fid": "999999915",
+      "submitDate": "2019-01-04T16:13:17",
+      "application": {
+          "licenseType": "MD",
+          "boardName": "Texas Medical Board",
+          "licenseSubtype": "Permanent Medical License"
+      },
+      "identity": {
+          "ssn": "123-45-1111",
+          "ssnLast4": "1111",
+          "npi": "",
+          "isUSCitizen": "Y",
+          "birthDate": "1978-08-08T00:00:00",
+          "birthCity": "Houston",
+          "birthStateOrProvince": {
+              "code": "TX",
+              "description": "Texas",
+              "countryCode": "US",
+              "countryDescription": "United States"
+          },
+          "gender": "M"
+      },
+      "names": {
+          "legalName": {
+              "firstName": "Philip",
+              "middleName": "James",
+              "lastName": "Testman"
+          }
+      },
+      "addresses": {
+          "forPublic": {
+              "addressType": "Business",
+              "lines": [
+                  "9665 Greenway Trail",
+              ],
+              "city": "Portland",
+              "stateOrProvince": {
+                  "code": "OR",
+                  "description": "Oregon",
+                  "countryCode": "US",
+                  "countryDescription": "United States"
+              },
+              "postalCode": "89456"
+          },
+          "forBoard": {
+              "addressType": "Business",
+              "lines": [
+                  "9665 Greenway Trail",
+              ],
+              "city": "Portland",
+              "stateOrProvince": {
+                  "code": "OR",
+                  "description": "Oregon",
+                  "countryCode": "US",
+                  "countryDescription": "United States"
+              },
+              "postalCode": "89456"
+          }
+      },
+      "emailAddresses": {
+          "forPublic": {
+              "email": "noreply@fsmb.org"
+          },
+          "forBoard": {
+              "email": "noreply@fsmb.org"
+          }
+      },
+      "phones": {
+          "forPublic": {
+              "phoneType": "Business",
+              "phoneNumber": "8524567856"
+          },
+          "forBoard": {
+              "phoneType": "Mobile",
+              "phoneNumber": "8524567856"
+          }
+      }
+  },
+  {
+    "id": 5678,
+    "fid": "999999956",
+    "submitDate": "2019-01-04T16:13:17",
+    "application": {
+        "licenseType": "MD",
+        "boardName": "Texas Medical Board",
+        "licenseSubtype": "Permanent Medical License"
+    },
+    "identity": {
+        "ssn": "123-45-6666",
+        "ssnLast4": "6666",
+        "npi": "",
+        "isUSCitizen": "Y",
+        "birthDate": "1965-05-09T00:00:00",
+        "birthCity": "Albany",
+        "birthStateOrProvince": {
+            "code": "NY",
+            "description": "New York",
+            "countryCode": "US",
+            "countryDescription": "United States"
+        },
+        "gender": "M"
+    },
+    "names": {
+        "legalName": {
+            "firstName": "Jess",
+            "middleName": "Chris",
+            "lastName": "Samphone"
+        }
+    },
+    "addresses": {
+        "forPublic": {
+            "addressType": "Business",
+            "lines": [
+                "5697 E Road",
+            ],
+            "city": "City",
+            "stateOrProvince": {
+                "code": "CA",
+                "description": "California",
+                "countryCode": "US",
+                "countryDescription": "United States"
+            },
+            "postalCode": "12345"
+        },
+        "forBoard": {
+            "addressType": "Business",
+            "lines": [
+                "5697 E Road",
+            ],
+            "city": "City",
+            "stateOrProvince": {
+                "code": "CA",
+                "description": "California",
+                "countryCode": "US",
+                "countryDescription": "United States"
+            },
+            "postalCode": "12345"
+        }
+    },
+    "emailAddresses": {
+        "forPublic": {
+            "email": "noreply@fsmb.org"
+        },
+        "forBoard": {
+            "email": "noreply@fsmb.org"
+        }
+    },
+    "phones": {
+        "forPublic": {
+            "phoneType": "Business",
+            "phoneNumber": "5485552516"
+        },
+        "forBoard": {
+            "phoneType": "Mobile",
+            "phoneNumber": "5485552516"
+        }
+    }
+  }
+]
 ```
