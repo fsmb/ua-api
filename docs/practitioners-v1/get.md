@@ -26,7 +26,7 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 | Name | Description | Type |
 | - |-|-|
-| 200 | OK | Submission |
+| 200 | OK | [Submission[]](submission.md) |
 
 ## Security
 
@@ -43,7 +43,7 @@ This resource supports paging and sorting. The following fields can be ordered.
 Input:
 
 ```http
-GET {baseUrl}/v1/practitioners/{board}/{fid}
+GET {baseUrl}/v1/practitioners/me/999999949
 ```
 
 Output:
@@ -56,7 +56,7 @@ Output:
 Input:
 
 ```http
-GET {baseUrl}/v1/practitioners/{board}/{fid}?fromDate=01/01/2018&toDate=12/31/2018
+GET {baseUrl}/v1/practitioners/me/999999949?fromDate=01/01/2018&toDate=12/31/2018
 ```
 
 Output:
