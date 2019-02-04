@@ -7,8 +7,8 @@ To learn more about FSMB APIs refer to the [Getting Started](https://github.com/
 - URL
   - Demo: https://demo-services.fsmb.org/ua/
   - Production: https://services.fsmb.org/ua/
-- Postman Collection: https://www.getpostman.com/collections/98586f4987694d146125
-- OpenAPI Specification: https://demo-services.fsmb.org/ua/_swagger/v1
+- [Postman Collection](https://www.getpostman.com/collections/98586f4987694d146125)
+- [OpenAPI Specification](https://demo-services.fsmb.org/ua/_swagger/v1)
 
 ## Change Log
 
