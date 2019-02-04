@@ -1,4 +1,4 @@
-# Current
+# Get Current
 
 Gets the current submission for a practitioner.
 
