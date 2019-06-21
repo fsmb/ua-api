@@ -46,4 +46,4 @@ FID - Federation ID. A 9 digit number used to access information about a medical
 
 ## Resources
 
-- [Submissions](docs/submissions/README.md)
+- [Submissions](docs/submissions/readme.md)
