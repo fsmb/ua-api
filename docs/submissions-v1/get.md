@@ -24,9 +24,9 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 ## Responses
 
-| Name | Description | Type |
+| Name | Type | Description |
 | - |-|-|
-| 200 | OK | [Submission[]](/docs/definitions/submission.md) |
+| 200 OK | [Submission[]](/docs/definitions/submission.md) | Success |
 
 ## Security
 
@@ -38,19 +38,24 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 ## Examples
 
+[Get All Submissions for a Single Day](#get-all-submissions-for-a-single-day)
+***
+
 ### Get All Submissions for a Single Day
 
 Get the submission for 4 Jan 2019.
 
-Input:
+#### Sample Request
 
 ```http
 GET {baseUrl}/v1/submissions/me?fromDate=01/04/2019&toDate=01/05/2019
 ```
 
-Output:
+#### Sample Response
 
-Output is ellided.
+Status code: 200
+
+*Note: Output is ellided.*
 
 ```json
 [
