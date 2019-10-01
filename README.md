@@ -4,6 +4,8 @@ This is the source for technical information for the Uniform Application (UA) AP
 
 To learn more about FSMB APIs refer to the [Getting Started](https://github.com/fsmb/api-docs) guide. To learn more about this API and to begin using it in your code please contact [FSMB](mailto:ua@fsmb.org).
 
+If you are currently a UA Web Service client then refer to our [migration guide](docs/migration-webservice.md) for help with migrating from the web service.
+
 - URL
   - Demo: https://demo-services.fsmb.org/ua/
   - Production: https://services.fsmb.org/ua/
