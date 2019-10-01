@@ -15,7 +15,7 @@ A submission to a board.
 | phones | [Phones](#phones) | Required. Phone numbers. |
 | medialEducation | [MedicalEducationTraining](#medicaleducationtraining) | Medical education. |
 | postGraduateTraining | [PostGraduateTraining](#postgraduatetraining) | Postgraduate training. |                    
-| exams | [Exam[]](#exam) | Exams. |
+| exams | [Exam](#exam)[] | Exams. |
 | licenses | [License](#license)[] | Licenses. |
 | malpractice | [Malpractice](#malpractice)[] | Malpractice information. |
 | activities | [Activity](#activity)[] | Chronology of activity. |
