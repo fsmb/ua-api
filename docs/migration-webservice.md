@@ -37,43 +37,49 @@ The biggest challenge for migrating from the UA web service to the API is mappin
 
 ### USMLASource
 
-This is the root element in XML. JSON does not have an equivalent.
+##### JSON Definition: None
 
-This element contains an array of [SourceUSMLA](#sourceusmla) elements, one for each submission. JSON does not need a wrapper object because arrays are first class citizens in JSON.
+This is the root element in XML and contained the submission(s). Arrays are first class citizens in JSON and therefore a wrapper type is not needed.
+
+| XML Element | XML Type | Comments |
+|:-:|:-:|:-:|-|
+| USMLASource1 | [SourceUSMLA](#sourceusmla)[] | |
 
 ### SourceUSMLA
 
-This represents a submission. The JSON equivalent is [Submission](definitions/submission.md).
+##### JSON Definition: [Submission](definitions/submission.md)
 
-| XML Element | JSON Field | Comments |
-|:-:|:-:|-|
-| Username | | The login information is not available. A user may have multiple logins for UA. |
-| SubmitId | `id` | |
-| StateBoard | `application.boardName` | |
-| DocumentTypeCode | | No equivalent. |
-| SubmittedDate | `submitDate` | The API returns the date and time of submission. The XML had only the date. |
-| MDDegree | `application.licenseType` | The license type captures the type of license. |
-| DODegree | `application.licenseType` | See `MDDegree`. |
-| SubmissionType | | No equivalent. |
-| HasFCVSFlag | | No equivalent. |
-| Physician | | |
+This represents a submission.
+
+| XML Element | XML Type | JSON Field | Comments |
+|:-:|:-:|:-:|-|
+| Username | string | | The login information is not available. A user may have multiple logins for UA. |
+| SubmitId | int | `id` | |
+| StateBoard | string | `application.boardName` | |
+| DocumentTypeCode | string | | No equivalent. |
+| SubmittedDate | string (date) | `submitDate` | The API returns the date and time of submission. The XML had only the date. |
+| MDDegree | string (boolean) | `application.licenseType` | The license type captures the type of license. |
+| DODegree | string (boolean) | `application.licenseType` | See `MDDegree`. |
+| SubmissionType | string | | No equivalent. |
+| HasFCVSFlag | string (boolean) | | No equivalent. |
+| Physician | [Physician](#physician) | |
 
 ### Physician
 
-XML required a wrapper element to store the physician data. In JSON it is at the same level as the rest of the data.
+###### JSON Definition: [Submission](definitions/submission.md)
 
-| XML Element | JSON Field | Comments |
-|:-:|:-:|-|
-| NameInfo | [names](definitions/submission.md#names) | |
-| PersonalInfo | [identity](definitions/submission.md#identification) | |
-| ECFMGInfo | [medicalEducation.ecfmg](definitions/submission.md#ecfmg) | |
-| MedicalEducationInfo | [medicalEducation](definitions/submission.md#medicaleducation) | |
-| PostGraduateTrainingInfo | [postGraduateTraining](definitions/submission.md#postgraduatetraining) | |
-| FifthPathwayInfo | [medicalEducation.fifthPathway](definitions/submission.md#fifthpathway) | |
-| ExamHistory | [exams](definitions/submission.md#exam) | |
-| LicensureInfo | [licenses](definitions/submission.md#license) | |
-| WorkHistory | [activities](definitions/submission.md#activity) | |
-| MalpracticeClaims | [malpractice](definitions/submission.md#malpractice) | |
-| ContactInfo.AddressInfo | [addresses](definitions/submission.md#addresses) | |
-| ContactInfo.Telephone | [phones](definitions/submission.md#phones) | |
-| ContactInfo.EmailAddress | [emailAddresses](definitions/submission.md#emailAddresses) | |
+This represents the physician data. XML required a wrapper element to store the data. In JSON it is at the same level as the submission.
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+| NameInfo | [NameInfo](#nameinfo) | [names](definitions/submission.md#names) | |
+| PersonalInfo | [PersonalInfo](#personalinfo) | [identity](definitions/submission.md#identification) | |
+| ECFMGInfo | [ECFMGInfo](#ecfmginfo) | [medicalEducation.ecfmg](definitions/submission.md#ecfmg) | |
+| MedicalEducationInfo | [MedicalEducationInfo](#medicaleducationinfo)[] | [medicalEducation](definitions/submission.md#medicaleducation) | |
+| PostGraduateTrainingInfo | [PostGraduateTrainingInfo](#postgraduatetraininginfo)[] | [postGraduateTraining](definitions/submission.md#postgraduatetraining) | |
+| FifthPathwayInfo | [fifthPathwayInfo](#fifthpathwayinfo) | [medicalEducation.fifthPathway](definitions/submission.md#fifthpathway) | |
+| ExamHistory | [ExaminationHistory](#examinationhistory)[] | [exams](definitions/submission.md#exam) | |
+| LicensureInfo | [Licensure](#licensure)[] | [licenses](definitions/submission.md#license) | |
+| WorkHistory | [WorkHistory](#workhistory)[] | [activities](definitions/submission.md#activity) | |
+| MalpracticeClaims | ? | [malpractice](definitions/submission.md#malpractice) | |
+| ContactInfo | [ContactInfo](#contactinfo) | | |
