@@ -6,7 +6,7 @@ A submission to a board.
 | - | - | - |
 | id | integer | Required. Submission ID |
 | fid | string (length: 9) | Required. FID of practitioner. |
-| submitDate | DateTime | Required. Date/time of submission (not in UTC). |
+| submitDate | string (date/time) | Required. Date/time of submission (not in UTC). |
 | application | [Application](#application) | Required. Application information. |
 | identity | [Identification](#identification) | Required. Identity information. |
 | names | [Names](#names) | Required. Names |
@@ -80,8 +80,8 @@ Mailing addresses.
 
 | Name | Type | Description |
 | - | - | - |
-| forPublic | [Address](#address) | Public address. |
-| forBoard | [Address](#address) | Board address. |
+| forPublic | [Address](#address) | Required. Public address. |
+| forBoard | [Address](#address) | Required. Board address. |
 | other | [Address[]](#address) | Other addresses. |
 
 ## Application
@@ -89,10 +89,10 @@ Mailing addresses.
 | Name | Type | Description |
 | - | - | - |
 | licenseType | string | Type of license (e.g. MD, DO, PA). |
-| boardName | string | Board name. |
+| boardName | string | Required. Board name. |
 | licenseSubtype | string | Subtype of license (e.g. Permanent Medical License). |
 
-## CodedDescription
+## Degree
 
 | Name | Type | Description |
 | - | - | - |
@@ -133,7 +133,7 @@ Exam.
 | Name | Type | Description |
 | - | - | - |
 | examType | string | Required. Type of exam. |
-| stateBoardDetail | [CodedDescription](#codeddescription) | State code and board description. |
+| stateBoardDetail | [State](#state) | State code and board description. |
 | examDate | string (date) | Required. Exam date. |
 | numberOfAttempts | integer | Reqiured. Number of attempts. |
 | passFail | string | Required. Pass/fail status (e.g. Pass, Fail, Unknown). |
@@ -183,12 +183,19 @@ License information.
 | Name | Type | Description |
 | - | - | - |
 | licenseType | string | Type of license. |
-| licensingEntity | [CodedDescription](#codeddescription) | Entity issuing license. |
+| licensingEntity | [LicenseEntity](#licenseentity) | Entity issuing license. |
 | status | string | License status. |
-| practitionerType | [CodedDescription](#codeddescription) | Practitioner type. |
+| practitionerType | [PractitionerType](#practitionertype) | Practitioner type. |
 | licenseNumber | string | License number. |
 | issueDate | string (date) | Issue date. |
 | expirationDate | string (date) | Expiration date. |
+
+## LicenseEntity
+
+| Name | Type | Description |
+| - | - | - |
+| code | string | Code. |
+| description | string | Description. |
 
 ## Malpractice
 
@@ -196,7 +203,7 @@ Malpractice Information.
 
 | Name | Type | Description |
 | - | - | - |
-| state | [CodedDescription](#codeddescription) | Required. State/province of malpractice. |
+| state | [State](#state) | Required. State/province of malpractice. |
 | eventDate | string (date) | Required. Date of event. |
 | patientName | string | Required. Name of patient. |
 | courtName | string | Required. Name of court. |
@@ -218,7 +225,7 @@ Medical school education.
 | school | [School](#school) | Medical school. |
 | beginDate | string (date) | Required. Start date. |
 | endDate | string (date) | Required. End date. |
-| degree | [CodedDescription](#codeddescription) | Degree information. |
+| degree | [Degree](#degree) | Degree information. |
 | graduationDate | string (date) | Graduation date. |
 
 ## MedicalEducationTraining
@@ -294,6 +301,13 @@ Phone information.
 | accreditedTraining | [AccreditedTraining[]](#accreditedtraining) | Accredited training. |
 | otherTraining | [OtherTraining[]](#otherTraining) | Other training. |
 
+## PractitionerType
+
+| Name | Type | Description |
+| - | - | - |
+| code | string | Code. |
+| description | string | Description. |
+
 ## Program
 
 Postgraduate training program.
@@ -324,9 +338,16 @@ Medical school.
 | - | - | - |
 | name | string | Required. School name. |
 | cibisCode | string | CIBIS code. |
-| schoolType | [CodedDescription](#codeddescription) | Required. Type of school. |
+| schoolType | [SchoolType](#schooltype) | Required. Type of school. |
 | city | string | City. |
 | stateOrProvince | [Region](#region) | State/province. |
+
+## SchoolType
+
+| Name | Type | Description |
+| - | - | - |
+| code | string | Code. |
+| description | string | Description. |
 
 ## Specialty
 
@@ -335,3 +356,10 @@ Training specialty.
 | Name | Type | Description |
 | - | - | - |
 | description | string | Required. Description. |
+
+## State
+
+| Name | Type | Description |
+| - | - | - |
+| code | string | Code. |
+| description | string | Description. |
