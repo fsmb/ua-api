@@ -26,7 +26,7 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 | Name | Description | Type |
 | - |-|-|
-| 200 | OK | [Submission[]](../definition-submission.md) |
+| 200 | OK | [Submission[]](/docs/definitions/submission.md) |
 
 ## Security
 
@@ -169,30 +169,30 @@ Output is ellided.
         "forPublic": {
             "addressType": "Business",
             "lines": [
-                "5697 E Road",
+                "6547 Skyline Way",
             ],
-            "city": "City",
+            "city": "Roanoke",
             "stateOrProvince": {
-                "code": "CA",
-                "description": "California",
+                "code": "VA",
+                "description": "Virginia",
                 "countryCode": "US",
                 "countryDescription": "United States"
             },
-            "postalCode": "12345"
+            "postalCode": "45675"
         },
         "forBoard": {
             "addressType": "Business",
             "lines": [
-                "5697 E Road",
+                "6547 Skyline Way",
             ],
-            "city": "City",
+            "city": "Roanoke",
             "stateOrProvince": {
-                "code": "CA",
-                "description": "California",
+                "code": "VA",
+                "description": "Virginia",
                 "countryCode": "US",
                 "countryDescription": "United States"
             },
-            "postalCode": "12345"
+            "postalCode": "45675"
         }
     },
     "emailAddresses": {
@@ -206,11 +206,11 @@ Output is ellided.
     "phones": {
         "forPublic": {
             "phoneType": "Business",
-            "phoneNumber": "5485552516"
+            "phoneNumber": "7418529654"
         },
         "forBoard": {
             "phoneType": "Mobile",
-            "phoneNumber": "5485552516"
+            "phoneNumber": "7418529654"
         }
     }
   }
