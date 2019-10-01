@@ -123,6 +123,16 @@ Each distinct program/specialty is listed as a separate accredited training entr
 ### AddressInfo
 ##### JSON Definition: [Address](definitions/submission.md#address)
 
+In the XML all addresses are combined into an array. In JSON the [addresses](definitions/submission.md#addresses) object separates them into separate objects to make it easier for clients to get just the information they need.
+
+| JSON Field | Comments |
+|:-:|-|
+| `forBoard` | Contains contact information for the board. |
+| `forPublic` | Contains contact information for the public. |
+| `other` | Array containing any additional contact information. |
+
+Each address has the following mapping.
+
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 | StreetAddressLine1 | string | `lines` | All address lines are stored in a single array. |
@@ -147,18 +157,6 @@ The `Mailing` and `Privacy` XML elements are managed by [addresses](definitions/
 | Telephone | [TelephoneInfo](#telephoneinfo)[] | [phones](definitions/submission.md#phones) | See below. |
 | EmailAddress | [EmailInfo](#emailinfo)[] | [emailAddresses](definitions/submission.md#emailaddresses) | See below. |
 
-The XML grouped contact information into 3 separate arrays. Client code had to enumerate the array to identify which contact information was for public or board use. 
-
-The JSON breaks contact information up into 3 separate objects. Each object exposes the following.
-
-| JSON Field | Comments |
-|:-:|-|
-| `forBoard` | Contains contact information for the board. |
-| `forPublic` | Contains contact information for the public. |
-| `other` | Array containing any additional contact information. |
-
-A client can either retrieve the specific contact information (e.g. board or public) or combine them all together depending upon its needs.
-
 ### ECFMGInfo
 ##### JSON Definition: [Ecfmg](definitions/submission.md#ecfmg)
 
@@ -170,6 +168,16 @@ A client can either retrieve the specific contact information (e.g. board or pub
 
 ### EmailInfo
 ##### JSON Definition: [EmailAddress](definitions/submission.md#emailaddress)
+
+In the XML all addresses are combined into an array. In JSON the [emailaddresses](definitions/submission.md#emailaddresses) object separates them into separate objects to make it easier for clients to get just the information they need.
+
+| JSON Field | Comments |
+|:-:|-|
+| `forBoard` | Contains contact information for the board. |
+| `forPublic` | Contains contact information for the public. |
+| `other` | Array containing any additional contact information. |
+
+Each email address has the following mapping.
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
@@ -306,6 +314,16 @@ In the XML post graduate training was combined into an array. In JSON the accred
 
 ### TelephoneInfo
 ##### JSON Definition: [phone](definitions/submission.md#phone)
+
+In the XML all addresses are combined into an array. In JSON the [phones](definitions/submission.md#phones) object separates them into separate objects to make it easier for clients to get just the information they need.
+
+| JSON Field | Comments |
+|:-:|-|
+| `forBoard` | Contains contact information for the board. |
+| `forPublic` | Contains contact information for the public. |
+| `other` | Array containing any additional contact information. |
+
+Each phone has the following mapping.
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
