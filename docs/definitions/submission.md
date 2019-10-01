@@ -96,8 +96,8 @@ Mailing addresses.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Code. |
-| description | string | Description. |
+| code | string | Required. Code. |
+| description | string | Required. Description. |
 
 ## Ecfmg
 
@@ -194,8 +194,8 @@ License information.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Code. |
-| description | string | Description. |
+| code | string | Required. Code. |
+| description | string | Required. Description. |
 
 ## Malpractice
 
@@ -305,8 +305,8 @@ Phone information.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Code. |
-| description | string | Description. |
+| code | string | Required. Code. |
+| description | string | Required. Description. |
 
 ## Program
 
@@ -346,8 +346,8 @@ Medical school.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Code. |
-| description | string | Description. |
+| code | string | Required. Code. |
+| description | string | Required. Description. |
 
 ## Specialty
 
@@ -361,5 +361,5 @@ Training specialty.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Code. |
-| description | string | Description. |
+| code | string | Required. Code. |
+| description | string | Required. Description. |
