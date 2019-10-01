@@ -16,7 +16,8 @@ To learn more about FSMB APIs refer to the [Getting Started](https://github.com/
 
 | Version | Date | Release Notes |
 | - | - | -|
-| 1 | 11/22/2016| Initial version |
+| 1.1 | 11 April 2019 | [Release Notes](relnotes/readme-v11.md) |
+| 1.0 | 22 Nov 2016| Initial version |
 
 ## Security
 
