@@ -18,7 +18,7 @@ GET {baseUrl}/v1/submissions/{board}/{id}
 
 | Name | Description | Type |
 | - |-|-|
-| 200 | OK | [Submission](../definition-submission.md) |
+| 200 | OK | [Submission](/docs/definitions/submission.md) |
 | 404 | Not Found | |
 
 ## Security
