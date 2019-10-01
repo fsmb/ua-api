@@ -2,9 +2,9 @@
 
 | Name | Type | Description |
 | - | - | - |
-| id | integer | Submission ID. |
-| fid | string | FID of practitioner. |
-| name | [Name](#name) | Practitioner name. |
+| id | integer | Required. Submission ID. |
+| fid | string | Required. FID of practitioner. |
+| name | [Name](#name) | Required. Practitioner name. |
 | submitDate | string (datetime) | Required. Data/time of submission (not in UTC). |
 
 ## Name
