@@ -114,10 +114,10 @@ Each distinct program/specialty is listed as a separate accredited training entr
 | TrainingYears.DepartmentPosition | string | `specialty.description` | |
 | TrainingYears.StatusDescription | string | `trainingStatus` | |
 | TrainingYears.TrainingLevel | string | ?? | |
-| TrainingYears.TrainingDates.BeginMonth | string (format: mm) | `beginDate` | See below. |
-| TrainingYears.TrainingDates.BeginYear | string (format: yyyy) | `beginDate` | See below. |
-| TrainingYears.TrainingDates.EndMonth | string (format: mm) | `endnDate` | See below. |
-| TrainingYears.TrainingDates.EndYear | string (format: yyyy) | `endnDate` | See below. |
+| TrainingYears.TrainingDates.BeginMonth | string (format: mm) | `beginDate` | |
+| TrainingYears.TrainingDates.BeginYear | string (format: yyyy) | `beginDate` | |
+| TrainingYears.TrainingDates.EndMonth | string (format: mm) | `endDate` | |
+| TrainingYears.TrainingDates.EndYear | string (format: yyyy) | `endDate` | |
 | TrainingYears.TrainingDates.InProgressFlag | string (`Y`, `N`) | | Not supported. |
 
 ### AddressInfo
@@ -163,8 +163,8 @@ The `Mailing` and `Privacy` XML elements are managed by [addresses](definitions/
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 | ECFMGid | string | `ecfmgNumber` | |
-| CertificationDate | string (date) `issueDate` | |
-| ExpirationDAte | string (format: mm/dd/yyyy)| | Not supported. *Note: The casing is incorrect for this field in the XML.* |
+| CertificationDate | string (date) | `issueDate` | |
+| ExpirationDAte | string (date)| | Not supported. *Note: The casing is incorrect for this field in the XML.* |
 
 ### EmailInfo
 ##### JSON Definition: [EmailAddress](definitions/submission.md#emailaddress)
@@ -213,7 +213,7 @@ Each email address has the following mapping.
 | LicenseTypeCode | string | | Not supported. | 
 | LicenseTypeDesc | string | | Not supported. | 
 | LicenseStatus | string | `status` | | 
-| LicenseIssueDate | string | `issueDate` | | 
+| LicenseIssueDate | string (date) | `issueDate` | | 
 | LicenseSubtypeCode | string | | Not supported. | 
 | LicenseSubtypeDesc | string | `licenseType` | | 
 
@@ -232,7 +232,7 @@ The following mapping applies to each school attended.
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 | Degree | string | `degree.code` | Only set if this a graduating school.
-| GraduationDate | string (format: mm/dd/yyyy) | `graduationDate` | Only set if this is a graduating school.
+| GraduationDate | string (date) | `graduationDate` | Only set if this is a graduating school.
 | SchoolInfo | [SchoolInfo](#schoolInfo) | `school` | 
 | MedicalEducationDatesEnrolled.BeginMonth | string (format: mm) | `beginDate` | See below. |
 | MedicalEducationDatesEnrolled.BeginYear | string (format: yyyy) | `beginDate` | See below. |
@@ -297,7 +297,7 @@ The following mappings applies to the name elements.
 | SSN | string (length: 9, format: digits) | `ssn` | |
 | NPID | string (length: 10, format: digits) | `npi` | |
 | USACitizenFlag | string (`Y`, `N`) | `isUSCitizen` | |
-| BirthInfo.BirthDate | string (format: mm/dd/yyyy) | `birthDate` | |
+| BirthInfo.BirthDate | string (date) | `birthDate` | |
 | BirthInfo.BirthCity | string | `birthCity` | |
 | BirthInfo.BirthStateOrProvince | string | `birthStateOrProvince.description` | |
 | BirthInfo.BirthCountry | string | `birthStateOrProvince.countryDescription` | |
