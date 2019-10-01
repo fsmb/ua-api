@@ -19,7 +19,7 @@ GET {baseUrl}/v1/submissions/{board}/{id}
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Submission](/docs/definitions/submission.md) | Success |
-| 404 Not Found | - | Submission not found|
+| 404 Not Found | | Submission not found|
 
 ## Security
 
