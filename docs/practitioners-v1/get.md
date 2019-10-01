@@ -45,6 +45,7 @@ This resource supports paging and sorting. The following fields can be ordered.
 ## Examples
 
 [Get All Submissions for a Practitioner](#get-all-submissions-for-a-practitioner)
+
 [Get All Submissions for 2018](#get-all-submissions-for-2018)
 ***
 
