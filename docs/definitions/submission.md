@@ -16,13 +16,13 @@ A submission to a board.
 | emailAddresses | [EmailAddresses](#emailaddresses) | Required. Email addresses. |
 | phones | [Phones](#phones) | Required. Phone numbers. |
 | medicalEducation | [MedicalEducationTraining](#medicaleducationtraining) | Medical education. |
-| medicalEducationTraining | | DEPRECATED. Use `medicalEducation`. |
+| medicalEducationTraining | | **Deprecated**. Use `medicalEducation`. |
 | postGraduateTraining | [PostGraduateTraining](#postgraduatetraining) | Postgraduate training. |                    
 | exams | [Exam](#exam)[] | Exams. |
 | licenses | [License](#license)[] | Licenses. |
 | malpractice | [Malpractice](#malpractice)[] | Malpractice information. |
 | activities | [Activity](#activity)[] | Chronology of activity. |
-| workHistory | | DEPRECATED. Use `activities`. |
+| workHistory | | **Deprecated**. Use `activities`. |
 | addendum | object | |
 
 ## AccreditedTraining
@@ -41,8 +41,8 @@ Accredited training information.
 | endDate | string (date) | Required. End date. |
 | percentageClinical | integer | Percentage of training that was Clinical. |
 | percentageAdministrative | integer | Percentage of training that was Administrative. |
-| isAcgme | | DEPRECATED. Use `accreditationType`. |
-| isAoa | | DEPRECATED. Use `accreditationType`. |
+| isAcgme | | **Deprecated**. Use `accreditationType`. |
+| isAoa | | **Deprecated**. Use `accreditationType`. |
         
 ## Activity
 
@@ -79,7 +79,7 @@ Mailing address.
 | city | string | Required. City. |
 | stateOrProvince | [Region](#region) | Required. State/province. |
 | postalCode | string | Required. Postal code. |
-| zipCode | | DEPRECATED. Use `postalCode`. |
+| zipCode | | **Deprecated**. Use `postalCode`. |
 
 ## Addresses
 
@@ -100,7 +100,7 @@ Application information.
 | licenseType | string | Type of license (e.g. `MD`, `DO`, `PA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | boardName | string | Required. Board name. |
 | licenseSubtypeDetails | [LicenseSubtype](#licensesubtype) | Subtype of license. |
-| licenseSubtype | string | DEPRECATED. Use `licenseSubtypeDetails`. |
+| licenseSubtype | string | **Deprecated**. Use `licenseSubtypeDetails`. |
 
 ## Degree
 
@@ -149,7 +149,7 @@ Exam.
 | examDate | string (date) | Required. Exam date. |
 | numberOfAttempts | integer | Reqiured. Number of attempts. |
 | passFail | string | Required. Pass/fail status (e.g. `Pass`, `Fail`, `Unknown`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| stateBoard | | DEPRECATED. Use `stateBoardDetail`. |
+| stateBoard | | **Deprecated**. Use `stateBoardDetail`. |
 
 ## FifthPathway
 
@@ -386,7 +386,7 @@ Training specialty.
 | Name | Type | Description |
 | - | - | - |
 | description | string | Required. Description. |
-| classification | | DEPRECATED. Use `Description`. |
+| classification | | **Deprecated**. Use `Description`. |
 
 ## StateProvince
 
