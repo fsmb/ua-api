@@ -33,6 +33,8 @@ This resource supports paging and sorting. The following fields can be ordered.
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [SubmissionSummary[]](/docs/definitions/submission-summary.md) | Success |
+| 204 No Content | | No submissions found | 
+| 404 Not Found | | Board code is missing or invalid |
 
 ## Security
 
