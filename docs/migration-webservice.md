@@ -70,16 +70,94 @@ This represents a submission.
 
 This represents the physician data. XML required a wrapper element to store the data. In JSON it is at the same level as the submission.
 
+| XML Element | XML Type | JSON Object |
+|:-:|:-:|:-:|
+| NameInfo | [NameInfo](#nameinfo) | [names](definitions/submission.md#names) |
+| PersonalInfo | [PersonalInfo](#personalinfo) | [identity](definitions/submission.md#identification) |
+| ECFMGInfo | [ECFMGInfo](#ecfmginfo) | [medicalEducation.ecfmg](definitions/submission.md#ecfmg) |
+| MedicalEducationInfo | [MedicalEducationInfo](#medicaleducationinfo)[] | [medicalEducatio(definitions/submission.md#medicaleducation) |
+| PostGraduateTrainingInfo | [PostGraduateTrainingInfo](#postgraduatetraininginfo)[] | [postGraduateTraining](definitions/submission.md#postgraduatetraining) |
+| FifthPathwayInfo | [fifthPathwayInfo](#fifthpathwayinfo) | [medicalEducation.fifthPathway](definitions/submission.md#fifthpathway) |
+| ExamHistory | [ExaminationHistory](#examinationhistory)[] | [exams](definitions/submission.md#exam) |
+| LicensureInfo | [Licensure](#licensure)[] | [licenses](definitions/submission.md#license) |
+| WorkHistory | [WorkHistory](#workhistory)[] | [activities](definitions/submission.md#activity) |
+| MalpracticeClaims | ? | [malpractice](definitions/submission.md#malpractice) |
+| ContactInfo | [ContactInfo](#contactinfo) | |
+
+### AddressInfo
+##### JSON Definition: 
+
 | XML Element | XML Type | JSON Object | Comments |
 |:-:|:-:|:-:|-|
-| NameInfo | [NameInfo](#nameinfo) | [names](definitions/submission.md#names) | |
-| PersonalInfo | [PersonalInfo](#personalinfo) | [identity](definitions/submission.md#identification) | |
-| ECFMGInfo | [ECFMGInfo](#ecfmginfo) | [medicalEducation.ecfmg](definitions/submission.md#ecfmg) | |
-| MedicalEducationInfo | [MedicalEducationInfo](#medicaleducationinfo)[] | [medicalEducation](definitions/submission.md#medicaleducation) | |
-| PostGraduateTrainingInfo | [PostGraduateTrainingInfo](#postgraduatetraininginfo)[] | [postGraduateTraining](definitions/submission.md#postgraduatetraining) | |
-| FifthPathwayInfo | [fifthPathwayInfo](#fifthpathwayinfo) | [medicalEducation.fifthPathway](definitions/submission.md#fifthpathway) | |
-| ExamHistory | [ExaminationHistory](#examinationhistory)[] | [exams](definitions/submission.md#exam) | |
-| LicensureInfo | [Licensure](#licensure)[] | [licenses](definitions/submission.md#license) | |
-| WorkHistory | [WorkHistory](#workhistory)[] | [activities](definitions/submission.md#activity) | |
-| MalpracticeClaims | ? | [malpractice](definitions/submission.md#malpractice) | |
-| ContactInfo | [ContactInfo](#contactinfo) | | |
+
+### ContactInfo
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### ECFMGInfo
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### EmailAddress
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### ExaminationHistory
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### FifthPathwayInfo
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### Licensure
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### MedicalEducationInfo
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### NameInfo
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### PersonalInfo
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### PostGraduateTrainingInfo
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### Telephone
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
+
+### WorkHistory
+##### JSON Definition: 
+
+| XML Element | XML Type | JSON Object | Comments |
+|:-:|:-:|:-:|-|
