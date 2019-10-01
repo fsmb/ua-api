@@ -31,12 +31,12 @@ Accredited training information.
 
 | Name | Type | Description |
 | - | - | - |
-| accreditationType | string | Required. The type of accreditation (e.g. `ACGME`, `AOA`). |
+| accreditationType | string | Required. The type of accreditation (e.g. `ACMGE`, `AOA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | programCode | string | Required. Program code. |
 | program | [Program](#program) | Required. Program. |
 | specialty | [Specialty](#specialty) | Required. Specialty. |
 | programType | string | Required. Program type. |
-| trainingStatus | string | Required. Training status (e.g. `Active`, `Completed`). |
+| trainingStatus | string | Required. Training status (e.g. `Active`, `Completed`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | beginDate | string (date) | Required. Start date. |
 | endDate | string (date) | Required. End date. |
 | percentageClinical | integer | Percentage of training that was Clinical. |
@@ -50,7 +50,7 @@ Activity information.
 
 | Name | Type | Description |
 | - | - | - |
-| id | string | ID of the activity. |
+| id | string | ID of the activity. *Note: The ID is only unique for this request.* |
 | type | string | Required. Type of activity. |
 | inProgress | boolean | Required. Is in progress? |
 | beginDate | string (date) | Required. Start date. |
@@ -74,7 +74,7 @@ Mailing address.
 
 | Name | Type | Description |
 | - | - | - |
-| addressType | string | Required. Type of address (e.g. `Business`, `Home`). |
+| addressType | string | Required. Type of address (e.g. `Business`, `Home`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | lines | string[] | Address lines. |
 | city | string | Required. City. |
 | stateOrProvince | [Region](#region) | Required. State/province. |
@@ -97,7 +97,7 @@ Application information.
 
 | Name | Type | Description |
 | - | - | - |
-| licenseType | string | Type of license (e.g. `MD`, `DO`, `PA`). |
+| licenseType | string | Type of license (e.g. `MD`, `DO`, `PA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | boardName | string | Required. Board name. |
 | licenseSubtypeDetails | [LicenseSubtype](#licensesubtype) | Subtype of license. |
 | licenseSubtype | string | DEPRECATED. Use `licenseSubtypeDetails`. |
@@ -108,7 +108,7 @@ Degree information.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Code (e.g. `BM`, `MD`, `DMCH`). |
+| code | string | Required. Code (e.g. `BM`, `MD`, `DMCH`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | description | string | Required. Description. |
 
 ## Ecfmg
@@ -148,7 +148,7 @@ Exam.
 | stateBoardDetail | [StateProvince](#stateprovince) | State board description. |
 | examDate | string (date) | Required. Exam date. |
 | numberOfAttempts | integer | Reqiured. Number of attempts. |
-| passFail | string | Required. Pass/fail status (e.g. `Pass`, `Fail`, `Unknown`). |
+| passFail | string | Required. Pass/fail status (e.g. `Pass`, `Fail`, `Unknown`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | stateBoard | | DEPRECATED. Use `stateBoardDetail`. |
 
 ## FifthPathway
@@ -195,9 +195,9 @@ License information.
 
 | Name | Type | Description |
 | - | - | - |
-| licenseType | string | Type of license (e.g. `TEMP`, `FULL`). |
+| licenseType | string | Type of license (e.g. `TEMP`, `FULL`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | licensingEntity | [LicenseEntity](#licenseentity) | Entity issuing license. |
-| status | string | License status (e.g. `Active`, `Denied`). |
+| status | string | License status (e.g. `Active`, `Denied`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | practitionerType | [PractitionerType](#practitionertype) | Practitioner type. |
 | licenseNumber | string | License number. |
 | issueDate | string (date) | Issue date. |
@@ -209,7 +209,7 @@ Entity issuing license.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Code. |
+| code | string | Required. Entity code. Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | description | string | Required. Description. |
 
 ## LicenseSubtype
@@ -218,7 +218,7 @@ License subtype information.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Code (e.g. `FULL`, `TEMP`). |
+| code | string | Required. Code (e.g. `FULL`, `TEMP`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | description | string | Required. Description. |
 
 ## Malpractice
@@ -291,8 +291,8 @@ Non-accredited postgraduate training.
 | - | - | - |
 | program | [Program](#program) | Required. Program. |
 | specialty | [Specialty](#specialty) | Required. Specialty. |
-| programType | string | Required. Program type (e.g. `Internship`, `Fellowship`). |
-| trainingStatus | string | Required. Training status (e.g. `Active`, `Completed`). |
+| programType | string | Required. Program type (e.g. `Internship`, `Fellowship`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| trainingStatus | string | Required. Training status (e.g. `Active`, `Completed`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | beginDate | string (date) | Required. Start date. |
 | endDate | string (date) | Required. End date. |
 | percentageClinical | integer | Percentage of training that was Clinical. |
@@ -304,7 +304,7 @@ Phone number.
 
 | Name | Type | Description |
 | - | - | - |
-| phoneType | string | Required. Type of home (e.g. `Business`, `Home`). |
+| phoneType | string | Required. Type of home (e.g. `Business`, `Home`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | phoneNumber | string | Required. Phone number. |
 | extension | string | Phone extension. |
 
@@ -333,7 +333,7 @@ Practitioner type.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Code. |
+| code | string | Required. Code. Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | description | string | Required. Description. |
 
 ## Program
@@ -353,9 +353,9 @@ Geographic region.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Region code (e.g. `TX`, `MD`). |
+| code | string | Required. Region code (e.g. `TX`, `MD`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | description | string | Required. Description. |
-| countryCode | string | ISO country code (e.g. `US`, `CA`). |
+| countryCode | string | ISO country code (e.g. `US`, `CA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | countryDescription | string | Country description. |
 
 ## School
@@ -376,7 +376,7 @@ Type of medical school.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Code (e.g. `MD`, `DO`). |
+| code | string | Required. Code (e.g. `MD`, `DO`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | description | string | Required. Description. |
 
 ## Specialty
@@ -394,5 +394,5 @@ State/province information.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Code (e.g. `TX`, `MD`). |
+| code | string | Required. Code (e.g. `TX`, `MD`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | description | string | Required. Description. |
