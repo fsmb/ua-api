@@ -145,7 +145,7 @@ The `Mailing` and `Privacy` XML elements are managed by [addresses](definitions/
 |:-:|:-:|:-:|-|
 | AddressInfo | [AddressInfo](#addressinfo)[] | [addresses](definitions/submission.md#addresses) | See below. |
 | Telephone | [TelephoneInfo](#telephoneinfo)[] | [phones](definitions/submission.md#phones) | See below. |
-| EmailAddress | [EmailInfo](#emailinfo)[] | [emailAddresses](definitions/submission.md#emiladdresses) | See below. |
+| EmailAddress | [EmailInfo](#emailinfo)[] | [emailAddresses](definitions/submission.md#emailaddresses) | See below. |
 
 The XML grouped contact information into 3 separate arrays. Client code had to enumerate the array to identify which contact information was for public or board use. 
 
