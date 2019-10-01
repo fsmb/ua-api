@@ -1,9 +1,7 @@
 # Submissions
 
-# Practitioners
-
-###### URL: /v1/submissions
-###### API Version: 1.0
+##### URL: /v1/submissions
+##### API Version: 1.0
 
 The submissions resource provides access to submissions to a board.
 
