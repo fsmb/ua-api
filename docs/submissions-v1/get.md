@@ -27,6 +27,7 @@ This resource supports paging and sorting. The following fields can be ordered.
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Submission[]](/docs/definitions/submission.md) | Success |
+| 404 Not Found | | Board code is missing or invalid -or- Submission cannot be found |
 
 ## Security
 
@@ -66,13 +67,14 @@ Status code: 200
       "application": {
           "licenseType": "MD",
           "boardName": "Texas Medical Board",
-          "licenseSubtype": "Permanent Medical License"
+          "licenseSubtypeDetails": {
+           "code": "FULL"
+           "description": "Permanent Medical License"
+        }
       },
       "identity": {
-          "ssn": "123-45-1111",
+          "ssn": "123451111",
           "ssnLast4": "1111",
-          "npi": "",
-          "isUSCitizen": "Y",
           "birthDate": "1978-08-08T00:00:00",
           "birthCity": "Houston",
           "birthStateOrProvince": {
@@ -146,13 +148,14 @@ Status code: 200
     "application": {
         "licenseType": "MD",
         "boardName": "Texas Medical Board",
-        "licenseSubtype": "Permanent Medical License"
+        "licenseSubtypeDetails": {
+           "code": "FULL"
+           "description": "Permanent Medical License"
+        }
     },
     "identity": {
-        "ssn": "123-45-6666",
+        "ssn": "123456666",
         "ssnLast4": "6666",
-        "npi": "",
-        "isUSCitizen": "Y",
         "birthDate": "1965-05-09T00:00:00",
         "birthCity": "Albany",
         "birthStateOrProvince": {
