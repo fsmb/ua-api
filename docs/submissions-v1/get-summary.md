@@ -32,7 +32,7 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 | Name | Type | Description |
 | - |-|-|
-| 200 OK | [SubmissionSummary[]](definition-submissionsummary.md) | Success |
+| 200 OK | [SubmissionSummary[]](definition-submission-summary.md) | Success |
 
 ## Security
 
