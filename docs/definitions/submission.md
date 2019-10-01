@@ -76,7 +76,7 @@ Mailing address.
 
 ## Addresses
 
-Mailing addresses.
+List of mailing addresses.
 
 | Name | Type | Description |
 | - | - | - |
@@ -86,6 +86,8 @@ Mailing addresses.
 
 ## Application
 
+Application information.
+
 | Name | Type | Description |
 | - | - | - |
 | licenseType | string | Type of license (e.g. MD, DO, PA). |
@@ -93,6 +95,8 @@ Mailing addresses.
 | licenseSubtype | string | Subtype of license (e.g. Permanent Medical License). |
 
 ## Degree
+
+Degree information.
 
 | Name | Type | Description |
 | - | - | - |
@@ -118,7 +122,7 @@ Email address.
 
 ## EmailAddresses
 
-Email information.
+List of email addresses.
 
 | Name | Type | Description |
 | - | - | - |
@@ -151,7 +155,7 @@ Fifth Pathway information.
 
 ## FifthPathwaySchool
 
-Fifth Pathway school. information.
+Fifth Pathway school information.
 
 | Name | Type | Description |
 | - | - | - |
@@ -192,6 +196,8 @@ License information.
 
 ## LicenseEntity
 
+Entity issuing license.
+
 | Name | Type | Description |
 | - | - | - |
 | code | string | Required. Code. |
@@ -230,7 +236,7 @@ Medical school education.
 
 ## MedicalEducationTraining
 
-Medical education.
+List of medical education.
 
 | Name | Type | Description |
 | - | - | - |
@@ -252,7 +258,7 @@ Name of a person.
 
 ## Names
 
-Names information.
+List of names.
 
 | Name | Type | Description |
 | - | - | - |
@@ -286,7 +292,7 @@ Phone number.
 
 ## Phones
 
-Phone information.
+List of phone numbers.
 
 | Name | Type | Description |
 | - | - | - |
@@ -296,12 +302,16 @@ Phone information.
 
 ## PostGraduateTraining
 
+List of post graduate training.
+
 | Name | Type | Description |
 | - | - | - |
 | accreditedTraining | [AccreditedTraining[]](#accreditedtraining) | Accredited training. |
 | otherTraining | [OtherTraining[]](#otherTraining) | Other training. |
 
 ## PractitionerType
+
+Practitioner type (e.g. MD, DO).
 
 | Name | Type | Description |
 | - | - | - |
@@ -344,6 +354,8 @@ Medical school.
 
 ## SchoolType
 
+Type of medical school (e.g. MD, DO).
+
 | Name | Type | Description |
 | - | - | - |
 | code | string | Required. Code. |
@@ -358,6 +370,8 @@ Training specialty.
 | description | string | Required. Description. |
 
 ## State
+
+State information.
 
 | Name | Type | Description |
 | - | - | - |
