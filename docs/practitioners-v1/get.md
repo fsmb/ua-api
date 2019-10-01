@@ -12,7 +12,7 @@ GET {baseUrl}/v1/practitioners/{board}/{fid}?fromDate={fromDate}&toDate={toDate}
 | - |-|-|-|-|
 | baseUrl | path | True | string | The API URL. |
 | board | path | True | string | The board code or `me`. |
-| fid | path | True | string | The FID of the practitioner. |
+| fid | path | True | string | The practitioner's FID. |
 | fromDate | query | False | DateTime | The optional start date for submissions. |
 | toDate | query | False | DateTime | The optional end date for submissions.
 
@@ -26,7 +26,7 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 | Name | Description | Type |
 | - |-|-|
-| 200 | OK | [Submission[]](../definition-submission.md) |
+| 200 | OK | [Submission[]](/docs/definitions/submission.md) |
 
 ## Security
 
@@ -215,6 +215,8 @@ Output:
 ]
 ```
 
+*Note: If there are many submissions then paging is required.*
+
 ### Get All Submissions for 2018
 
 Input:
@@ -390,5 +392,7 @@ Output:
   }
 ]
 ```
+
+*Note: If there are many submissions then paging is required.*
 
 For more examples go to [samples](/samples/).
