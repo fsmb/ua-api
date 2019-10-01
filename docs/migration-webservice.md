@@ -35,6 +35,10 @@ The web service provided a method for getting all submissions after a given ID. 
 
 The biggest challenge for migrating from the UA web service to the API is mapping the existing XML elements to their JSON equivalent. This section will discuss the general mapping between XML and JSON. Note that not every XML element has a corresponding JSON object. Furthermore the meaning and value of JSON objects may differ from their XML counterparts.
 
+JSON is not a typed language. The JSON definitions are logical types used to make it easier to discuss the layout of the data. The definition names have no meaning in JSON nor do they show up in any data sent or received. This is in contrast to XML where the "types" are defined by the XML element names.
+
+*Note: A word of warning about case. In XML Pascal casing is generally used and it is case sensitive. In JSON camel casing is always used and it is case sensitive.*
+
 ### USMLASource
 
 ##### JSON Definition: None
@@ -58,11 +62,13 @@ This represents a submission.
 | StateBoard | string | `application.boardName` | |
 | DocumentTypeCode | string | | No equivalent. |
 | SubmittedDate | string (date) | `submitDate` | The API returns the date and time of submission. The XML had only the date. |
-| MDDegree | string (boolean) | `application.licenseType` | The license type captures the type of license. |
-| DODegree | string (boolean) | `application.licenseType` | See `MDDegree`. |
+| MDDegree | string (boolean) | `application.licenseType` | See below. |
+| DODegree | string (boolean) | `application.licenseType` | See below. |
 | SubmissionType | string | | No equivalent. |
 | HasFCVSFlag | string (boolean) | | No equivalent. |
 | Physician | [Physician](#physician) | |
+
+`MDDegree` and `DODegree` are boolean strings in XML indicating what type of license is being submitted. In JSON this is combined into a single license type because a submission can have only one license type.
 
 ### Physician
 
@@ -85,79 +91,114 @@ This represents the physician data. XML required a wrapper element to store the 
 | ContactInfo | [ContactInfo](#contactinfo) | |
 
 ### AddressInfo
-##### JSON Definition: 
+##### JSON Definition: [Address](definitions/submission.md#address)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
+| StreetAddressLine1 | string | `lines` | All address lines are stored in a single array. |
+| StreetAddressLine2 | string | `lines` | All address lines are stored in a single array. |
+| StreetAddressLine3 | string | `lines` | All address lines are stored in a single array. |
+| City | string | `city` | |
+| StateOrProvince | string | [stateOrProvince.code](definitions/submission.md#stateprovince) | |
+| PostalCode | string | `zipCode` | |
+| Country | string | [stateOrProvince.countryCode](definitions/submission.md#stateprovince) | |
+| Description | string | `addressType` | |
+| Mailing | string (yes/no) | | This field is defined in [Addresses](definitions/submission.md#addresses) |
+| Privacy | string | | This field is defined in [Addresses](definitions/submission.md#addresses) |
 
 ### ContactInfo
-##### JSON Definition: 
+##### JSON Definition: None
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
+| AddressInfo | [AddressInfo](#addressinfo)[] | [addresses](definitions/submission.md#addresses) | See below. |
+| Telephone | [TelephoneInfo](#telephoneinfo)[] | [phones](definitions/submission.md#phones) | See below. |
+| EmailAddress | [EmailInfo](#emailinfo)[] | [emailAddresses](definitions/submission.md#emiladdresses) | See below. |
+
+The XML grouped contact information into 3 separate arrays. Client code had to enumerate the array to identify which contact information was for public or board use. 
+
+The JSON breaks contact information up into 3 separate objects. Each object exposes the following.
+
+| JSON Field | Comments |
+|:-:|-|
+| `forBoard` | Contains contact information for the board. |
+| `forPublic` | Contains contact information for the public. |
+| `other` | Array containing any additional contact information. |
+
+A client can either retrieve the specific contact information (e.g. board or public) or combine them all together depending upon its needs.
 
 ### ECFMGInfo
-##### JSON Definition: 
+##### JSON Definition: [Ecfmg](definitions/submission.md#ecfmg)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
+| ECFMGid | string | `ecfmgNumber` | |
+| CertificationDate | string (date) `issueDate` | |
+| ExpirationDAte | | Not available in JSON. *Note: The casing is incorrect for this field in the XML.* |
 
 ### EmailAddress
-##### JSON Definition: 
+##### JSON Definition: [EmailAddress](definitions/submission.md#emailaddress)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
+| Email | string | `email` | |
+| Description | string | | UA does not support type for email. |
 
 ### ExaminationHistory
-##### JSON Definition: 
+##### JSON Definition: [exam](definitions/submission.md#exam)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
+| ExamName | string | `examType` | | 
+| StateCode | string | ??? |
+| ExamDate | string (format: month/year) | `examDate` | |
+| NumberOfAttempts | int | `numberOfAttempts` | |
+| PassFailFlag | string (e.g. `P') | `passFail` | |
 
 ### FifthPathwayInfo
-##### JSON Definition: 
+##### JSON Definition: [](definitions/submission.md#)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### Licensure
-##### JSON Definition: 
+##### JSON Definition: [](definitions/submission.md#)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### MedicalEducationInfo
-##### JSON Definition: 
+##### JSON Definition: [](definitions/submission.md#)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### NameInfo
-##### JSON Definition: 
+##### JSON Definition: [](definitions/submission.md#)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### PersonalInfo
-##### JSON Definition: 
+##### JSON Definition: [](definitions/submission.md#)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### PostGraduateTrainingInfo
-##### JSON Definition: 
+##### JSON Definition: [](definitions/submission.md#)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
-### Telephone
-##### JSON Definition: 
+### TelephoneInfo
+##### JSON Definition: [](definitions/submission.md#)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### WorkHistory
-##### JSON Definition: 
+##### JSON Definition: [](definitions/submission.md#)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
