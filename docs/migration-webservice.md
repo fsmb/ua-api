@@ -70,13 +70,13 @@ This represents a submission.
 
 This represents the physician data. XML required a wrapper element to store the data. In JSON it is at the same level as the submission.
 
-| XML Element | XML Type | JSON Object |
+| XML Element | XML Type | JSON Field |
 |:-:|:-:|:-:|
 | NameInfo | [NameInfo](#nameinfo) | [names](definitions/submission.md#names) |
 | PersonalInfo | [PersonalInfo](#personalinfo) | [identity](definitions/submission.md#identification) |
 | ECFMGInfo | [ECFMGInfo](#ecfmginfo) | [medicalEducation.ecfmg](definitions/submission.md#ecfmg) |
-| MedicalEducationInfo | [MedicalEducationInfo](#medicaleducationinfo)[] | [medicalEducatio(definitions/submission.md#medicaleducation) |
-| PostGraduateTrainingInfo | [PostGraduateTrainingInfo](#postgraduatetraininginfo)[] | [postGraduateTraining](definitions/submission.md#postgraduatetraining) |
+| MedicalEducationInfo | [MedicalEducationInfo](#medicaleducationinfo)[] | [medicalEducation](definitions/submission.md#medicaleducation) |
+| PostGraduateTrainingInfo | [PostGraduateTrainingInfo](#postgraduatetraininginfo)[] | [postGraduateTraining](definitions/submission.md#postgraduatetraining) | 
 | FifthPathwayInfo | [fifthPathwayInfo](#fifthpathwayinfo) | [medicalEducation.fifthPathway](definitions/submission.md#fifthpathway) |
 | ExamHistory | [ExaminationHistory](#examinationhistory)[] | [exams](definitions/submission.md#exam) |
 | LicensureInfo | [Licensure](#licensure)[] | [licenses](definitions/submission.md#license) |
@@ -87,77 +87,77 @@ This represents the physician data. XML required a wrapper element to store the 
 ### AddressInfo
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### ContactInfo
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### ECFMGInfo
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### EmailAddress
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### ExaminationHistory
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### FifthPathwayInfo
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### Licensure
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### MedicalEducationInfo
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### NameInfo
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### PersonalInfo
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### PostGraduateTrainingInfo
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### Telephone
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 
 ### WorkHistory
 ##### JSON Definition: 
 
-| XML Element | XML Type | JSON Object | Comments |
+| XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
