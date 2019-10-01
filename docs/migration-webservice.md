@@ -74,26 +74,6 @@ This represents a submission.
 
 `MDDegree` and `DODegree` are boolean strings in XML indicating what type of license is being submitted. In JSON this is combined into a single license type because a submission can have only one license type.
 
-### Physician
-
-###### JSON Definition: [Submission](definitions/submission.md)
-
-This represents the physician data. XML required a wrapper element to store the data. In JSON it is at the same level as the submission.
-
-| XML Element | XML Type | JSON Field |
-|:-:|:-:|:-:|
-| NameInfo | [NameInfo](#nameinfo) | [names](definitions/submission.md#names) |
-| PersonalInfo | [PersonalInfo](#personalinfo) | [identity](definitions/submission.md#identification) |
-| ECFMGInfo | [ECFMGInfo](#ecfmginfo) | [medicalEducation.ecfmg](definitions/submission.md#ecfmg) |
-| MedicalEducationInfo | [MedicalEducationInfo](#medicaleducationinfo)[] | [medicalEducation](definitions/submission.md#medicaleducation) |
-| PostGraduateTrainingInfo | [PostGraduateTrainingInfo](#postgraduatetraininginfo)[] | [postGraduateTraining](definitions/submission.md#postgraduatetraining) | 
-| FifthPathwayInfo | [fifthPathwayInfo](#fifthpathwayinfo) | [medicalEducation.fifthPathway](definitions/submission.md#fifthpathway) |
-| ExamHistory | [ExaminationHistory](#examinationhistory)[] | [exams](definitions/submission.md#exam) |
-| LicensureInfo | [Licensure](#licensure)[] | [licenses](definitions/submission.md#license) |
-| WorkHistory | [WorkHistory](#workhistory)[] | [activities](definitions/submission.md#activity) |
-| MalpracticeClaims | ? | [malpractice](definitions/submission.md#malpractice) |
-| ContactInfo | [ContactInfo](#contactinfo) | |
-
 ### AccreditedTraining
 ##### JSON Definition: [accreditedTraining](definitions/submission.md#accreditedTraining)
 
@@ -101,15 +81,15 @@ Each distinct program/specialty is listed as a separate accredited training entr
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
-| InstitutionInfo.InstitutionName | string | `program.hospitalName` | |
-| InstitutionInfo.InstitutionAddress.StreetAddressLine1 | string | | Not supported. |
-| InstitutionInfo.InstitutionAddress.StreetAddressLine2 | string | | Not supported. |
-| InstitutionInfo.InstitutionAddress.StreetAddressLine3 | string | | Not supported. |
-| InstitutionInfo.InstitutionAddress.City | string | `program.city` | |
-| InstitutionInfo.InstitutionAddress.StateOrProvince | string | `program.stateOrProvince.description` | |
-| InstitutionInfo.InstitutionAddress.PostalCode | string | | Not supported. |
-| InstitutionInfo.InstitutionAddress.Country | string | `program.stateOrProvince.countryCode` | |
-| InstitutionInfo.InstitutionAddress.Description | string | | Not supported. |
+| InstitutionInfo .InstitutionName | string | `program.hospitalName` | |
+| InstitutionInfo .InstitutionAddress.StreetAddressLine1 | string | | Not supported. |
+| InstitutionInfo .InstitutionAddress.StreetAddressLine2 | string | | Not supported. |
+| InstitutionInfo .InstitutionAddress.StreetAddressLine3 | string | | Not supported. |
+| InstitutionInfo .InstitutionAddress.City | string | `program.city` | |
+| InstitutionInfo .InstitutionAddress.StateOrProvince | string | `program .stateOrProvince.description` | |
+| InstitutionInfo .InstitutionAddress.PostalCode | string | | Not supported. |
+| InstitutionInfo .InstitutionAddress.Country | string | `program .stateOrProvince.countryCode` | |
+| InstitutionInfo .InstitutionAddress.Description | string | | Not supported. |
 | TrainingYears.ProgramDescription | string | `programType` | |
 | TrainingYears.DepartmentPosition | string | `specialty.description` | |
 | TrainingYears.StatusDescription | string | `trainingStatus` | |
@@ -301,6 +281,26 @@ The following mappings applies to the name elements.
 | BirthInfo.BirthCity | string | `birthCity` | |
 | BirthInfo.BirthStateOrProvince | string | `birthStateOrProvince.description` | |
 | BirthInfo.BirthCountry | string | `birthStateOrProvince.countryDescription` | |
+
+### Physician
+
+###### JSON Definition: [Submission](definitions/submission.md)
+
+This represents the physician data. XML required a wrapper element to store the data. In JSON it is at the same level as the submission.
+
+| XML Element | XML Type | JSON Field |
+|:-:|:-:|:-:|
+| NameInfo | [NameInfo](#nameinfo) | [names](definitions/submission.md#names) |
+| PersonalInfo | [PersonalInfo](#personalinfo) | [identity](definitions/submission.md#identification) |
+| ECFMGInfo | [ECFMGInfo](#ecfmginfo) | [medicalEducation.ecfmg](definitions/submission.md#ecfmg) |
+| MedicalEducationInfo | [MedicalEducationInfo](#medicaleducationinfo)[] | [medicalEducation](definitions/submission.md#medicaleducation) |
+| PostGraduateTrainingInfo | [PostGraduateTrainingInfo](#postgraduatetraininginfo)[] | [postGraduateTraining](definitions/submission.md#postgraduatetraining) | 
+| FifthPathwayInfo | [fifthPathwayInfo](#fifthpathwayinfo) | [medicalEducation.fifthPathway](definitions/submission.md#fifthpathway) |
+| ExamHistory | [ExaminationHistory](#examinationhistory)[] | [exams](definitions/submission.md#exam) |
+| LicensureInfo | [Licensure](#licensure)[] | [licenses](definitions/submission.md#license) |
+| WorkHistory | [WorkHistory](#workhistory)[] | [activities](definitions/submission.md#activity) |
+| MalpracticeClaims | ? | [malpractice](definitions/submission.md#malpractice) |
+| ContactInfo | [ContactInfo](#contactinfo) | |
 
 ### PostGraduateTrainingInfo
 ##### JSON Definition: [postGraduateTraining](definitions/submission.md#postGraduateTraining)
