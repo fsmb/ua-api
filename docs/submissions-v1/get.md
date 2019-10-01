@@ -27,7 +27,8 @@ This resource supports paging and sorting. The following fields can be ordered.
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Submission[]](/docs/definitions/submission.md) | Success |
-| 404 Not Found | | Board code is missing or invalid -or- Submission cannot be found |
+| 204 No Content | | No submissions found |
+| 404 Not Found | | Board code is missing or invalid |
 
 ## Security
 
