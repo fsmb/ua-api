@@ -10,11 +10,13 @@ To learn more about FSMB APIs refer to the [Getting Started](https://github.com/
 - [Postman Collection](https://www.getpostman.com/collections/98586f4987694d146125)
 - [OpenAPI Specification](https://demo-services.fsmb.org/ua/_swagger/v1)
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/98586f4987694d146125)
+
 ## Change Log
 
 | Version | Date | Release Notes |
 | - | - | -|
-| 1 | | Initial version |
+| 1 | 11/22/2016| Initial version |
 
 ## Security
 
