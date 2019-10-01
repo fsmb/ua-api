@@ -1,3 +1,5 @@
+*~Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields.~*
+
 # Submission
 
 A submission to a board.
@@ -13,12 +15,14 @@ A submission to a board.
 | addresses | [Addresses](#addresses) | Required. Mailing addresses. |
 | emailAddresses | [EmailAddresses](#emailaddresses) | Required. Email addresses. |
 | phones | [Phones](#phones) | Required. Phone numbers. |
-| medialEducation | [MedicalEducationTraining](#medicaleducationtraining) | Medical education. |
+| medicalEducation | [MedicalEducationTraining](#medicaleducationtraining) | Medical education. |
+| medicalEducationTraining | | DEPRECATED. Use `medicalEducation`. |
 | postGraduateTraining | [PostGraduateTraining](#postgraduatetraining) | Postgraduate training. |                    
 | exams | [Exam](#exam)[] | Exams. |
 | licenses | [License](#license)[] | Licenses. |
 | malpractice | [Malpractice](#malpractice)[] | Malpractice information. |
 | activities | [Activity](#activity)[] | Chronology of activity. |
+| workHistory | | DEPRECATED. Use `activities`. |
 | addendum | object | |
 
 ## AccreditedTraining
@@ -27,16 +31,18 @@ Accredited training information.
 
 | Name | Type | Description |
 | - | - | - |
-| accreditationType | string | Required. The type of accreditation (e.g. ACGME, AOA). |
+| accreditationType | string | Required. The type of accreditation (e.g. `ACGME`, `AOA`). |
 | programCode | string | Required. Program code. |
 | program | [Program](#program) | Required. Program. |
 | specialty | [Specialty](#specialty) | Required. Specialty. |
 | programType | string | Required. Program type. |
-| trainingStatus | string | Required. Training status. |
+| trainingStatus | string | Required. Training status (e.g. `Active`, `Completed`). |
 | beginDate | string (date) | Required. Start date. |
 | endDate | string (date) | Required. End date. |
 | percentageClinical | integer | Percentage of training that was Clinical. |
 | percentageAdministrative | integer | Percentage of training that was Administrative. |
+| isAcgme | | DEPRECATED. Use `accreditationType`. |
+| isAoa | | DEPRECATED. Use `accreditationType`. |
         
 ## Activity
 
@@ -68,11 +74,12 @@ Mailing address.
 
 | Name | Type | Description |
 | - | - | - |
-| addressType | string | Required. Type of address (e.g. Business, Home). |
+| addressType | string | Required. Type of address (e.g. `Business`, `Home`). |
 | lines | string[] | Address lines. |
 | city | string | Required. City. |
 | stateOrProvince | [Region](#region) | Required. State/province. |
 | postalCode | string | Required. Postal code. |
+| zipCode | | DEPRECATED. Use `postalCode`. |
 
 ## Addresses
 
@@ -90,9 +97,10 @@ Application information.
 
 | Name | Type | Description |
 | - | - | - |
-| licenseType | string | Type of license (e.g. MD, DO, PA). |
+| licenseType | string | Type of license (e.g. `MD`, `DO`, `PA`). |
 | boardName | string | Required. Board name. |
-| licenseSubtype | string | Subtype of license (e.g. Permanent Medical License). |
+| licenseSubtypeDetails | [LicenseSubtype](#licensesubtype) | Subtype of license. |
+| licenseSubtype | string | DEPRECATED. Use `licenseSubtypeDetails`. |
 
 ## Degree
 
@@ -100,7 +108,7 @@ Degree information.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Code. |
+| code | string | Required. Code (e.g. `BM`, `MD`, `DMCH`). |
 | description | string | Required. Description. |
 
 ## Ecfmg
@@ -109,7 +117,7 @@ ECFMG information.
 
 | Name | Type | Description |
 | - | - | - |
-| ecfmgNumber | string | Required. ECFMG number. |
+| ecfmgNumber | string (format: digits) | Required. ECFMG number. |
 | issueDate | string (date) | Issue date. |
 
 ## EmailAddress
@@ -118,7 +126,7 @@ Email address.
 
 | Name | Type | Description |
 | - | - | - |
-| email | string | Email address. |
+| email | string | Required. Email address. |
 
 ## EmailAddresses
 
@@ -126,9 +134,9 @@ List of email addresses.
 
 | Name | Type | Description |
 | - | - | - |
-| forPublic | [EmailAddress](#emailaddress) | Public email. |
-| forBoard | [EmailAddress](#emailaddress) | Board email. |
-| other | [EmailAddress](#emailaddress)[] | Other emails. |
+| forPublic | [EmailAddress](#emailaddress) | Required. Public email address. |
+| forBoard | [EmailAddress](#emailaddress) | Required. Board email address. |
+| other | [EmailAddress](#emailaddress)[] | Other email addresses. |
 
 ## Exam
 
@@ -137,10 +145,11 @@ Exam.
 | Name | Type | Description |
 | - | - | - |
 | examType | string | Required. Type of exam. |
-| stateBoardDetail | [StateProvince](#stateprovince) | State code and board description. |
+| stateBoardDetail | [StateProvince](#stateprovince) | State board description. |
 | examDate | string (date) | Required. Exam date. |
 | numberOfAttempts | integer | Reqiured. Number of attempts. |
-| passFail | string | Required. Pass/fail status (e.g. Pass, Fail, Unknown). |
+| passFail | string | Required. Pass/fail status (e.g. `Pass`, `Fail`, `Unknown`). |
+| stateBoard | | DEPRECATED. Use `stateBoardDetail`. |
 
 ## FifthPathway
 
@@ -170,10 +179,10 @@ Identity information.
 
 | Name | Type | Description |
 | - | - | - |
-| ssn | string | SSN. |
-| ssnLast4 | string | Last 4 of the SSN. |
-| npi | string | NPI. |
-| usmleId | string | USMLE ID. |
+| ssn | string (length: 9, format: digits) | SSN. |
+| ssnLast4 | string (length: 4, format: digits) | Last 4 of the SSN. |
+| npi | string (length: 10, format: digits) | NPI. |
+| usmleId | string (length: 8, format: digits)| USMLE ID. |
 | isUSCitizen | string | US citizen indicator. |
 | birthDate | string (date) | Required. Date of birth. |
 | birthCity | string | Required. Date of birth. |
@@ -186,9 +195,9 @@ License information.
 
 | Name | Type | Description |
 | - | - | - |
-| licenseType | string | Type of license. |
+| licenseType | string | Type of license (e.g. `TEMP`, `FULL`). |
 | licensingEntity | [LicenseEntity](#licenseentity) | Entity issuing license. |
-| status | string | License status. |
+| status | string | License status (e.g. `Active`, `Denied`). |
 | practitionerType | [PractitionerType](#practitionertype) | Practitioner type. |
 | licenseNumber | string | License number. |
 | issueDate | string (date) | Issue date. |
@@ -201,6 +210,15 @@ Entity issuing license.
 | Name | Type | Description |
 | - | - | - |
 | code | string | Required. Code. |
+| description | string | Required. Description. |
+
+## LicenseSubtype
+
+License subtype information.
+
+| Name | Type | Description |
+| - | - | - |
+| code | string | Required. Code (e.g. `FULL`, `TEMP`). |
 | description | string | Required. Description. |
 
 ## Malpractice
@@ -240,7 +258,7 @@ List of medical education.
 
 | Name | Type | Description |
 | - | - | - |
-| graduating | [MedicalEducation](#medicaleducation) | Graduating school. |
+| graduating | [MedicalEducation](#medicaleducation) | Required. Graduating school. |
 | other | [MedicalEducation](#medicaleducation)[] | Other medical schools. |
 | ecfmg | [Ecfmg](#ecfmg) | ECFMG information. |
 | fifthPathway | [FifthPathway](#fifthpathway) | 5th Pathway information. |
@@ -273,8 +291,8 @@ Non-accredited postgraduate training.
 | - | - | - |
 | program | [Program](#program) | Required. Program. |
 | specialty | [Specialty](#specialty) | Required. Specialty. |
-| programType | string | Required. Program type. |
-| trainingStatus | string | Required. Training status. |
+| programType | string | Required. Program type (e.g. `Internship`, `Fellowship`). |
+| trainingStatus | string | Required. Training status (e.g. `Active`, `Completed`). |
 | beginDate | string (date) | Required. Start date. |
 | endDate | string (date) | Required. End date. |
 | percentageClinical | integer | Percentage of training that was Clinical. |
@@ -286,7 +304,7 @@ Phone number.
 
 | Name | Type | Description |
 | - | - | - |
-| phoneType | string | Required. Type of home (e.g. Business, Home, Mobile). |
+| phoneType | string | Required. Type of home (e.g. `Business`, `Home`). |
 | phoneNumber | string | Required. Phone number. |
 | extension | string | Phone extension. |
 
@@ -296,8 +314,8 @@ List of phone numbers.
 
 | Name | Type | Description |
 | - | - | - |
-| forPublic | [Phone](#phone) | Public phone. |
-| forBoard | [Phone](#phone) | Board phone. |
+| forPublic | [Phone](#phone) | Required. Public phone. |
+| forBoard | [Phone](#phone) | Required. Board phone. |
 | other | [Phone](#phone)[] | Other phone numbers. |
 
 ## PostGraduateTraining
@@ -311,7 +329,7 @@ List of post graduate training.
 
 ## PractitionerType
 
-Practitioner type (e.g. MD, DO).
+Practitioner type.
 
 | Name | Type | Description |
 | - | - | - |
@@ -327,7 +345,7 @@ Postgraduate training program.
 | hospitalName | string | Required. Hospital name. |
 | affiliatedInstitution | string | Affiliated institution. |
 | city | string | Required. City. |
-| stateOrProvince | [Region](#region) | State/province. |
+| stateOrProvince | [Region](#region) | Required. State/province. |
 
 ## Region
 
@@ -335,9 +353,9 @@ Geographic region.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Region code. |
+| code | string | Required. Region code (e.g. `TX`, `MD`). |
 | description | string | Required. Description. |
-| countryCode | string | ISO country code. |
+| countryCode | string | ISO country code (e.g. `US`, `CA`). |
 | countryDescription | string | Country description. |
 
 ## School
@@ -354,11 +372,11 @@ Medical school.
 
 ## SchoolType
 
-Type of medical school (e.g. MD, DO).
+Type of medical school.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Code. |
+| code | string | Required. Code (e.g. `MD`, `DO`). |
 | description | string | Required. Description. |
 
 ## Specialty
@@ -368,6 +386,7 @@ Training specialty.
 | Name | Type | Description |
 | - | - | - |
 | description | string | Required. Description. |
+| classification | | DEPRECATED. Use `Description`. |
 
 ## StateProvince
 
@@ -375,5 +394,5 @@ State/province information.
 
 | Name | Type | Description |
 | - | - | - |
-| code | string | Required. Code. |
+| code | string | Required. Code (e.g. `TX`, `MD`). |
 | description | string | Required. Description. |
