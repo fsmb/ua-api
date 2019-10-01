@@ -168,7 +168,7 @@ A client can either retrieve the specific contact information (e.g. board or pub
 | CertificationDate | string (date) `issueDate` | |
 | ExpirationDAte | | Not supported. *Note: The casing is incorrect for this field in the XML.* |
 
-### EmailAddress
+### EmailInfo
 ##### JSON Definition: [EmailAddress](definitions/submission.md#emailaddress)
 
 | XML Element | XML Type | JSON Field | Comments |
