@@ -24,9 +24,9 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 ## Responses
 
-| Name | Description | Type |
+| Name | Type | Description |
 | - |-|-|
-| 200 | OK | [SubmissionSummary[]](definition-submissionsummary.md) |
+| 200 OK | [SubmissionSummary[]](definition-submissionsummary.md) | Success |
 
 ## Security
 
@@ -42,13 +42,15 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 Get a summary of the submissions for 4 Jan 2019.
 
-Input:
+#### Sample Request
 
 ```http
 GET {baseUrl}/v1/submissions/me/summary?fromDate=01/04/2019&toDate=01/05/2019
 ```
 
-Output:
+#### Sample Response
+
+Status code: 200
 
 ```json
 [
