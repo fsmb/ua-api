@@ -16,9 +16,9 @@ GET {baseUrl}/v1/practitioners/{board}/{fid}/current
 
 ## Responses
 
-| Name | Description | Type |
+| Name | Type | Description |
 | - |-|-|
-| 200 | OK | [Submission](/docs/definitions/submission.md) |
+| 200 OK | [Submission](/docs/definitions/submission.md) | Success. |
 
 ## Security
 
@@ -30,17 +30,22 @@ GET {baseUrl}/v1/practitioners/{board}/{fid}/current
 
 ## Examples
 
+[Get the last submission](#get-the-last-submission)
+***
+
 ### Get the last submission
 
-Input:
+#### Sample Request
 
 ```http
 GET {baseUrl}/v1/practitioners/me/999999949/current
 ```
 
-Output:
+#### Sample Response
 
-Output is ellided.
+Status code: 200
+
+*Note: Output is ellided.*
 
 ```json
 {
