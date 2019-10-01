@@ -16,9 +16,9 @@ A submission to a board.
 | medialEducation | [MedicalEducationTraining](#medicaleducationtraining) | Medical education. |
 | postGraduateTraining | [PostGraduateTraining](#postgraduatetraining) | Postgraduate training. |                    
 | exams | [Exam[]](#exam) | Exams. |
-| licenses | [License[]](#license) | Licenses. |
-| malpractice | [Malpractice[]](#malpractice) | Malpractice information. |
-| activities | [Activity[]](#activity) | Chronology of activity. |
+| licenses | [License](#license)[] | Licenses. |
+| malpractice | [Malpractice](#malpractice)[] | Malpractice information. |
+| activities | [Activity](#activity)[] | Chronology of activity. |
 | addendum | object | |
 
 ## AccreditedTraining
@@ -82,7 +82,7 @@ List of mailing addresses.
 | - | - | - |
 | forPublic | [Address](#address) | Required. Public address. |
 | forBoard | [Address](#address) | Required. Board address. |
-| other | [Address[]](#address) | Other addresses. |
+| other | [Address](#address)[] | Other addresses. |
 
 ## Application
 
@@ -128,7 +128,7 @@ List of email addresses.
 | - | - | - |
 | forPublic | [EmailAddress](#emailaddress) | Public email. |
 | forBoard | [EmailAddress](#emailaddress) | Board email. |
-| other | [EmailAddress[]](#emailaddress) | Other emails. |
+| other | [EmailAddress](#emailaddress)[] | Other emails. |
 
 ## Exam
 
@@ -209,7 +209,7 @@ Malpractice Information.
 
 | Name | Type | Description |
 | - | - | - |
-| state | [State](#state) | Required. State/province of malpractice. |
+| state | [StateProvince](#stateprovince) | Required. State/province of malpractice. |
 | eventDate | string (date) | Required. Date of event. |
 | patientName | string | Required. Name of patient. |
 | courtName | string | Required. Name of court. |
@@ -241,7 +241,7 @@ List of medical education.
 | Name | Type | Description |
 | - | - | - |
 | graduating | [MedicalEducation](#medicaleducation) | Graduating school. |
-| other | [MedicalEducation[]](#medicaleducation) | Other medical schools. |
+| other | [MedicalEducation](#medicaleducation)[] | Other medical schools. |
 | ecfmg | [Ecfmg](#ecfmg) | ECFMG information. |
 | fifthPathway | [FifthPathway](#fifthpathway) | 5th Pathway information. |
 
@@ -263,7 +263,7 @@ List of names.
 | Name | Type | Description |
 | - | - | - |
 | legalName | [Name](#name) | Required. Legal name. |
-| other | [Name[]](#name) | Other names. |
+| other | [Name](#name)[] | Other names. |
 
 ## OtherTraining
 
@@ -298,7 +298,7 @@ List of phone numbers.
 | - | - | - |
 | forPublic | [Phone](#phone) | Public phone. |
 | forBoard | [Phone](#phone) | Board phone. |
-| other | [Phone[]](#phone) | Other phone numbers. |
+| other | [Phone](#phone)[] | Other phone numbers. |
 
 ## PostGraduateTraining
 
@@ -306,8 +306,8 @@ List of post graduate training.
 
 | Name | Type | Description |
 | - | - | - |
-| accreditedTraining | [AccreditedTraining[]](#accreditedtraining) | Accredited training. |
-| otherTraining | [OtherTraining[]](#otherTraining) | Other training. |
+| accreditedTraining | [AccreditedTraining](#accreditedtraining)[] | Accredited training. |
+| otherTraining | [OtherTraining](#otherTraining)[] | Other training. |
 
 ## PractitionerType
 
@@ -369,9 +369,9 @@ Training specialty.
 | - | - | - |
 | description | string | Required. Description. |
 
-## State
+## StateProvince
 
-State information.
+State/province information.
 
 | Name | Type | Description |
 | - | - | - |
