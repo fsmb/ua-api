@@ -1,4 +1,4 @@
-# Practitioners v1
+# Practitioners
 
 ##### URL: /v1/practitioners
 ##### API Version: 1.0
