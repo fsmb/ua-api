@@ -94,11 +94,11 @@ Each distinct program/specialty is listed as a separate accredited training entr
 | TrainingYears.DepartmentPosition | string | `specialty.description` | |
 | TrainingYears.StatusDescription | string | `trainingStatus` | |
 | TrainingYears.TrainingLevel | string | ?? | |
-| TrainingYears.TrainingDates.BeginMonth | string (format: mm) | `beginDate` | |
-| TrainingYears.TrainingDates.BeginYear | string (format: yyyy) | `beginDate` | |
-| TrainingYears.TrainingDates.EndMonth | string (format: mm) | `endDate` | |
-| TrainingYears.TrainingDates.EndYear | string (format: yyyy) | `endDate` | |
-| TrainingYears.TrainingDates.InProgressFlag | string (`Y`, `N`) | | Not supported. |
+| TrainingYears .TrainingDates.BeginMonth | string (format: mm) | `beginDate` | |
+| TrainingYears .TrainingDates.BeginYear | string (format: yyyy) | `beginDate` | |
+| TrainingYears .TrainingDates.EndMonth | string (format: mm) | `endDate` | |
+| TrainingYears .TrainingDates.EndYear | string (format: yyyy) | `endDate` | |
+| TrainingYears .TrainingDates.InProgressFlag | string (`Y`, `N`) | | Not supported. |
 
 ### AddressInfo
 ##### JSON Definition: [Address](definitions/submission.md#address)
