@@ -164,7 +164,7 @@ The `Mailing` and `Privacy` XML elements are managed by [addresses](definitions/
 |:-:|:-:|:-:|-|
 | ECFMGid | string | `ecfmgNumber` | |
 | CertificationDate | string (date) `issueDate` | |
-| ExpirationDAte | | Not supported. *Note: The casing is incorrect for this field in the XML.* |
+| ExpirationDAte | string (format: mm/dd/yyyy)| | Not supported. *Note: The casing is incorrect for this field in the XML.* |
 
 ### EmailInfo
 ##### JSON Definition: [EmailAddress](definitions/submission.md#emailaddress)
