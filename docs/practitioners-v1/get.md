@@ -2,7 +2,13 @@
 
 Gets the submissions for a practitioner.
 
-```http
+```HTTP
+GET {baseUrl}/v1/practitioners/{board}/{fid}
+```
+
+With optional parameters:
+
+```HTTP
 GET {baseUrl}/v1/practitioners/{board}/{fid}?fromDate={fromDate}&toDate={toDate}
 ```
 
@@ -24,9 +30,9 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 ## Responses
 
-| Name | Description | Type |
+| Name | Type | Description |
 | - |-|-|
-| 200 | OK | [Submission[]](/docs/definitions/submission.md) |
+| 200 OK | [Submission[]](/docs/definitions/submission.md) | Success
 
 ## Security
 
@@ -38,15 +44,21 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 ## Examples
 
+[Get All Submissions for a Practitioner](#get-all-submissions-for-a-practitioner)
+[Get All Submissions for 2018](#get-all-submissions-for-2018)
+***
+
 ### Get All Submissions for a Practitioner
 
-Input:
+#### Sample Request
 
-```http
+```HTTP
 GET {baseUrl}/v1/practitioners/me/999999949
 ```
 
-Output:
+#### Sample Response
+
+Status code: 200
 
 ```json
 [
@@ -219,13 +231,15 @@ Output:
 
 ### Get All Submissions for 2018
 
-Input:
+#### Sample Request
 
 ```http
 GET {baseUrl}/v1/practitioners/me/999999949?fromDate=01/01/2018&toDate=12/31/2018
 ```
 
-Output:
+#### Sample Response
+
+Status code: 200
 
 ```json
 [
