@@ -250,14 +250,14 @@ The following mappings applies to the name elements.
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 | InstitutionInfo.InstitutionName | string | `program.hospitalName` | |
-| InstitutionInfo.InstitutionAddress.StreetAddressLine1 | string | | Not supported. |
-| InstitutionInfo.InstitutionAddress.StreetAddressLine2 | string | | Not supported. |
-| InstitutionInfo.InstitutionAddress.StreetAddressLine3 | string | | Not supported. |
-| InstitutionInfo.InstitutionAddress.City | string | `program.city` | |
-| InstitutionInfo.InstitutionAddress.StateOrProvince | string | `program.stateOrProvince.description` | |
-| InstitutionInfo.InstitutionAddress.PostalCode | string | | Not supported. |
-| InstitutionInfo.InstitutionAddress.Country | string | `program.stateOrProvince.countryCode` | |
-| InstitutionInfo.InstitutionAddress.Description | string | | Not supported. |
+| InstitutionInfo .InstitutionAddress.StreetAddressLine1 | string | | Not supported. |
+| InstitutionInfo .InstitutionAddress.StreetAddressLine2 | string | | Not supported. |
+| InstitutionInfo .InstitutionAddress.StreetAddressLine3 | string | | Not supported. |
+| InstitutionInfo .InstitutionAddress.City | string | `program.city` | |
+| InstitutionInfo .InstitutionAddress.StateOrProvince | string | `program.stateOrProvince.description` | |
+| InstitutionInfo .InstitutionAddress.PostalCode | string | | Not supported. |
+| InstitutionInfo .InstitutionAddress.Country | string | `program.stateOrProvince.countryCode` | |
+| InstitutionInfo .InstitutionAddress.Description | string | | Not supported. |
 | TrainingYears.ProgramDescription | string | `programType` | |
 | TrainingYears.DepartmentPosition | string | `specialty.description` | |
 | TrainingYears.StatusDescription | string | `trainingStatus` | |
@@ -269,7 +269,7 @@ The following mappings applies to the name elements.
 | TrainingYears.TrainingDates.InProgressFlag | string (`Y`, `N`) | | Not supported. |
 
 ### PersonalInfo
-##### JSON Definition: [identity](definitions/submission.md#identity)
+##### JSON Definition: [identification](definitions/submission.md#identification)
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
