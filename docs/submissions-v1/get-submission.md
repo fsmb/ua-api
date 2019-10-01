@@ -2,7 +2,7 @@
 
 Gets a submission by its unique ID for the board.
 
-```http
+```HTTP
 GET {baseUrl}/v1/submissions/{board}/{id}
 ```
 
@@ -16,10 +16,10 @@ GET {baseUrl}/v1/submissions/{board}/{id}
 
 ## Responses
 
-| Name | Description | Type |
+| Name | Type | Description |
 | - |-|-|
-| 200 | OK | [Submission](/docs/definitions/submission.md) |
-| 404 | Not Found | |
+| 200 OK | [Submission](/docs/definitions/submission.md) | Success |
+| 404 Not Found | - | Submission not found|
 
 ## Security
 
@@ -31,19 +31,24 @@ GET {baseUrl}/v1/submissions/{board}/{id}
 
 ## Examples
 
+[Get a Submission](#get-a-submission)
+***
+
 ### Get a Submission
 
 Get the submission for ID 1234.
 
-Input:
+#### Sample Request
 
 ```http
 GET {baseUrl}/v1/submissions/me/1234
 ```
 
-Output:
+#### Sample Response
 
-Output is ellided.
+Status code: 200
+
+*Note: Output is ellided.*
 
 ```json
 {
