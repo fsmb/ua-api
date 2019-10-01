@@ -3,6 +3,12 @@
 Gets a summary of submissions to a board.
 
 ```http
+GET {baseUrl}/v1/submissions/{board}/summary
+```
+
+With optional parameters.
+
+```http
 GET {baseUrl}/v1/submissions/{board}/summary?fid={fid}&fromDate={fromDate}&toDate={toDate}
 ```
 
@@ -38,10 +44,10 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 ## Examples
 
-[Get summary of submissions for one day](#get-summary-of-submissions-for-one-day)
+[Get Summary Of Submissions For One Day](#get-summary-of-submissions-for-one-day)
 ***
 
-### Get summary of submissions for one day
+### Get Summary Of Submissions For One Day
 
 Get a summary of the submissions for 4 Jan 2019.
 
