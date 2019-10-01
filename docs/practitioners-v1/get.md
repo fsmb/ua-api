@@ -33,6 +33,8 @@ This resource supports paging and sorting. The following fields can be ordered.
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Submission[]](/docs/definitions/submission.md) | Success
+| 204 No Content | | Practitioner has no submissions |
+| 404 Not Found | | Board code is missing or invalid |
 
 ## Security
 
@@ -70,13 +72,14 @@ Status code: 200
       "application": {
           "licenseType": "MD",
           "boardName": "Texas Medical Board",
-          "licenseSubtype": "Permanent Medical License"
+          "licenseSubtypeDetails": {
+            "code": "FULL",
+            "description": "Permanent Medical License"
+          }
       },
       "identity": {
-          "ssn": "123-45-7777",
+          "ssn": "123457777",
           "ssnLast4": "7777",
-          "npi": "",
-          "isUSCitizen": "Y",
           "birthDate": "1945-01-06T00:00:00",
           "birthCity": "Seattle",
           "birthStateOrProvince": {
@@ -151,13 +154,14 @@ Status code: 200
     "application": {
         "licenseType": "MD",
         "boardName": "Texas Medical Board",
-        "licenseSubtype": "Permanent Medical License"
+        "licenseSubtypeDetails": {
+           "code": "FULL",
+           "description": "Permanent Medical License"
+        }
     },
     "identity": {
-        "ssn": "123-45-7777",
+        "ssn": "123457777",
         "ssnLast4": "7777",
-        "npi": "",
-        "isUSCitizen": "Y",
         "birthDate": "1945-01-06T00:00:00",
         "birthCity": "Seattle",
         "birthStateOrProvince": {
@@ -251,13 +255,14 @@ Status code: 200
       "application": {
           "licenseType": "MD",
           "boardName": "Texas Medical Board",
-          "licenseSubtype": "Permanent Medical License"
+          "licenseSubtypeDetails": {
+              "code": "FULL",
+              "description": "Permanent Medical License"
+          }
       },
       "identity": {
-          "ssn": "123-45-7777",
+          "ssn": "123457777",
           "ssnLast4": "7777",
-          "npi": "",
-          "isUSCitizen": "Y",
           "birthDate": "1945-01-06T00:00:00",
           "birthCity": "Seattle",
           "birthStateOrProvince": {
@@ -332,13 +337,14 @@ Status code: 200
       "application": {
           "licenseType": "MD",
           "boardName": "Texas Medical Board",
-          "licenseSubtype": "Permanent Medical License"
+          "licenseSubtypeDetails": {
+             "code": "FULL",
+             "description": "Permanent Medical License"
+          }
       },
       "identity": {
-          "ssn": "123-45-1111",
+          "ssn": "123451111",
           "ssnLast4": "1111",
-          "npi": "",
-          "isUSCitizen": "Y",
           "birthDate": "1978-08-08T00:00:00",
           "birthCity": "Houston",
           "birthStateOrProvince": {
