@@ -137,7 +137,7 @@ Exam.
 | Name | Type | Description |
 | - | - | - |
 | examType | string | Required. Type of exam. |
-| stateBoardDetail | [State](#state) | State code and board description. |
+| stateBoardDetail | [StateProvince](#state) | State code and board description. |
 | examDate | string (date) | Required. Exam date. |
 | numberOfAttempts | integer | Reqiured. Number of attempts. |
 | passFail | string | Required. Pass/fail status (e.g. Pass, Fail, Unknown). |
