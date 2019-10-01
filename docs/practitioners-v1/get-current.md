@@ -19,6 +19,8 @@ GET {baseUrl}/v1/practitioners/{board}/{fid}/current
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Submission](/docs/definitions/submission.md) | Success |
+| 204 No Content | | Practitioner has no submissions |
+| 404 Not Found | | Board code is missing or invalid |
 
 ## Security
 
@@ -55,13 +57,14 @@ Status code: 200
     "application": {
         "licenseType": "MD",
         "boardName": "Texas Medical Board",
-        "licenseSubtype": "Permanent Medical License"
+        "licenseSubtypeDetails": {
+           "code": "FULL"
+           "description": "Permanent Medical License"
+        }
     },
     "identity": {
-        "ssn": "123-45-7777",
+        "ssn": "123457777",
         "ssnLast4": "7777",
-        "npi": "",
-        "isUSCitizen": "Y",
         "birthDate": "1945-01-06T00:00:00",
         "birthCity": "Seattle",
         "birthStateOrProvince": {
