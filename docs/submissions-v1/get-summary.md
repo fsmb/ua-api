@@ -38,7 +38,10 @@ This resource supports paging and sorting. The following fields can be ordered.
 
 ## Examples
 
-### Get a summary of submissions for one day.
+[Get summary of submissions for one day](#get-summary-of-submissions-for-one-day)
+***
+
+### Get summary of submissions for one day
 
 Get a summary of the submissions for 4 Jan 2019.
 
