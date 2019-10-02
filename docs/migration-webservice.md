@@ -37,11 +37,22 @@ The biggest challenge for migrating from the UA web service to the API is mappin
 
 ### General Guidelines on JSON
 
-JSON is not a typed language. The JSON definitions are logical types used to make it easier to discuss the layout of the data. The definition names have no meaning in JSON nor do they show up in any data sent or received. This is in contrast to XML where the "types" are defined by the XML element names.
+#### Types
+
+JSON is not a typed language. The JSON definitions are logical types used to make it easier to discuss the layout of the data. The definition names have no meaning in JSON nor do they show up in any data sent or received. This is in contrast to XML where the "types" 
+are defined by the XML element names.
+
+#### Casing
 
 Like XML, case matters in JSON. In XML Pascal casing is generally used. In JSON camel casing is always used. Pay careful attention to casing when writing code.
 
+#### Default Values
+
 In XML elements are generally provided even if they are empty. In JSON objects and values are generally only included if there is a valid. Clients should assume that missing values have their default value (empty string for strings, 0 for numbers, etc). It is also possible in JSON to get more fields than documented. Client code should only process fields that are relevant to them and ignore any other fields. It is not a breaking change to add new fields to an existing JSON object.
+
+#### Partial Dates
+
+In the XML when dates are collected they are generally collected as just month and year. This results in two elements in the XML. In JSON date strings are used. Date strings must have a day to be valid. In cases where a full date is collected from the practitioner then it is provided in the JSON. In cases where only a partial date is collected then the day will be set to `1`. 
 
 ### USMLASource
 
