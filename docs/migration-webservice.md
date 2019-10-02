@@ -219,6 +219,30 @@ Each email address has the following mapping.
 | LicenseSubtypeCode | string | | Not supported. | 
 | LicenseSubtypeDesc | string | `licenseType` | | 
 
+### MalpracticeClaimsInfo
+##### JSON Definition: [malpractice](definitions/submission.md#malpractice)
+
+| XML Element | XML Type | JSON Field | Comments |
+|:-:|:-:|:-:|-|
+| ActionState | string | `state.code` | | 
+| Case | string | `caseNumber` | | 
+| CaseStatus | string | `claimStatus` | | 
+| CaseStatusNote | string | | Not supported. | 
+| ClaimStatusCode | string | | Not supported. | 
+| Court | string | `courtName` | | 
+| EventMonth | string (format: mm) | `eventDate` | | 
+| EventNote | string | `explanation`  | | 
+| EventYear | string (format: yyyy) | `eventDate` | | 
+| InsuranceCarrier | string | `insuranceName` | | 
+| JudgementAmount | number | `judgementAmount` | | 
+| LawsuitMonth | string (format: mm) | `lawsuiteDate` | | 
+| LawsuitYear | string (format: yyyy) | `lawsuitDate` | | 
+| PatientName | string | `patientName` | | 
+| PaymentOnBehalfAmount | number | `behalfAmount` | | 
+| Status | string | `role` | | 
+| StatusNote | string | | Not supported. | 
+| YourStatusCode | string | | Not supported. | 
+
 ### MedicalEducationInfo
 ##### JSON Definition: [medicalEducation](definitions/submission.md#medicalEducation)
 
@@ -227,7 +251,7 @@ In the XML this is an array of `MedicalEducationInfo` elements. In JSON the defi
 | JSON Field | Comments |
 |:-:|-|
 | `graduating` | Contains the school of graduation. |
-| ??`other` | Contains any other medical schools that the practitioner attended. |
+| `other` | Contains any other medical schools that the practitioner attended. |
 
 The following mapping applies to each school attended.
 
@@ -252,7 +276,7 @@ In the XML this is an array of `NameInfo` elements. In JSON the definition [name
 | JSON Field | Comments |
 |:-:|-|
 | `legalName` | Contains the legal name of the practitioner. |
-| ??`other` | Contains alternate names provided by the practitioner. |
+| `other` | Contains alternate names provided by the practitioner. |
 
 The following mappings applies to the name elements.
 
@@ -267,27 +291,26 @@ The following mappings applies to the name elements.
 
 ## OtherTraining
 ##### JSON Definition: [otherTraining](definitions/submission.md#otherTraining)
-???
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
 | InstitutionInfo.InstitutionName | string | `program.hospitalName` | |
-| InstitutionInfo .InstitutionAddress.StreetAddressLine1 | string | | Not supported. |
-| InstitutionInfo .InstitutionAddress.StreetAddressLine2 | string | | Not supported. |
-| InstitutionInfo .InstitutionAddress.StreetAddressLine3 | string | | Not supported. |
-| InstitutionInfo .InstitutionAddress.City | string | `program.city` | |
-| InstitutionInfo .InstitutionAddress.StateOrProvince | string | `program.stateOrProvince.description` | |
-| InstitutionInfo .InstitutionAddress.PostalCode | string | | Not supported. |
-| InstitutionInfo .InstitutionAddress.Country | string | `program.stateOrProvince.countryCode` | |
-| InstitutionInfo .InstitutionAddress.Description | string | | Not supported. |
+| InstitutionInfo.InstitutionAddress.StreetAddressLine1 | string | | Not supported. |
+| InstitutionInfo.InstitutionAddress.StreetAddressLine2 | string | | Not supported. |
+| InstitutionInfo.InstitutionAddress.StreetAddressLine3 | string | | Not supported. |
+| InstitutionInfo.InstitutionAddress.City | string | `program.city` | |
+| InstitutionInfo.InstitutionAddress.StateOrProvince | string | `program.stateOrProvince.description` | |
+| InstitutionInfo.InstitutionAddress.PostalCode | string | | Not supported. |
+| InstitutionInfo.InstitutionAddress.Country | string | `program.stateOrProvince.countryCode` | |
+| InstitutionInfo.InstitutionAddress.Description | string | | Not supported. |
 | TrainingYears.ProgramDescription | string | `programType` | |
 | TrainingYears.DepartmentPosition | string | `specialty.description` | |
 | TrainingYears.StatusDescription | string | `trainingStatus` | |
-| TrainingYears.TrainingLevel | string | ?? | |
-| TrainingYears.TrainingDates.BeginMonth | string (format: mm) | `beginDate` | See below. |
-| TrainingYears.TrainingDates.BeginYear | string (format: yyyy) | `beginDate` | See below. |
-| TrainingYears.TrainingDates.EndMonth | string (format: mm) | `endnDate` | See below. |
-| TrainingYears.TrainingDates.EndYear | string (format: yyyy) | `endnDate` | See below. |
+| TrainingYears.TrainingLevel | string | | Not supported. |
+| TrainingYears.TrainingDates.BeginMonth | string (format: mm) | `beginDate` | |
+| TrainingYears.TrainingDates.BeginYear | string (format: yyyy) | `beginDate` | |
+| TrainingYears.TrainingDates.EndMonth | string (format: mm) | `endnDate` | |
+| TrainingYears.TrainingDates.EndYear | string (format: yyyy) | `endnDate` | |
 | TrainingYears.TrainingDates.InProgressFlag | string (`Y`, `N`) | | Not supported. |
 
 ### PersonalInfo
@@ -321,7 +344,7 @@ This represents the physician data. XML required a wrapper element to store the 
 | ExamHistory | [ExaminationHistory](#examinationhistory)[] | [exams](definitions/submission.md#exam) |
 | LicensureInfo | [Licensure](#licensure)[] | [licenses](definitions/submission.md#license) |
 | WorkHistory | [WorkHistory](#workhistory)[] | [activities](definitions/submission.md#activity) |
-| MalpracticeClaims | ? | [malpractice](definitions/submission.md#malpractice) |
+| MalpracticeClaims | [MalpracticeClaimsInfo](#malpracticeclaimsinfo)[] | [malpractice](definitions/submission.md#malpractice) |
 | ContactInfo | [ContactInfo](#contactinfo) | |
 
 ### PostGraduateTrainingInfo
@@ -332,7 +355,7 @@ In the XML post graduate training was combined into an array. In JSON the accred
 | JSON Field | Comments |
 |:-:|-|
 | `accreditedTraining` | Array of [accreditedTraining](#accreditedTraining). |
-|?? `otherTraining` | Array of [otherTraining](#otherTraining). |
+| `otherTraining` | Array of [otherTraining](#otherTraining). |
 
 ### TelephoneInfo
 ##### JSON Definition: [phone](definitions/submission.md#phone)
