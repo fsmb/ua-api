@@ -403,8 +403,8 @@ Each phone has the following mapping.
 | Employment | string (`Y`, `N`) | `wasEmployed` | |
 | Staff | string (`Y`, `N`) | `hadStaffPrivileges` | |
 | Affiliation | string (`Y`, `N`) | `wasAffiliated` | |
-|? Other | string | | |
-|? OtherDesc | string | | |
+| Other | string | | Not supported. |
+| OtherDesc | string | | Not supported. |
 | PercentClinical | string (format: ###) | `percentageClinical` | |
 | PercentAdministrative | string (format: ###) | `percentageAdministrative` | |
 | WorkHistoryDates.BeginMonth | string (format: mm) | `beginDate` | |
