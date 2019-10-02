@@ -187,7 +187,7 @@ Each email address has the following mapping.
 | FifthPathwayDatesEnrolled.EndMonth | string (format: mm) | `endDate` | |
 | FifthPathwayDatesEnrolled.EndYear | string (format: yyyy) | `endDate` | |
 | FifthPathwayDatesEnrolled.InProgressFlag | string (`Y`, `N`) | | Not supported. |
-| FifthPathwayInstitutionInfo.INSTITUTIONNAME | string | `school.affiliatedInstitution` | This is the only supported field in this element. |
+| FifthPathwayInstitutionInfo .INSTITUTIONNAME | string | `school.affiliatedInstitution` | This is the only supported field in this element. |
 | FifthPathwaySchoolInfo | [FifthPathwayMedicalSchoolInfo](#fifthpathwaymedicalschoolinfo) | `school` | | 
 
 ### FifthPathwayMedicalSchoolInfo
@@ -195,14 +195,14 @@ Each email address has the following mapping.
 
 | XML Element | XML Type | JSON Field | Comments |
 |:-:|:-:|:-:|-|
-| FifthPathwayMedicalSchoolAddress.ADDRESSTYPECODE | string | | Not supported. |
+| FifthPathwayMedicalSchoolAddress .ADDRESSTYPECODE | string | | Not supported. |
 | FifthPathwayMedicalSchoolAddress.CITY | string | `city` | |
 | FifthPathwayMedicalSchoolAddress.COUNTRY | string | `stateOrProvince.countryCode` | |
 | FifthPathwayMedicalSchoolAddress.POSTALCODE | string | | Not supported. |
-| FifthPathwayMedicalSchoolAddress.STATEORPROVINCE | string | `stateOrProvince.code` | |
-| FifthPathwayMedicalSchoolAddress.STREETADDRESSLINE1 | string | | Not supported. |
-| FifthPathwayMedicalSchoolAddress.STREETADDRESSLINE2 | string | | Not supported. |
-| FifthPathwayMedicalSchoolAddress.STREETADDRESSLINE3 | string | | Not supported. |
+| FifthPathwayMedicalSchoolAddress .STATEORPROVINCE | string | `stateOrProvince.code` | |
+| FifthPathwayMedicalSchoolAddress .STREETADDRESSLINE1 | string | | Not supported. |
+| FifthPathwayMedicalSchoolAddress .STREETADDRESSLINE2 | string | | Not supported. |
+| FifthPathwayMedicalSchoolAddress .STREETADDRESSLINE3 | string | | Not supported. |
 | SCHOOLNAME | string | `name` | |
 
 ### Licensure
@@ -317,7 +317,7 @@ This represents the physician data. XML required a wrapper element to store the 
 | ECFMGInfo | [ECFMGInfo](#ecfmginfo) | [medicalEducation.ecfmg](definitions/submission.md#ecfmg) |
 | MedicalEducationInfo | [MedicalEducationInfo](#medicaleducationinfo)[] | [medicalEducation](definitions/submission.md#medicaleducation) |
 | PostGraduateTrainingInfo | [PostGraduateTrainingInfo](#postgraduatetraininginfo)[] | [postGraduateTraining](definitions/submission.md#postgraduatetraining) | 
-| FifthPathwayInfo | [fifthPathwayInfo](#fifthpathwayinfo) | [medicalEducation.fifthPathway](definitions/submission.md#fifthpathway) |
+| FifthPathwayInfo | [FifthPathwayInfo](#fifthpathwayinfo) | [medicalEducation.fifthPathway](definitions/submission.md#fifthpathway) |
 | ExamHistory | [ExaminationHistory](#examinationhistory)[] | [exams](definitions/submission.md#exam) |
 | LicensureInfo | [Licensure](#licensure)[] | [licenses](definitions/submission.md#license) |
 | WorkHistory | [WorkHistory](#workhistory)[] | [activities](definitions/submission.md#activity) |
