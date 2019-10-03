@@ -14,6 +14,7 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -26,25 +27,73 @@ namespace Fsmb.Apis.UA.Sample
 {
     class Program
     {        
+        public Program ()
+        {
+            _client = new Lazy<UaClient>(CreateClient);
+        }
+
         static void Main ( string[] args )
         {
             var program = new Program();
 
             program.Run(args);
-        }                                                    
+        }
 
-        #region Client Calls
+        #region API Calls
+
+        private UaClient CreateClient ()
+        {
+            //Authenticate the client
+            var credentials = GetCredentialsAsync(_options.AuthenticationUrl, _options.ClientId, _options.ClientSecret).Result;
+
+            //Create the client 
+            return new UaClient(new Uri(_options.ApiUrl), credentials);
+        }
+
+        /// <summary>Gets an access token for the given client.</summary>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        private async Task<ServiceClientCredentials> GetCredentialsAsync ( string authenticationUrl, string clientId, string clientSecret )
+        {
+            //Create a single instance of HttpClient per base address per application otherwise you can run out of resources
+            var httpClient = new HttpClient() { BaseAddress = new Uri(authenticationUrl) };
+
+            var client = new AuthenticationClient(httpClient);
+
+            Terminal.WriteDebug("Authenticating user");
+            var accessToken = await client.AuthenticateAsync(clientId, clientSecret, "ua.read").ConfigureAwait(false);
+
+            return new TokenCredentials(accessToken);
+        }
+
+        // Gets submissions by a FID
+        private async Task GetSubmissionByFidAsync ( UaClient client, string fid )
+        {
+            //Call API
+            Terminal.WriteDebug($"Getting submissions for FID {fid}");
+            var submissions = await client.Submissions.GetByRequestAsync("me", fid: fid).ConfigureAwait(false);
+            if (!(submissions?.Any() ?? false))
+                Terminal.WriteWarning("No submissions found");
+            else
+            {
+                foreach (var submission in submissions)
+                {
+                    WriteSubmission(submission);
+                    Terminal.WriteLine();
+                };
+            };
+        }
 
         // Gets a submission by its ID
         private async Task GetSubmissionByIdAsync ( UaClient client, int id )
         {
             //Call API
             Terminal.WriteDebug($"Getting submission by Id {id}");
-            var result = await client.Submissions.GetByIdAsync("me", id).ConfigureAwait(false);
-            if (result == null)
+            var submission = await client.Submissions.GetByIdAsync("me", id).ConfigureAwait(false);
+            if (submission == null)
                 Terminal.WriteWarning("No submission found");
             else
-                WriteSubmission(result);
+                WriteSubmission(submission);
         }
 
         // Gets a summary of the submissions in a given date range
@@ -98,22 +147,10 @@ namespace Fsmb.Apis.UA.Sample
                     case '0': return OnQuitAsync;
                     case '1': return OnSummaryByDateAsync;
                     case '2': return OnSubmissionByIdAsync;
+                    case '3': return OnSubmissionByFidAsync;
                 };                
             } while (true);
-        }
-
-        private async Task<ServiceClientCredentials> GetCredentialsAsync ( ProgramOptions options )
-        {
-            //Create a single instance of HttpClient per base address per application otherwise you can run out of resources
-            var httpClient = new HttpClient() { BaseAddress = new Uri(options.AuthenticationUrl) };
-
-            var client = new AuthenticationClient(httpClient);
-
-            Terminal.WriteDebug("Authenticating user");
-            var accessToken = await client.AuthenticateAsync(options.ClientId, options.ClientSecret, "ua.read").ConfigureAwait(false);
-
-            return new TokenCredentials(accessToken);            
-        }
+        }        
 
         private bool Initialize ( string[] args )
         {
@@ -140,6 +177,24 @@ namespace Fsmb.Apis.UA.Sample
             _quit = true;
 
             return Task.CompletedTask;
+        }
+
+        private async Task OnSubmissionByFidAsync ( UaClient client )
+        {
+            try
+            {
+                //Get the FID
+                var fid = Terminal.ReadString("FID (or ENTER to cancel)? ", allowEmptyStrings: true);
+                if (String.IsNullOrEmpty(fid))
+                    return;
+
+                await GetSubmissionByFidAsync(client, fid).ConfigureAwait(false);
+            } catch (Exception e)
+            {
+                e = e.Unwrap();
+
+                Terminal.WriteError(e.Message);
+            };
         }
 
         private async Task OnSubmissionByIdAsync ( UaClient client )
@@ -246,17 +301,11 @@ namespace Fsmb.Apis.UA.Sample
         }
 
         private async Task RunAsync ()
-        {         
-            //Authenticate the client
-            var credentials = await GetCredentialsAsync(_options).ConfigureAwait(false);
-
-            //Create the client 
-            var client = new UaClient(new Uri(_options.ApiUrl), credentials);
-
+        {                     
             do
             {
                 var handler = DisplayMenu();
-                await handler(client);
+                await handler(Client);
             } while (!_quit);
         }
 
@@ -265,10 +314,14 @@ namespace Fsmb.Apis.UA.Sample
             Terminal.WriteLine("-clientId {id} where {id} is the client ID");
             Terminal.WriteLine("-clientSecret {secret} where {secret} is the client secret");
             Terminal.WriteLine("-url {url} where {url} is the base URL (default is https://demo-services.fsmb.org)");
-        }        
+        }
+
+        private readonly Lazy<UaClient> _client;
+
+        private UaClient Client => _client.Value;
 
         private bool _quit;
-        private ProgramOptions _options;
+        private ProgramOptions _options;        
         #endregion
     }
 }
