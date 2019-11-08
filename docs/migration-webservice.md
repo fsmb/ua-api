@@ -185,7 +185,7 @@ Each email address has the following mapping.
 | ExamDate | string (format: month/year) | `examDate` | |
 | ExamName | string | `examType` | | 
 | NumberOfAttempts | int | `numberOfAttempts` | |
-| PassFailFlag | string (`P', `F`) | `passFail` | |
+| PassFailFlag | string (`P`, `F`) | `passFail` | |
 | StateCode | string | `stateBoardDetail.code` | Only when the exam is a state board exam. |
 
 ### FifthPathwayInfo
