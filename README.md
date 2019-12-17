@@ -7,8 +7,8 @@ To learn more about FSMB APIs refer to the [Getting Started](https://github.com/
 If you are currently a UA Web Service client then refer to our [migration guide](docs/migration-webservice.md) for help with migrating from the web service.
 
 - URL
-  - Demo: https://demo-services.fsmb.org/ua/
-  - Production: https://services.fsmb.org/ua/
+  - Demo: https://services-ua-demo.fsmb.org/
+  - Production: https://services-ua.fsmb.org/
 - [Postman Collection](https://www.getpostman.com/collections/98586f4987694d146125)
 - [OpenAPI Specification](https://demo-services.fsmb.org/ua/_swagger/v1)
 
@@ -18,6 +18,7 @@ If you are currently a UA Web Service client then refer to our [migration guide]
 
 | Version | Date | Release Notes |
 | - | - | -|
+| 1.2 | 17 Dec 2019 | Updated Urls |
 | 1.1 | 11 April 2019 | [Release Notes](relnotes/readme-v11.md) |
 | 1.0 | 22 Nov 2016| Initial version |
 

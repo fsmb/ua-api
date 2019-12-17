@@ -58,7 +58,7 @@ Status code: 200
         "licenseType": "MD",
         "boardName": "Texas Medical Board",
         "licenseSubtypeDetails": {
-           "code": "FULL"
+           "code": "FULL",
            "description": "Permanent Medical License"
         }
     },
