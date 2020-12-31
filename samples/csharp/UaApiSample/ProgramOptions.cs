@@ -23,10 +23,8 @@ namespace Fsmb.Apis.UA.Sample
 
         public string ClientSecret { get; set; }
 
-        public string BaseAddress { get; set; } = "https://demo-services.fsmb.org";
-        
-        public string ApiUrl => StringExtensions.Combine("/", BaseAddress, "ua").EnsureEndsWith("/");
+        public string BaseAddress { get; set; } = "https://services-ua-demo.fsmb.org";
 
-        public string AuthenticationUrl => StringExtensions.Combine("/", BaseAddress, "authorization").EnsureEndsWith("/");
+        public string AuthenticationUrl => StringExtensions.Combine("/", BaseAddress, "connect", "token").EnsureEndsWith("/");
     }
 }
