@@ -18,6 +18,7 @@ If you are currently a UA Web Service client then refer to our [migration guide]
 
 | Version | Date | Release Notes |
 | - | - | -|
+| 1.3 | | Updated Medical Education defintion and sample code |
 | 1.2 | 17 Dec 2019 | Updated Urls |
 | 1.1 | 11 April 2019 | [Release Notes](relnotes/readme-v11.md) |
 | 1.0 | 22 Nov 2016| Initial version |

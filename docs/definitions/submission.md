@@ -251,6 +251,7 @@ Medical school education.
 | endDate | string (date) | Required. End date. |
 | degree | [Degree](#degree) | Degree information. |
 | graduationDate | string (date) | Graduation date. |
+| isInternationalEducation | boolean | Required. Is school international? |
 
 ## MedicalEducationTraining
 
