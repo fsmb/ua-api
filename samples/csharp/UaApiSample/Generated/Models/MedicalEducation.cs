@@ -24,13 +24,15 @@ namespace Fsmb.Apis.Ua.Clients.Models
         /// <summary>
         /// Initializes a new instance of the MedicalEducation class.
         /// </summary>
-        public MedicalEducation(School school, DateTime? beginDate = default(DateTime?), DateTime? endDate = default(DateTime?), CodedDescription degree = default(CodedDescription), DateTime? graduationDate = default(DateTime?))
+        public MedicalEducation(School school, DateTime? beginDate = default(DateTime?), DateTime? endDate = default(DateTime?),
+            CodedDescription degree = default(CodedDescription), DateTime? graduationDate = default(DateTime?), bool isInternationalEducation = default(bool))
         {
             School = school;
             BeginDate = beginDate;
             EndDate = endDate;
             Degree = degree;
             GraduationDate = graduationDate;
+            IsInternationalEducation = isInternationalEducation;
         }
 
         /// <summary>
@@ -62,6 +64,12 @@ namespace Fsmb.Apis.Ua.Clients.Models
         /// </summary>
         [JsonProperty(PropertyName = "graduationDate")]
         public DateTime? GraduationDate { get; set; }
+
+        /// <summary>
+        /// Is school international?
+        /// </summary>
+        [JsonProperty(PropertyName = "isInternationalEducation")]
+        public bool IsInternationalEducation { get; set; }
 
         /// <summary>
         /// Validate the object. Throws ValidationException if validation fails.
