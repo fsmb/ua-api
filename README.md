@@ -12,8 +12,7 @@ If you are currently a UA Web Service client then refer to our [migration guide]
 - [Postman Collection](https://www.getpostman.com/collections/8a01437c26a3e7411c5d)
 - [OpenAPI Specification](https://demo-services.fsmb.org/ua/_swagger/v1)
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8a01437c26a3e7411c5d)
-
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8a01437c26a3e7411c5d#?env%5BUA%20(Demo)%5D=W3sia2V5IjoiYmFzZVVybCIsInZhbHVlIjoiaHR0cHM6Ly9zZXJ2aWNlcy11YS1kZW1vLmZzbWIub3JnIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJib2FyZCIsInZhbHVlIjoibWUiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY2Vzc1Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfV0=)
 ## Change Log
 
 | Version | Date | Release Notes |
