@@ -24,13 +24,20 @@ namespace Fsmb.Apis.Ua.Clients.Models
         /// <summary>
         /// Initializes a new instance of the MedicalEducationTraining class.
         /// </summary>
-        public MedicalEducationTraining(MedicalEducation graduating, IList<MedicalEducation> other = default(IList<MedicalEducation>), Ecfmg ecfmg = default(Ecfmg), FifthPathway fifthPathway = default(FifthPathway))
+        public MedicalEducationTraining(MedicalEducation graduating, bool isInternationalGraduate = default(bool), IList<MedicalEducation> other = default(IList<MedicalEducation>), Ecfmg ecfmg = default(Ecfmg), FifthPathway fifthPathway = default(FifthPathway))
         {
             Graduating = graduating;
+            IsInternationalGraduate = isInternationalGraduate;
             Other = other;
             Ecfmg = ecfmg;
             FifthPathway = fifthPathway;
         }
+
+        /// <summary>
+        /// Is international graduate?
+        /// </summary>
+        [JsonProperty(PropertyName = "isInternationalGraduate")]
+        public bool IsInternationalGraduate { get; set; }
 
         /// <summary>
         /// Graduating school

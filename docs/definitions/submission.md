@@ -251,7 +251,6 @@ Medical school education.
 | endDate | string (date) | Required. End date. |
 | degree | [Degree](#degree) | Degree information. |
 | graduationDate | string (date) | Graduation date. |
-| isInternationalEducation | boolean | Required. Is school international? |
 
 ## MedicalEducationTraining
 
@@ -259,6 +258,7 @@ List of medical education.
 
 | Name | Type | Description |
 | - | - | - |
+| isInternationalGraduate | boolean | Required. Is international graduate? |
 | graduating | [MedicalEducation](#medicaleducation) | Required. Graduating school. |
 | other | [MedicalEducation](#medicaleducation)[] | Other medical schools. |
 | ecfmg | [Ecfmg](#ecfmg) | ECFMG information. |
