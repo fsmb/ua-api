@@ -17,7 +17,7 @@ If you are currently a UA Web Service client then refer to our [migration guide]
 
 | Version | Date | Release Notes |
 | - | - | -|
-| 1.3 | | Updated Medical Education Training defintion, sample code, and Postman collection|
+| 1.3 | 20 Jan 2021 | Updated Medical Education Training definition, sample code, and Postman collection|
 | 1.2 | 17 Dec 2019 | Updated Urls |
 | 1.1 | 11 April 2019 | [Release Notes](relnotes/readme-v11.md) |
 | 1.0 | 22 Nov 2016| Initial version |
