@@ -258,6 +258,7 @@ List of medical education.
 
 | Name | Type | Description |
 | - | - | - |
+| isInternationalGraduate | boolean | Required. Is international graduate? |
 | graduating | [MedicalEducation](#medicaleducation) | Required. Graduating school. |
 | other | [MedicalEducation](#medicaleducation)[] | Other medical schools. |
 | ecfmg | [Ecfmg](#ecfmg) | ECFMG information. |

@@ -24,6 +24,12 @@ GET {baseUrl}/v1/submissions/{board}/{id}
 
 ## Security
 
+**Security Risk:** When retrieving submissions by ID be sure to first validate the submission ID belongs to the authenticated user when collecting the ID from the user either directly or via a URL. A malicious user could enter random IDs which could potentially be valid for the board resulting in a submission being loaded that is not valid for the user. 
+
+**Example:** A website collects the submission ID for a UA application from the user. A malicious user goes to the site and starts entering IDs, incrementing by 1, until a successful call is made.
+
+**Solution:** Require at least two pieces of information such as the FID and submission ID. Query for the submission using the ID and then compare the provided FID with the FID on the submission. If they do not match then fail the request. This will make it harder for a malicious user to guess a valid FID or ID.
+
 ### Scopes
 
 | Scope | Description |

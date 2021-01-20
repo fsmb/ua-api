@@ -24,7 +24,8 @@ namespace Fsmb.Apis.Ua.Clients.Models
         /// <summary>
         /// Initializes a new instance of the MedicalEducation class.
         /// </summary>
-        public MedicalEducation(School school, DateTime? beginDate = default(DateTime?), DateTime? endDate = default(DateTime?), CodedDescription degree = default(CodedDescription), DateTime? graduationDate = default(DateTime?))
+        public MedicalEducation(School school, DateTime? beginDate = default(DateTime?), DateTime? endDate = default(DateTime?),
+            CodedDescription degree = default(CodedDescription), DateTime? graduationDate = default(DateTime?))
         {
             School = school;
             BeginDate = beginDate;

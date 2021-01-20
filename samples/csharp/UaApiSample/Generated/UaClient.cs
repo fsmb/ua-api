@@ -125,13 +125,18 @@ namespace Fsmb.Apis.Ua.Clients
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        public UaClient(ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        public UaClient(string clientId, string clientSecret, params DelegatingHandler[] handlers) : this(handlers)
         {
-            if (credentials == null)
+            if (clientId == null)
             {
-                throw new ArgumentNullException("credentials");
+                throw new ArgumentNullException("clientId");
             }
-            this.Credentials = credentials;
+            if (clientSecret == null)
+            {
+                throw new ArgumentNullException("clientSecret");
+            }
+
+            this.Credentials = AuthenticateAsync(clientId, clientSecret).Result;
             if (this.Credentials != null)
             {
                 this.Credentials.InitializeServiceClient(this);
@@ -150,13 +155,17 @@ namespace Fsmb.Apis.Ua.Clients
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        public UaClient(ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        public UaClient(string clientId, string clientSecret, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
-            if (credentials == null)
+            if (clientId == null)
             {
-                throw new ArgumentNullException("credentials");
+                throw new ArgumentNullException("clientId");
             }
-            this.Credentials = credentials;
+            if (clientSecret == null)
+            {
+                throw new ArgumentNullException("clientSecret");
+            }
+            this.Credentials = AuthenticateAsync(clientId, clientSecret).Result;
             if (this.Credentials != null)
             {
                 this.Credentials.InitializeServiceClient(this);
@@ -175,18 +184,22 @@ namespace Fsmb.Apis.Ua.Clients
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        public UaClient(Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        public UaClient(Uri baseUri, string clientId, string clientSecret, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (baseUri == null)
             {
                 throw new ArgumentNullException("baseUri");
             }
-            if (credentials == null)
+            if (clientId == null)
             {
-                throw new ArgumentNullException("credentials");
+                throw new ArgumentNullException("clientId");
+            }
+            if (clientSecret == null)
+            {
+                throw new ArgumentNullException("clientSecret");
             }
             this.BaseUri = baseUri;
-            this.Credentials = credentials;
+            this.Credentials = AuthenticateAsync(clientId, clientSecret).Result;
             if (this.Credentials != null)
             {
                 this.Credentials.InitializeServiceClient(this);
@@ -237,7 +250,7 @@ namespace Fsmb.Apis.Ua.Clients
         {
             this.Practitioners = new Practitioners(this);
             this.Submissions = new Submissions(this);
-            this.BaseUri = new Uri("https://demo-services.fsmb.org/ua");
+            this.BaseUri = new Uri("https://services-ua-demo.fsmb.org/");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented,
@@ -264,6 +277,45 @@ namespace Fsmb.Apis.Ua.Clients
                     }
             };
             CustomInitialize();
-        }    
+        }
+
+        /// <summary>Authenticates a client.</summary>
+        /// <param name="clientId">The client ID.</param>
+        /// <param name="clientSecret">The client secret.</param>
+        /// <returns>The access token.</returns>
+        private async Task<TokenCredentials> AuthenticateAsync(string clientId, string clientSecret)
+        {
+            if (String.IsNullOrEmpty(clientId))
+                throw new ArgumentException("Client ID is required.", nameof(clientId));
+            if (String.IsNullOrEmpty(clientSecret))
+                throw new ArgumentException("Client secret is required.", nameof(clientSecret));
+
+            var message = new HttpRequestMessage(HttpMethod.Post, BaseUri + "/connect/token");
+            message.Headers.Add("Accept", "application/json");
+
+            var request = new List<KeyValuePair<string, string>>() {
+                new KeyValuePair<string, string>("client_id", clientId),
+                new KeyValuePair<string, string>("client_secret", clientSecret),
+                new KeyValuePair<string, string>("scope", "ua.read"),
+                new KeyValuePair<string, string>("grant_type", "client_credentials")
+            };
+            message.Content = new FormUrlEncodedContent(request);
+
+            using (var response = await HttpClient.SendAsync(message, CancellationToken.None).ConfigureAwait(false))
+            {
+                response.EnsureSuccessStatusCode();
+
+                var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+                var token = JsonConvert.DeserializeObject<BearerToken>(body);
+
+                return new TokenCredentials(token.access_token);
+            };
+        }
+
+        private sealed class BearerToken
+        {
+            public string access_token { get; set; }
+        }
     }
 }

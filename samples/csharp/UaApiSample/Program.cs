@@ -14,11 +14,11 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-using Fsmb.Apis.Authentication;
 using Fsmb.Apis.Ua.Clients;
 
 using Microsoft.Rest;
@@ -42,29 +42,7 @@ namespace Fsmb.Apis.UA.Sample
         #region API Calls
 
         private UaClient CreateClient ()
-        {
-            //Authenticate the client
-            var credentials = GetCredentialsAsync(_options.AuthenticationUrl, _options.ClientId, _options.ClientSecret).Result;
-
-            //Create the client 
-            return new UaClient(new Uri(_options.ApiUrl), credentials);
-        }
-
-        /// <summary>Gets an access token for the given client.</summary>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        private async Task<ServiceClientCredentials> GetCredentialsAsync ( string authenticationUrl, string clientId, string clientSecret )
-        {
-            //Create a single instance of HttpClient per base address per application otherwise you can run out of resources
-            var httpClient = new HttpClient() { BaseAddress = new Uri(authenticationUrl) };
-
-            var client = new AuthenticationClient(httpClient);
-
-            Terminal.WriteDebug("Authenticating user");
-            var accessToken = await client.AuthenticateAsync(clientId, clientSecret, "ua.read").ConfigureAwait(false);
-
-            return new TokenCredentials(accessToken);
-        }
+            => new UaClient(new Uri(_options.BaseAddress), _options.ClientId, _options.ClientSecret);
 
         // Gets submissions by a FID
         private async Task GetSubmissionByFidAsync ( UaClient client, string fid )
@@ -81,6 +59,21 @@ namespace Fsmb.Apis.UA.Sample
                     WriteSubmission(submission);
                     Terminal.WriteLine();
                 };
+            };
+        }
+
+        // Gets latest submissions by a FID
+        private async Task GetLatestSubmissionByFidAsync(UaClient client, string fid)
+        {
+            //Call API
+            Terminal.WriteDebug($"Getting latest submissions for FID {fid}");
+            var submission = await client.Practitioners.GetLatestAsync("me", fid: fid).ConfigureAwait(false);
+            if (submission == null)
+                Terminal.WriteWarning("No submission found");
+            else
+            {
+                WriteSubmission(submission);
+                Terminal.WriteLine();
             };
         }
 
@@ -135,9 +128,10 @@ namespace Fsmb.Apis.UA.Sample
             Terminal.WriteLine("\nUA API Options");
             Terminal.WriteLine("".PadLeft(20, '-'));
                         
-            Terminal.WriteLine("1) Get a summary of submissions in a date range");
-            Terminal.WriteLine("2) Get a submission by ID");
-            Terminal.WriteLine("3) Get the submissions for a specific FID");
+            Terminal.WriteLine("1) Get the latest submissions for a specific FID");
+            Terminal.WriteLine("2) Get a summary of submissions in a date range");
+            Terminal.WriteLine("3) Get a submission by ID");
+            Terminal.WriteLine("4) Get the submissions for a specific FID");
             Terminal.WriteLine("0) Quit");
 
             do
@@ -145,9 +139,10 @@ namespace Fsmb.Apis.UA.Sample
                 switch (Console.ReadKey(true).KeyChar)
                 {
                     case '0': return OnQuitAsync;
-                    case '1': return OnSummaryByDateAsync;
-                    case '2': return OnSubmissionByIdAsync;
-                    case '3': return OnSubmissionByFidAsync;
+                    case '1': return OnLatestSubmissionByFidAsync;
+                    case '2': return OnSummaryByDateAsync;
+                    case '3': return OnSubmissionByIdAsync;
+                    case '4': return OnSubmissionByFidAsync;
                 };                
             } while (true);
         }        
@@ -177,6 +172,25 @@ namespace Fsmb.Apis.UA.Sample
             _quit = true;
 
             return Task.CompletedTask;
+        }
+
+        private async Task OnLatestSubmissionByFidAsync(UaClient client)
+        {
+            try
+            {
+                //Get the FID
+                var fid = Terminal.ReadString("FID (or ENTER to cancel)? ", allowEmptyStrings: true);
+                if (String.IsNullOrEmpty(fid))
+                    return;
+
+                await GetLatestSubmissionByFidAsync(client, fid).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                e = e.Unwrap();
+
+                Terminal.WriteError(e.Message);
+            };
         }
 
         private async Task OnSubmissionByFidAsync ( UaClient client )
