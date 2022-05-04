@@ -227,7 +227,7 @@ Malpractice Information.
 
 | Name | Type | Description |
 | - | - | - |
-| state | [StateProvince](#stateprovince) | Required. State/province of malpractice. |
+| state | [Region](#region) | Required. State/province of malpractice. |
 | eventDate | string (date) | Required. Date of event. |
 | patientName | string | Required. Name of patient. |
 | courtName | string | Required. Name of court. |
