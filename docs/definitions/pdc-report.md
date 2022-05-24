@@ -9,7 +9,7 @@ PDC report.
 | AsOfDate | string (date-time) | Yes | Date the report was generated. |
 | BoardActionStatus | string | Yes | Board action status. One of: `Cleared`, `Alerted` |
 | Names | [PdcNames](#pdcNames) | Yes | Names. |
-| BirthDate | [PartialDate](/docs/definitions/partialDate.md) | No | Birth date. |
+| BirthDate | [PartialDate](/docs/definitions/partial-date.md) | No | Birth date. |
 | MedicalEducation | [PdcMedicalEducation](#pdcMedicalEducation) | Yes | Medical education. |
 | Licenses | [PdcLicense](#pdcLicense)[] | No | License information. |
 | Npi | [PdcNpi](#pdcNpi)[] | No | NPI information. |
@@ -18,3 +18,9 @@ PDC report.
 | Dea | [PdcDea](#pdcDea) | No | DEA information, if available. |
 
 ## PdcAbms
+
+PDC ABMS information.
+
+| Name | Type | Required | Description |
+| - | - | - | - |
+| Certifications | [PdcAbmsCertification](#pdcAbmsCertification)[] | No | ABMS certifications. |
