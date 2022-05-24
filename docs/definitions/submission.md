@@ -4,25 +4,25 @@ A submission to a board.
 
 | Name | Type | Required | Description |
 | - | - | - | - |
-| id | integer | Required. Submission ID |
-| fid | string (length: 9, format: digits) | Required. FID of practitioner. |
-| submitDate | string (date/time) | Required. Date/time of submission (not in UTC). |
-| application | [Application](application.md) | Required. Application information. |
-| identity | [Identification](identification.md) | Required. Identity information. |
-| names | [Names](names.md) | Required. Names |
-| addresses | [Addresses](addresses.md) | Required. Mailing addresses. |
-| emailAddresses | [EmailAddresses](email-addresses.md) | Required. Email addresses. |
-| phones | [Phones](phones.md) | Required. Phone numbers. |
-| medicalEducation | [MedicalEducationTraining](medical-education-training.md) | Medical education. |
-| medicalEducationTraining | | **Deprecated**. Use `medicalEducation`. |
-| postGraduateTraining | [PostGraduateTraining](post-graduate-training.md) | Postgraduate training. |                    
-| exams | [Exam](exam.md)[] | Exams. |
-| licenses | [License](license.md)[] | Licenses. |
-| malpractice | [Malpractice](malpractice.md)[] | Malpractice information. |
-| activities | [Activity](activity.md)[] | Chronology of activity. |
-| workHistory | | **Deprecated**. Use `activities`. |
-| pdc | [PdcReport](pdc/pdc-report.md) | PDC information, if available. |
-| addendum | object | |
+| id | integer | Yes | Submission ID |
+| fid | string (length: 9, format: digits) | Yes | FID of practitioner. |
+| submitDate | string (date/time) | Yes | Date/time of submission (not in UTC). |
+| application | [Application](application.md) | Yes | Application information. |
+| identity | [Identification](identification.md) | Yes | Identity information. |
+| names | [Names](names.md) | Yes | Names |
+| addresses | [Addresses](addresses.md) | Yes | Mailing addresses. |
+| emailAddresses | [EmailAddresses](email-addresses.md) | Yes | Email addresses. |
+| phones | [Phones](phones.md) | Yes | Phone numbers. |
+| medicalEducation | [MedicalEducationTraining](medical-education-training.md) | No | Medical education. |
+| medicalEducationTraining | | | **Deprecated**. Use `medicalEducation`. |
+| postGraduateTraining | [PostGraduateTraining](post-graduate-training.md) | No | Postgraduate training. |                    
+| exams | [Exam](exam.md)[] | No | Exams. |
+| licenses | [License](license.md)[] | No | Licenses. |
+| malpractice | [Malpractice](malpractice.md)[] | No | Malpractice information. |
+| activities | [Activity](activity.md)[] | No | Chronology of activity. |
+| workHistory | | | **Deprecated**. Use `activities`. |
+| pdc | [PdcReport](pdc/pdc-report.md) | No | PDC information, if available. |
+| addendum | object | No | |
 
 *Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
 
