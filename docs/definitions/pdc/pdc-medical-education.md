@@ -7,5 +7,5 @@ PDC medical education.
 | Name | Type | Required | Description |
 | - | - | - | - |
 | Degree | [PdcMedicalDegree](pdc-medical-degree.md) | No | Medical degree. |
-| GraduationDate | [PdcMedicalGraduationDate](pdc-graduationdate.md) | No | Graduation date. |
+| GraduationDate | [PdcGraduationDate](pdc-graduationdate.md) | No | Graduation date. |
 | School | [PdcMedicalSchool](pdc-medical-school.md) | No | Medical school. |
