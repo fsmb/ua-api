@@ -23,6 +23,7 @@ A submission to a board.
 | malpractice | [Malpractice](#malpractice)[] | Malpractice information. |
 | activities | [Activity](#activity)[] | Chronology of activity. |
 | workHistory | | **Deprecated**. Use `activities`. |
+| pdc | [PdcReport](/docs/definitions/pdcReport.md) | PDC information, if available. |
 | addendum | object | |
 
 ## AccreditedTraining
