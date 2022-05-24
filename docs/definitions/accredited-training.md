@@ -6,8 +6,8 @@ Accredited training information.
 | - | - | - | - |
 | accreditationType | string | Yes | The type of accreditation (e.g. `ACMGE`, `AOA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | programCode | string | Yes | Program code. |
-| program | [Program](#program) | Yes | Program. |
-| specialty | [Specialty](#specialty) | Yes | Specialty. |
+| program | [Program](program.md) | Yes | Program. |
+| specialty | [Specialty](specialty.md) | Yes | Specialty. |
 | programType | string | Yes | Program type. |
 | trainingStatus | string | Yes | Training status (e.g. `Active`, `Completed`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | beginDate | string (date) | Yes | Start date. |
