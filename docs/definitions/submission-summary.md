@@ -6,18 +6,7 @@ Summary of the submissions to a board.
 | - | - | - |
 | id | integer | Required. Submission ID. |
 | fid | string (length: 9, format: digits) | Required. FID of practitioner. |
-| name | [Name](#name) | Required. Practitioner name. |
+| name | [Name](name.md) | Required. Practitioner name. |
 | submitDate | string (datetime) | Required. Data/time of submission (not in UTC). |
-
-## Name
-
-Name of a person.
-
-| Name | Type | Description |
-| - | - | - |
-| firstName | string | Required. First name. |
-| middleName | string | Middle name. |
-| lastName | string | Required. Last name. |
-| suffix | string | Suffix. |
 
 *Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
