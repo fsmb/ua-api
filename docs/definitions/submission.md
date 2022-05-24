@@ -1,400 +1,429 @@
-**Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.**
-
 # Submission
 
 A submission to a board.
 
-| Name | Type | Description |
-| - | - | - |
+| Name | Type | Required | Description |
+| - | - | - | - |
 | id | integer | Required. Submission ID |
 | fid | string (length: 9, format: digits) | Required. FID of practitioner. |
 | submitDate | string (date/time) | Required. Date/time of submission (not in UTC). |
-| application | [Application](#application) | Required. Application information. |
-| identity | [Identification](#identification) | Required. Identity information. |
-| names | [Names](#names) | Required. Names |
-| addresses | [Addresses](#addresses) | Required. Mailing addresses. |
-| emailAddresses | [EmailAddresses](#emailaddresses) | Required. Email addresses. |
-| phones | [Phones](#phones) | Required. Phone numbers. |
-| medicalEducation | [MedicalEducationTraining](#medicaleducationtraining) | Medical education. |
+| application | [Application](application.md) | Required. Application information. |
+| identity | [Identification](identification.md) | Required. Identity information. |
+| names | [Names](names.md) | Required. Names |
+| addresses | [Addresses](addresses.md) | Required. Mailing addresses. |
+| emailAddresses | [EmailAddresses](email-addresses.md) | Required. Email addresses. |
+| phones | [Phones](phones.md) | Required. Phone numbers. |
+| medicalEducation | [MedicalEducationTraining](medical-education-training.md) | Medical education. |
 | medicalEducationTraining | | **Deprecated**. Use `medicalEducation`. |
-| postGraduateTraining | [PostGraduateTraining](#postgraduatetraining) | Postgraduate training. |                    
-| exams | [Exam](#exam)[] | Exams. |
-| licenses | [License](#license)[] | Licenses. |
-| malpractice | [Malpractice](#malpractice)[] | Malpractice information. |
-| activities | [Activity](#activity)[] | Chronology of activity. |
+| postGraduateTraining | [PostGraduateTraining](post-graduate-training.md) | Postgraduate training. |                    
+| exams | [Exam](exam.md)[] | Exams. |
+| licenses | [License](license.md)[] | Licenses. |
+| malpractice | [Malpractice](malpractice.md)[] | Malpractice information. |
+| activities | [Activity](activity.md)[] | Chronology of activity. |
 | workHistory | | **Deprecated**. Use `activities`. |
 | pdc | [PdcReport](pdc/pdc-report.md) | PDC information, if available. |
 | addendum | object | |
 
-## AccreditedTraining
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# AccreditedTraining
 
 Accredited training information.
 
-| Name | Type | Description |
-| - | - | - |
-| accreditationType | string | Required. The type of accreditation (e.g. `ACMGE`, `AOA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| programCode | string | Required. Program code. |
-| program | [Program](#program) | Required. Program. |
-| specialty | [Specialty](#specialty) | Required. Specialty. |
-| programType | string | Required. Program type. |
-| trainingStatus | string | Required. Training status (e.g. `Active`, `Completed`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| beginDate | string (date) | Required. Start date. |
-| endDate | string (date) | Required. End date. |
-| percentageClinical | integer | Percentage of training that was Clinical. |
-| percentageAdministrative | integer | Percentage of training that was Administrative. |
-| isAcgme | | **Deprecated**. Use `accreditationType`. |
-| isAoa | | **Deprecated**. Use `accreditationType`. |
-        
-## Activity
+| Name | Type | Required | Description |
+| - | - | - | - |
+| accreditationType | string | Yes | The type of accreditation (e.g. `ACMGE`, `AOA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| programCode | string | Yes | Program code. |
+| program | [Program](#program) | Yes | Program. |
+| specialty | [Specialty](#specialty) | Yes | Specialty. |
+| programType | string | Yes | Program type. |
+| trainingStatus | string | Yes | Training status (e.g. `Active`, `Completed`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| beginDate | string (date) | Yes | Start date. |
+| endDate | string (date) | Yes | End date. |
+| percentageClinical | integer | No | Percentage of training that was Clinical. |
+| percentageAdministrative | integer | No | Percentage of training that was Administrative. |
+| isAcgme | | | **Deprecated**. Use `accreditationType`. |
+| isAoa | | | **Deprecated**. Use `accreditationType`. |
+
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Activity
 
 Activity information.
 
-| Name | Type | Description |
-| - | - | - |
-| id | string | ID of the activity. *Note: The ID is only unique for this request.* |
-| type | string | Required. Type of activity. |
-| inProgress | boolean | Required. Is in progress? |
-| beginDate | string (date) | Required. Start date. |
-| endDate | string (date) | End date. |
-| description | string | Required. Description. |
-| addressLines | string[] | Address lines. |
-| city | string | City. |
-| stateOrProvince | [Region](#region) | State/province. |
-| postalCode | string | Postal code. |
-| position | string | Position. |
-| department | string | Department. |
-| wasEmployed | boolean | Required. Was employee? |
-| hadStaffPrivileges | boolean | Required. Had staff privileges? |
-| wasAffiliated | boolean | Required. Was affiliated? |
-| percentageClinical | integer | % clinical. |
-| percentageAdminstrative | integer | % administrative. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| id | string | Yes | ID of the activity. *Note: The ID is only unique for this request.* |
+| type | string | Yes | Type of activity. |
+| inProgress | boolean | Yes | Is in progress? |
+| beginDate | string (date) | Yes | Start date. |
+| endDate | string (date) | No | End date. |
+| description | string | Yes | Description. |
+| addressLines | string[] | No | Address lines. |
+| city | string | No | City. |
+| stateOrProvince | [Region](#region) | No | State/province. |
+| postalCode | string | No | Postal code. |
+| position | string | No | Position. |
+| department | string | No | Department. |
+| wasEmployed | boolean | Yes | Was employee? |
+| hadStaffPrivileges | boolean | Yes | Had staff privileges? |
+| wasAffiliated | boolean | Yes | Was affiliated? |
+| percentageClinical | integer | No | % clinical. |
+| percentageAdminstrative | integer | No | % administrative. |
 
-## Address
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Address
 
 Mailing address.
 
-| Name | Type | Description |
-| - | - | - |
-| addressType | string | Required. Type of address (e.g. `Business`, `Home`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| lines | string[] | Address lines. |
-| city | string | Required. City. |
-| stateOrProvince | [Region](#region) | Required. State/province. |
-| postalCode | string | Required. Postal code. |
-| zipCode | | **Deprecated**. Use `postalCode`. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| addressType | string | Yes | Type of address (e.g. `Business`, `Home`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| lines | string[] | Yes | Address lines. |
+| city | string | Yes | City. |
+| stateOrProvince | [Region](#region) | Yes | State/province. |
+| postalCode | string | Yes | Postal code. |
+| zipCode | | | **Deprecated**. Use `postalCode`. |
 
-## Addresses
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Addresses
 
 List of mailing addresses.
 
-| Name | Type | Description |
-| - | - | - |
-| forPublic | [Address](#address) | Required. Public address. |
-| forBoard | [Address](#address) | Required. Board address. |
-| other | [Address](#address)[] | Other addresses. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| forPublic | [Address](#address) | Yes | Public address. |
+| forBoard | [Address](#address) | Yes | Board address. |
+| other | [Address](#address)[] | No | Other addresses. |
 
-## Application
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Application
 
 Application information.
 
-| Name | Type | Description |
-| - | - | - |
-| licenseType | string | Type of license (e.g. `MD`, `DO`, `PA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| boardName | string | Required. Board name. |
-| licenseSubtypeDetails | [LicenseSubtype](#licensesubtype) | Subtype of license. |
-| licenseSubtype | string | **Deprecated**. Use `licenseSubtypeDetails`. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| licenseType | string | Yes | Type of license (e.g. `MD`, `DO`, `PA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| boardName | string | Yes | Board name. |
+| licenseSubtypeDetails | [LicenseSubtype](#licensesubtype) | Yes | Subtype of license. |
+| licenseSubtype | string | | **Deprecated**. Use `licenseSubtypeDetails`. |
 
-## Degree
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Degree
 
 Degree information.
 
-| Name | Type | Description |
-| - | - | - |
-| code | string | Required. Code (e.g. `BM`, `MD`, `DMCH`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| description | string | Required. Description. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| code | string | Yes | Code (e.g. `BM`, `MD`, `DMCH`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| description | string | Yes | Description. |
 
-## Ecfmg
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Ecfmg
 
 ECFMG information.
 
-| Name | Type | Description |
-| - | - | - |
-| ecfmgNumber | string (format: digits) | Required. ECFMG number. |
-| issueDate | string (date) | Issue date. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| ecfmgNumber | string (format: digits) | Yes | ECFMG number. |
+| issueDate | string (date) | No | Issue date. |
 
-## EmailAddress
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# EmailAddress
 
 Email address.
 
-| Name | Type | Description |
-| - | - | - |
-| email | string | Required. Email address. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| email | string | Yes | Email address. |
 
-## EmailAddresses
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# EmailAddresses
 
 List of email addresses.
 
-| Name | Type | Description |
-| - | - | - |
-| forPublic | [EmailAddress](#emailaddress) | Required. Public email address. |
-| forBoard | [EmailAddress](#emailaddress) | Required. Board email address. |
-| other | [EmailAddress](#emailaddress)[] | Other email addresses. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| forPublic | [EmailAddress](#emailaddress) | Yes | Public email address. |
+| forBoard | [EmailAddress](#emailaddress) | Yes | Board email address. |
+| other | [EmailAddress](#emailaddress)[] | No | Other email addresses. |
 
-## Exam
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Exam
 
 Exam. 
 
-| Name | Type | Description |
-| - | - | - |
-| examType | string | Required. Type of exam. |
-| stateBoardDetail | [StateProvince](#stateprovince) | State board description. |
-| examDate | string (date) | Required. Exam date. |
-| numberOfAttempts | integer | Reqiured. Number of attempts. |
-| passFail | string | Required. Pass/fail status (e.g. `Pass`, `Fail`, `Unknown`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| stateBoard | | **Deprecated**. Use `stateBoardDetail`. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| examType | string | Yes | Type of exam. |
+| stateBoardDetail | [StateProvince](#stateprovince) | No | State board description. |
+| examDate | string (date) | Yes | Exam date. |
+| numberOfAttempts | integer | Yes | Number of attempts. |
+| passFail | string | Yes | Pass/fail status (e.g. `Pass`, `Fail`, `Unknown`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| stateBoard | | | **Deprecated**. Use `stateBoardDetail`. |
 
-## FifthPathway
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# FifthPathway
 
 Fifth Pathway information.
 
-| Name | Type | Description |
-| - | - | - |
-| school | [FifthPathwaySchool](#fifthpathwayschool) | Required. School. |
-| startDate | string (date) | Required. Start date. |
-| endDate | string (date) | Required. End date. |
-| certificateDate | string (date) | Required. Certification date. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| school | [FifthPathwaySchool](#fifthpathwayschool) | Yes | School. |
+| startDate | string (date) | Yes | Start date. |
+| endDate | string (date) | Yes | End date. |
+| certificateDate | string (date) | Yes | Certification date. |
 
-## FifthPathwaySchool
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# FifthPathwaySchool
 
 Fifth Pathway school information.
 
-| Name | Type | Description |
-| - | - | - |
-| name | string | Required. School name. |
-| affiliatedInstitution | string | Required. Affiliated institution. |
-| city | string | City. |
-| stateOrProvince | [Region](#region) | State/province. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| name | string | Yes | School name. |
+| affiliatedInstitution | string | Yes | Affiliated institution. |
+| city | string | No | City. |
+| stateOrProvince | [Region](#region) | No | State/province. |
 
-## Identification
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Identification
 
 Identity information.
 
-| Name | Type | Description |
-| - | - | - |
-| ssn | string (length: 9, format: digits) | SSN. |
-| ssnLast4 | string (length: 4, format: digits) | Last 4 of the SSN. |
-| npi | string (length: 10, format: digits) | NPI. |
-| usmleId | string (length: 8, format: digits)| USMLE ID. |
-| isUSCitizen | string | US citizen indicator. |
-| birthDate | string (date) | Required. Date of birth. |
-| birthCity | string | Required. Date of birth. |
-| birthStateOrProvince | [Region](#region) | State/province of birth. |
-| gender | string | Required. Gender. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| ssn | string (length: 9, format: digits) | No | SSN. |
+| ssnLast4 | string (length: 4, format: digits) | No | Last 4 of the SSN. |
+| npi | string (length: 10, format: digits) | No | NPI. |
+| usmleId | string (length: 8, format: digits) | No | USMLE ID. |
+| isUSCitizen | string | No | US citizen indicator. |
+| birthDate | string (date) | Yes | Date of birth. |
+| birthCity | string | Yes | Place of birth. |
+| birthStateOrProvince | [Region](#region) | No | State/province of birth. |
+| gender | string | Yes | Gender. |
 
-## License
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# License
 
 License information.
 
-| Name | Type | Description |
-| - | - | - |
-| licenseType | string | Type of license (e.g. `TEMP`, `FULL`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| licensingEntity | [LicenseEntity](#licenseentity) | Entity issuing license. |
-| status | string | License status (e.g. `Active`, `Denied`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| practitionerType | [PractitionerType](#practitionertype) | Practitioner type. |
-| licenseNumber | string | License number. |
-| issueDate | string (date) | Issue date. |
-| expirationDate | string (date) | Expiration date. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| licenseType | string | No | Type of license (e.g. `TEMP`, `FULL`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| licensingEntity | [LicenseEntity](#licenseentity) | No | Entity issuing license. |
+| status | string | No | License status (e.g. `Active`, `Denied`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| practitionerType | [PractitionerType](#practitionertype) | No | Practitioner type. |
+| licenseNumber | string | No | License number. |
+| issueDate | string (date) | No | Issue date. |
+| expirationDate | string (date) | No | Expiration date. |
 
-## LicenseEntity
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# LicenseEntity
 
 Entity issuing license.
 
-| Name | Type | Description |
-| - | - | - |
-| code | string | Required. Entity code. Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| description | string | Required. Description. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| code | string | Yes | Entity code. Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| description | string | Yes | Description. |
 
-## LicenseSubtype
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# LicenseSubtype
 
 License subtype information.
 
-| Name | Type | Description |
-| - | - | - |
-| code | string | Required. Code (e.g. `FULL`, `TEMP`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| description | string | Required. Description. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| code | string | Yes | Code (e.g. `FULL`, `TEMP`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| description | string | Yes | Description. |
 
-## Malpractice
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Malpractice
 
 Malpractice Information.
 
-| Name | Type | Description |
-| - | - | - |
-| state | [Region](#region) | Required. State/province of malpractice. |
-| eventDate | string (date) | Required. Date of event. |
-| patientName | string | Required. Name of patient. |
-| courtName | string | Required. Name of court. |
-| caseNumber | string | Case number. |
-| role | string | Required. Role of practitioner in claim. |
-| lawsuiteDate | string (date) | Required. Date of lawsuit. |
-| claimStatus | string | Required. Status of claim. |
-| insuranceName | string | Required. Name of insurance. |
-| judgementAmount | number | Amount of judgement. |
-| behalfAmount | number | Behalf amount. |
-| explanation | string | Required. Explanation. |
-        
-## MedicalEducation
+| Name | Type | Required | Description |
+| - | - | - | - |
+| state | [Region](#region) | Yes | State/province of malpractice. |
+| eventDate | string (date) | Yes | Date of event. |
+| patientName | string | Yes | Name of patient. |
+| courtName | string | Yes | Name of court. |
+| caseNumber | string | No | Case number. |
+| role | string | Yes | Role of practitioner in claim. |
+| lawsuiteDate | string (date) | Yes | Date of lawsuit. |
+| claimStatus | string | Yes | Status of claim. |
+| insuranceName | string | Yes | Name of insurance. |
+| judgementAmount | number | No | Amount of judgement. |
+| behalfAmount | number | No | Behalf amount. |
+| explanation | string | Yes | Explanation. |
+
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# MedicalEducation
 
 Medical school education.
 
-| Name | Type | Description |
-| - | - | - |
-| school | [School](#school) | Medical school. |
-| beginDate | string (date) | Required. Start date. |
-| endDate | string (date) | Required. End date. |
-| degree | [Degree](#degree) | Degree information. |
-| graduationDate | string (date) | Graduation date. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| school | [School](#school) | Yes | Medical school. |
+| beginDate | string (date) | Yes | Start date. |
+| endDate | string (date) | Yes | End date. |
+| degree | [Degree](#degree) | No | Degree information. |
+| graduationDate | string (date) | No | Graduation date. |
 
-## MedicalEducationTraining
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# MedicalEducationTraining
 
 List of medical education.
 
-| Name | Type | Description |
-| - | - | - |
-| isInternationalGraduate | boolean | Required. Is international graduate? |
-| graduating | [MedicalEducation](#medicaleducation) | Required. Graduating school. |
-| other | [MedicalEducation](#medicaleducation)[] | Other medical schools. |
-| ecfmg | [Ecfmg](#ecfmg) | ECFMG information. |
-| fifthPathway | [FifthPathway](#fifthpathway) | 5th Pathway information. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| isInternationalGraduate | boolean | Yes | Is international graduate? |
+| graduating | [MedicalEducation](#medicaleducation) | Yes | Graduating school. |
+| other | [MedicalEducation](#medicaleducation)[] | No | Other medical schools. |
+| ecfmg | [Ecfmg](#ecfmg) | No | ECFMG information. |
+| fifthPathway | [FifthPathway](#fifthpathway) | No | 5th Pathway information. |
 
-## Name
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Name
 
 Name of a person.
 
-| Name | Type | Description |
-| - | - | - |
-| firstName | string | Required. First name. |
-| middleName | string | Middle name. |
-| lastName | string | Required. Last name. |
-| suffix | string | Suffix. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| firstName | string | Yes | First name. |
+| middleName | string | No | Middle name. |
+| lastName | string | Yes | Last name. |
+| suffix | string | No | Suffix. |
 
-## Names
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Names
 
 List of names.
 
-| Name | Type | Description |
-| - | - | - |
-| legalName | [Name](#name) | Required. Legal name. |
-| other | [Name](#name)[] | Other names. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| legalName | [Name](#name) | Yes | Legal name. |
+| other | [Name](#name)[] | No | Other names. |
 
-## OtherTraining
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# OtherTraining
 
 Non-accredited postgraduate training.
 
-| Name | Type | Description |
-| - | - | - |
-| program | [Program](#program) | Required. Program. |
-| specialty | [Specialty](#specialty) | Required. Specialty. |
-| programType | string | Required. Program type (e.g. `Internship`, `Fellowship`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| trainingStatus | string | Required. Training status (e.g. `Active`, `Completed`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| beginDate | string (date) | Required. Start date. |
-| endDate | string (date) | Required. End date. |
-| percentageClinical | integer | Percentage of training that was Clinical. |
-| percentageAdministrative | integer | Percentage of training that was Administrative. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| program | [Program](#program) | Yes | Program. |
+| specialty | [Specialty](#specialty) | Yes | Specialty. |
+| programType | string | Yes | Program type (e.g. `Internship`, `Fellowship`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| trainingStatus | string | Yes | Training status (e.g. `Active`, `Completed`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| beginDate | string (date) | Yes | Start date. |
+| endDate | string (date) | Yes | End date. |
+| percentageClinical | integer | No | Percentage of training that was Clinical. |
+| percentageAdministrative | integer | No | Percentage of training that was Administrative. |
 
-## Phone
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Phone
 
 Phone number.
 
-| Name | Type | Description |
-| - | - | - |
-| phoneType | string | Required. Type of home (e.g. `Business`, `Home`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| phoneNumber | string | Required. Phone number. |
-| extension | string | Phone extension. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| phoneType | string | Yes | Type of home (e.g. `Business`, `Home`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| phoneNumber | string | Yes | Phone number. |
+| extension | string | No | Phone extension. |
 
-## Phones
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Phones
 
 List of phone numbers.
 
-| Name | Type | Description |
-| - | - | - |
-| forPublic | [Phone](#phone) | Required. Public phone. |
-| forBoard | [Phone](#phone) | Required. Board phone. |
-| other | [Phone](#phone)[] | Other phone numbers. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| forPublic | [Phone](#phone) | Yes | Public phone. |
+| forBoard | [Phone](#phone) | Yes | Board phone. |
+| other | [Phone](#phone)[] | No | Other phone numbers. |
 
-## PostGraduateTraining
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# PostGraduateTraining
 
 List of post graduate training.
 
-| Name | Type | Description |
-| - | - | - |
-| accreditedTraining | [AccreditedTraining](#accreditedtraining)[] | Accredited training. |
-| otherTraining | [OtherTraining](#otherTraining)[] | Other training. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| accreditedTraining | [AccreditedTraining](#accreditedtraining)[] | No | Accredited training. |
+| otherTraining | [OtherTraining](#otherTraining)[] | No | Other training. |
 
-## PractitionerType
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# PractitionerType
 
 Practitioner type.
 
-| Name | Type | Description |
-| - | - | - |
-| code | string | Required. Code. Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| description | string | Required. Description. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| code | string | Yes | Code. Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| description | string | Yes | Description. |
 
-## Program
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
+
+# Program
 
 Postgraduate training program.
 
-| Name | Type | Description |
-| - | - | - |
-| hospitalName | string | Required. Hospital name. |
-| affiliatedInstitution | string | Affiliated institution. |
-| city | string | Required. City. |
-| stateOrProvince | [Region](#region) | Required. State/province. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| hospitalName | string | Yes | Hospital name. |
+| affiliatedInstitution | string | No | Affiliated institution. |
+| city | string | Yes | City. |
+| stateOrProvince | [Region](#region) | Yes | State or province. |
 
-## Region
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
 
-Geographic region.
-
-| Name | Type | Description |
-| - | - | - |
-| code | string | Required. Region code (e.g. `TX`, `MD`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| description | string | Required. Description. |
-| countryCode | string | ISO country code (e.g. `US`, `CA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| countryDescription | string | Country description. |
-
-## School
+# School
 
 Medical school.
 
-| Name | Type | Description |
-| - | - | - |
-| name | string | Required. School name. |
-| cibisCode | string | CIBIS code. |
-| schoolType | [SchoolType](#schooltype) | Required. Type of school. |
-| city | string | City. |
-| stateOrProvince | [Region](#region) | State/province. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| name | string | Yes | School name. |
+| cibisCode | string | No | CIBIS code. |
+| schoolType | [SchoolType](#schooltype) | Yes | Type of school. |
+| city | string | No | City. |
+| stateOrProvince | [Region](#region) | No | State or province. |
 
-## SchoolType
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
 
-Type of medical school.
-
-| Name | Type | Description |
-| - | - | - |
-| code | string | Required. Code (e.g. `MD`, `DO`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| description | string | Required. Description. |
-
-## Specialty
+# Specialty
 
 Training specialty.
 
-| Name | Type | Description |
-| - | - | - |
-| description | string | Required. Description. |
-| classification | | **Deprecated**. Use `Description`. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| description | string | Yes | Description. |
+| classification | | | **Deprecated**. Use `Description`. |
 
-## StateProvince
-
-State/province information.
-
-| Name | Type | Description |
-| - | - | - |
-| code | string | Required. Code (e.g. `TX`, `MD`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| description | string | Required. Description. |
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
