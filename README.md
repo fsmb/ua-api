@@ -17,7 +17,8 @@ If you are currently a UA Web Service client then refer to our [migration guide]
 ## Change Log
 
 | Version | Date | Release Notes |
-| - | - | -|
+| - | - | - |
+| 2.0 | 05 Oct 2022 | Breaking change to graduating medical education. Updated documentation. Added PDC. |
 | 1.4 | 03 May 2022 | Added international malpractice. Updated documentation. |
 | 1.3 | 20 Jan 2021 | Updated Medical Education Training definition, sample code, and Postman collection|
 | 1.2 | 17 Dec 2019 | Updated Urls |
