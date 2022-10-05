@@ -1,4 +1,4 @@
-# Release 1.2
+# Release 2.0
 
 ## What's New
 
