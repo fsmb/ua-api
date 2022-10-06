@@ -5,7 +5,7 @@ A submission to a board.
 | Name | Type | Required | Description |
 | - | - | - | - |
 | id | integer | Yes | Submission ID |
-| fid | string (length: 9, format: digits) | Yes | FID of practitioner. |
+| fid | string (format: digits, len: 9) | Yes | FID of practitioner. |
 | submitDate | string (date/time) | Yes | Date/time of submission (not in UTC). |
 | application | [Application](application.md) | Yes | Application information. |
 | identity | [Identification](identification.md) | Yes | Identity information. |
