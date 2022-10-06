@@ -4,8 +4,8 @@ Application information.
 
 | Name | Type | Required | Description |
 | - | - | - | - |
-| licenseType | string | Yes | Type of license (e.g. `MD`, `DO`, `PA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| boardName | string | Yes | Board name. |
+| licenseType | string (5) | Yes | Type of license (e.g. `MD`, `DO`, `PA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| boardName | string (100) | Yes | Board name. |
 | licenseSubtypeDetails | [LicenseSubtype](license-subtype.md) | Yes | Subtype of license. |
 | licenseSubtype | string | | **Deprecated**. Use `licenseSubtypeDetails`. |
 
