@@ -7,9 +7,9 @@ PDC license.
 | Name | Type | Required | Description |
 | - | - | - | - |
 | ReportDate | string (date-time) | Yes | Report date. |
-| LicenseType | string | No | Type of license. |
-| Issuer | string | Yes | Issuer of license. |
-| Status | string | No | License status. |
-| LicenseNumber | string | No | License number. |
+| LicenseType | string (len: 100) | No | Type of license. |
+| Issuer | [LicenseEntity](../license-entity.md) | Yes | Issuer of license. |
+| Status | string (len: 100) | No | License status. |
+| LicenseNumber | string (len: 20) | No | License number. |
 | IssueDate | string (date) | No | Issue date. |
 | ExpirationDate | string (date) | No | Expiration date. |
