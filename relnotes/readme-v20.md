@@ -2,7 +2,8 @@
 
 ## What's New
 
-None.
+- All definitions containing string fields have been updated to include the maximum length of the string.
+- `AccreditedTraining.IsAcgme` and `AccreditedTraiing.IsAoa` are no longer deprecated. They can be used to check for these specific accreditation entities instead of looking at `AccreditationType` directly.
 
 ## Breaking Changes
 
