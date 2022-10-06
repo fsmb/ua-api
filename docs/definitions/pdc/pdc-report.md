@@ -7,7 +7,7 @@ PDC report.
 | Name | Type | Required | Description |
 | - | - | - | - |
 | AsOfDate | string (date-time) | Yes | Date the report was generated. |
-| BoardActionStatus | string | Yes | Board action status. One of: `Cleared`, `Alerted` |
+| BoardActionStatus | string (len: 20) | Yes | Board action status. One of: `Cleared`, `Alerted` |
 | Names | [PdcNames](pdc-names.md) | Yes | Names. |
 | BirthDate | [PartialDate](/docs/definitions/partial-date.md) | No | Birth date. |
 | MedicalEducation | [PdcMedicalEducation](pdc-medical-education.md) | Yes | Medical education. |
