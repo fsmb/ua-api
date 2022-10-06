@@ -6,5 +6,5 @@ PDC medical degree.
 
 | Name | Type | Required | Description |
 | - | - | - | - |
-| Code | string | Yes | Code. |
-| Description | string | Yes | Description. |
+| Code | string (len: 5) | Yes | Code. |
+| Description | string (len: 100) | Yes | Description. |
