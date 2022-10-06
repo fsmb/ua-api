@@ -14,7 +14,7 @@ Accredited training information.
 | endDate | string (date) | Yes | End date. |
 | percentageClinical | integer | No | Percentage of training that was Clinical. |
 | percentageAdministrative | integer | No | Percentage of training that was Administrative. |
-| isAcgme | | | **Deprecated**. Use `accreditationType`. |
-| isAoa | | | **Deprecated**. Use `accreditationType`. |
+| isAcgme | boolean | Yes | Determines if `accreditationType` is `ACGME`. |
+| isAoa | boolean | Yes | Determines if `accreditationType` is `AOA`. |
 
 *Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
