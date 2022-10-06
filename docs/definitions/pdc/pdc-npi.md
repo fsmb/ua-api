@@ -6,5 +6,5 @@ PDC NPI.
 
 | Name | Type | Required | Description |
 | - | - | - | - |
-| NpiNumber | string | Yes | NPI number. |
-| EntityType | string | Yes | Entity type (e.g. `Individual`, `Group`). |
+| NpiNumber | string (len: 10) | Yes | NPI number. |
+| EntityType | string (len: 20) | Yes | Entity type (e.g. `Individual`, `Group`). |
