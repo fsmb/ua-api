@@ -5,7 +5,7 @@ Summary of the submissions to a board.
 | Name | Type | Description |
 | - | - | - |
 | id | integer | Required. Submission ID. |
-| fid | string (length: 9, format: digits) | Required. FID of practitioner. |
+| fid | string (format: digits, len: 9) | Required. FID of practitioner. |
 | name | [Name](name.md) | Required. Practitioner name. |
 | submitDate | string (datetime) | Required. Data/time of submission (not in UTC). |
 
