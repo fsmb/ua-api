@@ -4,12 +4,12 @@ Accredited training information.
 
 | Name | Type | Required | Description |
 | - | - | - | - |
-| accreditationType | string (5) | Yes | The type of accreditation (e.g. `ACMGE`, `AOA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| programCode | string (10) | Yes | Program code. |
+| accreditationType | string (len: 5) | Yes | The type of accreditation (e.g. `ACMGE`, `AOA`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| programCode | string (len: 10) | Yes | Program code. |
 | program | [Program](program.md) | Yes | Program. |
 | specialty | [Specialty](specialty.md) | Yes | Specialty. |
-| programType | string (100) | Yes | Program type. |
-| trainingStatus | string (100) | Yes | Training status (e.g. `Active`, `Completed`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
+| programType | string (len: 100) | Yes | Program type. |
+| trainingStatus | string (len: 100) | Yes | Training status (e.g. `Active`, `Completed`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | beginDate | string (date) | Yes | Start date. |
 | endDate | string (date) | Yes | End date. |
 | percentageClinical | integer | No | Percentage of training that was Clinical. |
