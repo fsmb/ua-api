@@ -1,5 +1,3 @@
-**Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.**
-
 # PdcAoaCertification
 
 PDC AOA certification.
@@ -18,3 +16,5 @@ PDC AOA certification.
 | CertificationEndDate | string (date) | No | Certification end date. |
 | RecertificationIssueDate | string (date) | No | Recertification issue date. |
 | RecertificationExpireDate | string (date) | No | Recertification expire date. |
+
+*Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
