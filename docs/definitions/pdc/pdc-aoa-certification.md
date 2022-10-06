@@ -6,12 +6,12 @@ PDC AOA certification.
 
 | Name | Type | Required | Description |
 | - | - | - | - |
-| AoaId | string | Yes | AOA ID. |
+| AoaId | string (len: 6) | Yes | AOA ID. |
 | ReportDate | string (date-time) | Yes | Report date. |
-| BoardName | string | Yes | Board name. |
-| CertificationName | string | Yes | Certification name. |
-| CertificationStatus | string | No | Certification status (e.g. `Active`, `Inactive`, `Retired`, `Deceased`). |
-| CertificationType | string | No | Certification type (e.g. `Primary`, `Subspecialty`). |
+| BoardName | string (len: 100) | Yes | Board name. |
+| CertificationName | string (len: 100) | Yes | Certification name. |
+| CertificationStatus | string (len: 20) | No | Certification status (e.g. `Active`, `Inactive`, `Retired`, `Deceased`). |
+| CertificationType | string (len: 50) | No | Certification type (e.g. `Primary`, `Subspecialty`). |
 | IsOccParticipating | boolean | Yes | Is OCC participating. |
 | IsOccRequired | boolean | Yes | Is OCC required. |
 | CertificationIssueDate | string (date) | No | Certification issue date. |
