@@ -14,14 +14,11 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 
-using Fsmb.Apis.Ua.Clients;
-
-using Microsoft.Rest;
+using Fsmb.Api.Ua.Client;
+using Fsmb.Api.Ua.Client.Models;
 
 namespace Fsmb.Apis.UA.Sample
 {
@@ -41,8 +38,9 @@ namespace Fsmb.Apis.UA.Sample
 
         #region API Calls
 
+        //HttpClient requires that base addresses end with a slash
         private UaClient CreateClient ()
-            => new UaClient(new Uri(_options.BaseAddress), _options.ClientId, _options.ClientSecret);
+            => new UaClient(new Uri(_options.BaseAddress.EnsureEndsWith("/")), _options.ClientId, _options.ClientSecret);
 
         // Gets submissions by a FID
         private async Task GetSubmissionByFidAsync ( UaClient client, string fid )
@@ -106,10 +104,10 @@ namespace Fsmb.Apis.UA.Sample
             };
         }        
 
-        private static string GetFullName ( Ua.Clients.Models.Name name ) 
+        private static string GetFullName ( Name name ) 
                         => String.Join(" ", name.FirstName, name.MiddleName, name.LastName, name.Suffix);
 
-        private void WriteSubmission ( Ua.Clients.Models.Submission submission )
+        private void WriteSubmission ( Submission submission )
         {
             Terminal.WriteLine($"ID = {submission.Id}");
 
@@ -118,6 +116,9 @@ namespace Fsmb.Apis.UA.Sample
 
             Terminal.WriteLine($"FID = {submission.Fid}");
             Terminal.WriteLine($"Submit Date = {submission.SubmitDate}");
+
+            //Display some basic data
+            Terminal.WriteLine($"Names = {(submission.Names.Other?.Count() ?? 0) + 1}");
         }
         #endregion
 
@@ -136,7 +137,7 @@ namespace Fsmb.Apis.UA.Sample
 
             do
             {
-                switch (Console.ReadKey(true).KeyChar)
+                switch (Terminal.ReadKey(true).KeyChar)
                 {
                     case '0': return OnQuitAsync;
                     case '1': return OnLatestSubmissionByFidAsync;
@@ -331,8 +332,9 @@ namespace Fsmb.Apis.UA.Sample
         }
 
         private readonly Lazy<UaClient> _client;
-
         private UaClient Client => _client.Value;
+
+        private ITerminal Terminal => ConsoleTerminal.Default;
 
         private bool _quit;
         private ProgramOptions _options;        
