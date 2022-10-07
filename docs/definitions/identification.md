@@ -4,14 +4,14 @@ Identity information.
 
 | Name | Type | Required | Description |
 | - | - | - | - |
-| ssn | string (length: 9, format: digits) | No | SSN. |
-| ssnLast4 | string (length: 4, format: digits) | No | Last 4 of the SSN. |
-| npi | string (length: 10, format: digits) | No | NPI. |
-| usmleId | string (length: 8, format: digits) | No | USMLE ID. |
-| isUSCitizen | string | No | US citizen indicator. |
+| ssn | string (format: digits, len: 9) | No | SSN. |
+| ssnLast4 | string (format: digits, len: 4) | No | Last 4 of the SSN. |
+| npi | string (format: digits, len: 10) | No | NPI. |
+| usmleId | string (format: digits, len: 8) | No | USMLE ID. |
+| isUSCitizen | string (len: 1) | No | US citizen indicator. |
 | birthDate | string (date) | Yes | Date of birth. |
-| birthCity | string | Yes | Place of birth. |
+| birthCity | string (len: 50) | Yes | Place of birth. |
 | birthStateOrProvince | [Region](region.md) | No | State/province of birth. |
-| gender | string | Yes | Gender. |
+| gender | string (len: 1) | Yes | Gender. |
 
 *Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*

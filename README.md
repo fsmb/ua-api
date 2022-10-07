@@ -4,11 +4,10 @@ This is the source for technical information for the Uniform Application (UA) AP
 
 To learn more about FSMB APIs refer to the [Getting Started](https://github.com/fsmb/api-docs) guide. To learn more about this API and to begin using it in your code please contact [FSMB](mailto:ua@fsmb.org).
 
-If you are currently a UA Web Service client then refer to our [migration guide](docs/migration-webservice.md) for help with migrating from the web service.
-
 - URL
-  - Demo: https://services-ua-demo.fsmb.org/
-  - Production: https://services-ua.fsmb.org/
+  - Demo: `https://services-ua-demo.fsmb.org/`
+  - Production: `https://services-ua.fsmb.org/`
+- Authentication URL `<baseUrl>/connect/token`
 - [Postman Collection](https://www.getpostman.com/collections/98586f4987694d146125)
 - [OpenAPI Specification](https://services-ua-demo.fsmb.org/_swagger/v1)
 
@@ -18,7 +17,7 @@ If you are currently a UA Web Service client then refer to our [migration guide]
 
 | Version | Date | Release Notes |
 | - | - | - |
-| 2.0 | 05 Oct 2022 | Breaking change to graduating medical education. Updated documentation. Added PDC. |
+| 2.0 | 05 Oct 2022 | [Release Notes](relnotes/readme-v20.md) |
 | 1.4 | 03 May 2022 | Added international malpractice. Updated documentation. |
 | 1.3 | 20 Jan 2021 | Updated Medical Education Training definition, sample code, and Postman collection|
 | 1.2 | 17 Dec 2019 | Updated Urls |
