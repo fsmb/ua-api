@@ -112,6 +112,13 @@ namespace Fsmb.Api.Ua.Client.Models
         [Newtonsoft.Json.JsonProperty(PropertyName = "addendum", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public object Addendum { get; set; }
 
+        /// <summary>
+        /// Status of PDC report. Refer to ReportStatus for possible values.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty(PropertyName = "pdcReportStatus", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]
+        public string PdcReportStatus { get; set; }
+
         /// <summary>PDC information, if available.</summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "pdc", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public PdcReport Pdc { get; set; }
