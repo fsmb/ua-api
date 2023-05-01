@@ -19,7 +19,7 @@ namespace Fsmb.Api.Ua.Client.Models
         /// <summary>
         /// Graduating school
         /// </summary>
-        [Newtonsoft.Json.JsonProperty(PropertyName = "graduating", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty(PropertyName = "graduating", Required = Newtonsoft.Json.Required.Always)]
         public MedicalEducation Graduating { get; set; }
 
         /// <summary>
