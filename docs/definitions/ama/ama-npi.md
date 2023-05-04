@@ -5,7 +5,7 @@ NPI information.
 | Name | Type | Required | Description |
 | - | - | - | - |
 | npiNumber | string (format: digits, len: 10) | Yes | NPI number. |
-| deactivationDate | string (date) | NO | Date the number was deactivated. |
+| deactivationDate | string (date) | No | Date the number was deactivated. |
 | reactivationDate | string (date) | No | Date the number was reactivated. |
 | replacementNpiNumber | string (format: digits, len: 10) | No | Replacement NPI number. |
 | lastReportedDate | string (date) | No | Last reported date. |
