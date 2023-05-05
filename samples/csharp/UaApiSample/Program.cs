@@ -99,8 +99,7 @@ namespace Fsmb.Apis.UA.Sample
                 Terminal.WriteLine($"ID = {result.Id}");
                 Terminal.WriteLine($"Name = {GetFullName(result.Name)}");
                 Terminal.WriteLine($"FID = {result.Fid}");
-                Terminal.WriteLine($"Submit Date = {result.SubmitDate}");
-                Terminal.WriteLine();
+                Terminal.WriteLine($"Submit Date = {result.SubmitDate}");                
             };
         }        
 
@@ -119,6 +118,39 @@ namespace Fsmb.Apis.UA.Sample
 
             //Display some basic data
             Terminal.WriteLine($"Names = {(submission.Names.Other?.Count() ?? 0) + 1}");
+
+            WriteSubmissionPdc(submission.Pdc);
+            WriteSubmissionAma(submission.Ama);
+        }
+        
+        private void WriteSubmissionAma(AmaReport report)
+        {
+            if (report == null)
+                return;
+
+            Terminal.WriteLine("Ama");
+            Terminal.WriteLine($"  ID = {report.Id}");
+            Terminal.WriteLine($"  AsOfDate = {report.AsOfDate}");
+
+            if (report.Demographics != null) {
+                var demo = report.Demographics;
+                Terminal.WriteLine($"  Name = {String.Join(" ", demo.Prefix, demo.FirstName, demo.MiddleName, demo.LastName, demo.Suffix)}");
+            };
+
+            Terminal.WriteLine($"  MedicalSchools = {report.MedicalSchools?.Count() ?? 0}");
+            Terminal.WriteLine($"  MedicalTraining = {report.MedicalTraining?.Count() ?? 0}");
+            Terminal.WriteLine($"  NPI = {report.Npi?.Count() ?? 0}");
+            Terminal.WriteLine($"  Licenses = {report.Licenses?.Count() ?? 0}");
+        }
+
+        private void WriteSubmissionPdc ( PdcReport report )
+        {
+            if (report == null)
+                return;
+
+            Terminal.WriteLine("PDC");
+            Terminal.WriteLine($"  AsOfDate = {report.AsOfDate}");
+            Terminal.WriteLine($"  BoardActionStatus = {report.BoardActionStatus}");            
         }
         #endregion
 
