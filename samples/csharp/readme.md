@@ -45,5 +45,6 @@ To use the class library in your own code do the following.
 ## Change Log
 
 - 2023-May-02
+  - Updated sample project to .NET 6.
   - Changed `PDC.ABMS.MeetsMocRequirements` field to not required to match API.
   - Added `AMA` models for boards supporting AMA data.
