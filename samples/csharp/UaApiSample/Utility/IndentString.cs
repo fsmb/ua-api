@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright © 2018 Federation of State Medical Boards
+ * Copyright © 2023 Federation of State Medical Boards
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
  * documentation files (the “Software”), to deal in the Software without restriction, including without limitation the
@@ -15,20 +15,43 @@
  */
 using System;
 
-namespace Fsmb.Apis.UA.Sample
+namespace Fsmb.Apis.UA
 {
-    public class ProgramOptions
+    public class IndentString
     {
-        public const string DefaultBoard = "me";
+        public IndentString(int level, int tabSize)
+        {
+            _level = Math.Max(level, 0);
+            _tabSize = Math.Max(tabSize, 1);
 
-        public const string DefaultUrl = "https://services-ua-demo.fsmb.org";
+            ResetValue();
+        }
 
-        public string ClientId { get; set; }
+        public void Indent()
+        {
+            ++_level;
+            ResetValue();
+        }
 
-        public string ClientSecret { get; set; }
+        public void Unindent()
+        {
+            if (_level > 0)
+            {
+                --_level;
+                ResetValue();
+            };
+        }
 
-        public string Url { get; set; } = DefaultUrl;
+        public override string ToString() => _value.Value;
 
-        public string Board { get; set; } = DefaultBoard;
+        private void ResetValue()
+        {
+            _value = new Lazy<string>(() => new string(' ', _level * _tabSize));
+        }
+
+        private Lazy<string> _value;
+
+        private int _level;
+        private readonly int _tabSize;
     }
 }
