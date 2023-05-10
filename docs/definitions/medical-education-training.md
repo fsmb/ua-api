@@ -5,7 +5,7 @@ List of medical education.
 | Name | Type | Required | Description |
 | - | - | - | - |
 | isInternationalGraduate | boolean | Yes | Is international graduate? |
-| graduating | [MedicalEducation](medical-education.md) | No | Graduating school. |
+| graduating | [MedicalEducation](medical-education.md) | Yes | Graduating school. |
 | other | [MedicalEducation](medical-education.md)[] | No | Other medical schools. |
 | ecfmg | [Ecfmg](ecfmg.md) | No | ECFMG information. |
 | fifthPathway | [FifthPathway](fifth-pathway.md) | No | 5th Pathway information. |

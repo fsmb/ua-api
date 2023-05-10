@@ -21,6 +21,7 @@ A submission to a board.
 | malpractice | [Malpractice](malpractice.md)[] | No | Malpractice information. |
 | activities | [Activity](activity.md)[] | No | Chronology of activity. |
 | workHistory | | | **Deprecated**. Use `activities`. |
+| pdcReportStatus | string (len: 20) | Yes | Status of PDC report. Refer to [ReportStatus](report-status.md) for possible values. |
 | pdc | [PdcReport](pdc/pdc-report.md) | No | PDC information, if available. |
 | addendum | object | No | |
 
