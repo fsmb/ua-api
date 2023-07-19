@@ -23,8 +23,7 @@ namespace Fsmb.Api.Ua.Client.Models
         public string CertificateName { get; set; }
 
         /// <summary>Meets MOC requirements (e.g. Yes, No, Not Required)</summary>
-        [Newtonsoft.Json.JsonProperty("meetsMocRequirements", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]
+        [Newtonsoft.Json.JsonProperty("meetsMocRequirements", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MeetsMocRequirements { get; set; }
 
         /// <summary>Is certified?</summary>

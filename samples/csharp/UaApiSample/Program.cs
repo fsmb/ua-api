@@ -40,23 +40,20 @@ namespace Fsmb.Apis.UA.Sample
 
         //HttpClient requires that base addresses end with a slash
         private UaClient CreateClient ()
-            => new UaClient(new Uri(_options.BaseAddress.EnsureEndsWith("/")), _options.ClientId, _options.ClientSecret);
+            => new UaClient(new Uri(_options.Url.EnsureEndsWith("/")), _options.ClientId, _options.ClientSecret);
 
         // Gets submissions by a FID
         private async Task GetSubmissionByFidAsync ( UaClient client, string fid )
         {
             //Call API
             Terminal.WriteDebug($"Getting submissions for FID {fid}");
-            var submissions = await client.Submissions.GetByRequestAsync("me", fid: fid).ConfigureAwait(false);
+            var submissions = await client.Submissions.GetByRequestAsync(_options.Board, fid: fid).ConfigureAwait(false);
             if (!(submissions?.Any() ?? false))
                 Terminal.WriteWarning("No submissions found");
             else
             {
                 foreach (var submission in submissions)
-                {
                     WriteSubmission(submission);
-                    Terminal.WriteLine();
-                };
             };
         }
 
@@ -65,14 +62,11 @@ namespace Fsmb.Apis.UA.Sample
         {
             //Call API
             Terminal.WriteDebug($"Getting latest submissions for FID {fid}");
-            var submission = await client.Practitioners.GetLatestAsync("me", fid: fid).ConfigureAwait(false);
+            var submission = await client.Practitioners.GetLatestAsync(_options.Board, fid: fid).ConfigureAwait(false);
             if (submission == null)
                 Terminal.WriteWarning("No submission found");
             else
-            {
                 WriteSubmission(submission);
-                Terminal.WriteLine();
-            };
         }
 
         // Gets a submission by its ID
@@ -80,7 +74,7 @@ namespace Fsmb.Apis.UA.Sample
         {
             //Call API
             Terminal.WriteDebug($"Getting submission by Id {id}");
-            var submission = await client.Submissions.GetByIdAsync("me", id).ConfigureAwait(false);
+            var submission = await client.Submissions.GetByIdAsync(_options.Board, id).ConfigureAwait(false);
             if (submission == null)
                 Terminal.WriteWarning("No submission found");
             else
@@ -92,16 +86,9 @@ namespace Fsmb.Apis.UA.Sample
         {
             //Call API
             Terminal.WriteDebug($"Getting summary submissions between '{beginDate.ToString("MM/dd/yyyy")}' and '{endDate.ToString("MM/dd/yyyy")}'");
-            var results = await client.Submissions.GetSummaryAsync("me", fromDate: beginDate, toDate: endDate).ConfigureAwait(false);
+            var results = await client.Submissions.GetSummaryAsync(_options.Board, fromDate: beginDate, toDate: endDate).ConfigureAwait(false);
 
-            foreach (var result in results)
-            {
-                Terminal.WriteLine($"ID = {result.Id}");
-                Terminal.WriteLine($"Name = {GetFullName(result.Name)}");
-                Terminal.WriteLine($"FID = {result.Fid}");
-                Terminal.WriteLine($"Submit Date = {result.SubmitDate}");
-                Terminal.WriteLine();
-            };
+            Terminal.WriteObject("Results", results);
         }        
 
         private static string GetFullName ( Name name ) 
@@ -119,7 +106,9 @@ namespace Fsmb.Apis.UA.Sample
 
             //Display some basic data
             Terminal.WriteLine($"Names = {(submission.Names.Other?.Count() ?? 0) + 1}");
-        }
+
+            Terminal.WriteObject("Submission", submission);            
+        }        
         #endregion
 
         #region Private Members        
@@ -270,7 +259,8 @@ namespace Fsmb.Apis.UA.Sample
                     {
                         case "clientid": argumentAction = value => options.ClientId = value; break;
                         case "clientsecret": argumentAction = value => options.ClientSecret = value; break;
-                        case "url": argumentAction = value => options.BaseAddress = value; break;
+                        case "url": argumentAction = value => options.Url = value; break;
+                        case "board": argumentAction = value => options.Board = value; break;
                         case "help": return null;
 
                         default: badArgument = true; break;
@@ -326,9 +316,10 @@ namespace Fsmb.Apis.UA.Sample
 
         private void ShowHelp ()
         {
-            Terminal.WriteLine("-clientId {id} where {id} is the client ID");
-            Terminal.WriteLine("-clientSecret {secret} where {secret} is the client secret");
-            Terminal.WriteLine("-url {url} where {url} is the base URL (default is https://demo-services.fsmb.org)");
+            Terminal.WriteLine("-clientId <id> where <id> is the client ID");
+            Terminal.WriteLine("-clientSecret <secret> where <secret> is the client secret");
+            Terminal.WriteLine($"-url <url> where <url> is the base URL (Default = {ProgramOptions.DefaultUrl})");
+            Terminal.WriteLine($"-board <board> where <board> is the board code (Default = {ProgramOptions.DefaultBoard})");
         }
 
         private readonly Lazy<UaClient> _client;

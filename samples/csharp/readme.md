@@ -1,5 +1,9 @@
 # UA API Sample (C#)
 
+[Run the Code](#run-the-code) \
+[Using the Class Library](#using-the-class-library) \
+[Change Log](#change-log)
+
 This solution contains a simple test application for working with the API and a class library.
 
 The console application demonstrates using the API to make calls. It demonstrates some of the more common requests.
@@ -37,3 +41,10 @@ To use the class library in your own code do the following.
    //Assuming this code is called in an async function then use await to wait for the response
    Submission submissions = await client.Submissions.GetLatestAsync("me", fid: fid).ConfigureAwait(false);
    ```
+
+## Change Log
+
+- 2023-May-02
+  - Updated sample project to .NET 6.
+  - Changed `PDC.ABMS.MeetsMocRequirements` field to not required to match API.
+  - Added `AMA` models for boards supporting AMA data.

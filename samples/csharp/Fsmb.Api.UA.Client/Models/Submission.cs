@@ -122,5 +122,17 @@ namespace Fsmb.Api.Ua.Client.Models
         /// <summary>PDC information, if available.</summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "pdc", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public PdcReport Pdc { get; set; }
+
+        /// <summary>AMA information, if available.</summary>
+        [Newtonsoft.Json.JsonProperty(PropertyName = "ama", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public AmaReport Ama { get; set; }
+
+        /// <summary>
+        /// AMA report status (`NotAvailable`, `Available`, `Pending`, `NotReleased`)
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty(PropertyName = "amaReportStatus", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]
+        public string AmaReportStatus { get; set; }
+
     }
 }

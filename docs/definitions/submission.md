@@ -23,6 +23,8 @@ A submission to a board.
 | workHistory | | | **Deprecated**. Use `activities`. |
 | pdcReportStatus | string (len: 20) | Yes | Status of PDC report. Refer to [ReportStatus](report-status.md) for possible values. |
 | pdc | [PdcReport](pdc/pdc-report.md) | No | PDC information, if available. |
+| ama | [AmaReport](ama/ama-report.md) | No | AMA information, if available. |
+| amaReportStatus | string ([AmaReportStatus](ama/ama-report-status.md)) | Yes | Status of AMA report. |
 | addendum | object | No | |
 
 *Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*

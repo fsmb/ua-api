@@ -1,15 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net472</TargetFrameworks>
-    <OutputType>Exe</OutputType>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>     
+    <TargetFrameworks>net6.0</TargetFrameworks>
+    <OutputType>Exe</OutputType>    
   </PropertyGroup>
       
   <ItemGroup>
     <ProjectReference Include="..\Fsmb.Api.UA.Client\Fsmb.Api.UA.Client.csproj" />
-  </ItemGroup>
-   
-  <ItemGroup>
-    <Reference Include="System.Net.Http" />
-  </ItemGroup>
+  </ItemGroup>   
 </Project>

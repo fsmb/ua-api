@@ -7,7 +7,7 @@ PDC ABMS certification.
 | ReportDate | string (date) | Yes | Report date. |
 | BoardName | string (len: 100) | Yes | Certifying board. |
 | CertificateName | string (len: 100) | Yes | Certificate name. |
-| MeetsMocRequirements | string (len: 20) | Yes | Meets MOC requirements (e.g. `Yes`, `No`, `Not Required`). |
+| MeetsMocRequirements | string (len: 20) | No | Meets MOC requirements (e.g. `Yes`, `No`, `Not Required`). |
 | IsCertified | boolean | Yes | Is certified. |
 | CertificateStatus | string (len: 100) | No | Status of certificate (e.g. `Active`, `Inactive`, `Expired`). |
 | CertificateType | string (len: 100) | Yes | Type of certificate (e.g. `General`, `Subspecialty`). |

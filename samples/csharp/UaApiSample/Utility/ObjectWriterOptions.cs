@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright © 2018 Federation of State Medical Boards
+ * Copyright © 2023 Federation of State Medical Boards
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
  * documentation files (the “Software”), to deal in the Software without restriction, including without limitation the
@@ -15,20 +15,23 @@
  */
 using System;
 
-namespace Fsmb.Apis.UA.Sample
+namespace Fsmb.Apis.UA
 {
-    public class ProgramOptions
+    /// <summary>Options for writing objects.</summary>
+    public struct ObjectWriterOptions
     {
-        public const string DefaultBoard = "me";
+        /// <summary>Initializes an instance of the <see cref="ObjectWriterOptions"/> structure.</summary>
+        public ObjectWriterOptions ()
+        { }
 
-        public const string DefaultUrl = "https://services-ua-demo.fsmb.org";
+        /// <summary>Gets or sets the size of an indent level.</summary>
+        public int IndentTabSize { get; set; } = 2;
 
-        public string ClientId { get; set; }
+        /// <summary>Gets or sets the maximum number of items to display in an array or collection.</summary>        
+        /// <default>Default is all items.</default>
+        public int MaxItemsLength { get; set; } = -1;
 
-        public string ClientSecret { get; set; }
-
-        public string Url { get; set; } = DefaultUrl;
-
-        public string Board { get; set; } = DefaultBoard;
+        /// <summary>Determines if properties with <see langword="null"/> values are shown.</summary>
+        public bool ShowNullProperties { get; set; } = false;
     }
 }
