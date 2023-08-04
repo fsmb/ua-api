@@ -9,6 +9,7 @@
 ## Breaking Changes
 
 - In v2.0 it was documented that Graduating Medical School is no longer required. However this change was reverted before release. v2.1 follows the behavior in v2.0 where the graduating medical school is required.
+- In previous versions if a client passed a `pageSize` value larger than the maximum size supported by the server then an error was returned. This has been changed to now use whatever the maximum value the server supports. Returned HTTP header links reflect the new value. Calling code should not assume the page size that is returned matches the page size requested.
 
 ## Sample Code Changes
 
