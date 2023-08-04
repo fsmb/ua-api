@@ -19,7 +19,7 @@ To learn more about FSMB APIs refer to the [Getting Started](https://github.com/
 
 | Version | Date | Release Notes |
 | - | - | - |
-| 2.1 | 04 Aug 2023 | Adjusted sample code to handle authentication endpoint with or without trailing slash. Changed `pageSize` to not raise an error when it exceeds server maximum. |
+| 2.1 | 04 Aug 2023 | [Release Notes](relnotes/readme-v21.md) |
 | 2.0 | 05 Oct 2022 | [Release Notes](relnotes/readme-v20.md) |
 | 1.4 | 03 May 2022 | Added international malpractice. Updated documentation. |
 | 1.3 | 20 Jan 2021 | Updated Medical Education Training definition, sample code, and Postman collection|
