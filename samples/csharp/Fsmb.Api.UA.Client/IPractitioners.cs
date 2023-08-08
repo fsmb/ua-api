@@ -62,5 +62,24 @@ namespace Fsmb.Api.Ua.Client
         /// The cancellation token.
         /// </param>
         Task<HttpOperationResponse<Submission>> GetLatestWithHttpMessagesAsync(string board, string fid, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the submission for a practitioner.
+        /// </summary>
+        /// <param name='board'>
+        /// Board code
+        /// </param>
+        /// <param name='fid'>
+        /// FID of the practitioner
+        /// </param>
+        /// <param name='id'>
+        /// Submission ID
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<HttpOperationResponse<Submission>> GetByIdWithHttpMessagesAsync ( string board, string fid, long id, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken) );
     }
 }
