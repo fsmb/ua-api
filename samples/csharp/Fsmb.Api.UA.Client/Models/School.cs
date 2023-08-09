@@ -41,6 +41,6 @@ namespace Fsmb.Api.Ua.Client.Models
         /// State/province
         /// </summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "stateOrProvince", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public Region StateOrProvince { get; set; }
+        public StateOrProvince StateOrProvince { get; set; }
     }
 }

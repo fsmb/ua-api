@@ -4,14 +4,12 @@
 
 namespace Fsmb.Api.Ua.Client.Models
 {
-    /// <summary>
-    /// Geographic region
-    /// </summary>
+    /// <summary>Entity issuing license</summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.0.22.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class Region
-    {
+    public partial class LicensingEntity
+    {        
         /// <summary>
-        /// Region code (e.g. `TX`, `MD`)
+        /// Entity code
         /// </summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "code", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]
@@ -24,16 +22,5 @@ namespace Fsmb.Api.Ua.Client.Models
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]
         public string Description { get; set; }
 
-        /// <summary>
-        /// ISO Country code (e.g. `US`, `CA`)
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty(PropertyName = "countryCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string CountryCode { get; set; }
-
-        /// <summary>
-        /// Country description
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty(PropertyName = "countryDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string CountryDescription { get; set; }
     }
 }

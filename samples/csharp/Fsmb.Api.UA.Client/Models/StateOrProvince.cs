@@ -4,12 +4,14 @@
 
 namespace Fsmb.Api.Ua.Client.Models
 {
-    /// <summary>State or province</summary>
+    /// <summary>
+    /// State or province
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.0.22.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class StateOrProvince
     {
         /// <summary>
-        /// State or province code
+        /// State or province code (e.g. `TX`, `MD`)
         /// </summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "code", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]
@@ -22,5 +24,16 @@ namespace Fsmb.Api.Ua.Client.Models
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// ISO Country code (e.g. `US`, `CA`)
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty(PropertyName = "countryCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string CountryCode { get; set; }
+
+        /// <summary>
+        /// Country description
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty(PropertyName = "countryDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string CountryDescription { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Fsmb.Api.Ua.Client.Models
         /// <summary>Issuer of license</summary>
         [Newtonsoft.Json.JsonProperty("issuer", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
-        public LicenseEntity Issuer { get; set; }
+        public LicensingEntity Issuer { get; set; }
 
         /// <summary>License status</summary>
         [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]

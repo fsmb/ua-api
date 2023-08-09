@@ -21,7 +21,7 @@ namespace Fsmb.Api.Ua.Client.Models
         /// State Code and State Board Description
         /// </summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "stateBoardDetail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public StateOrProvince StateBoardDetail { get; set; }
+        public ExamStateBoard StateBoardDetail { get; set; }
 
         /// <summary>
         /// Exam date

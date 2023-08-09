@@ -36,7 +36,7 @@ namespace Fsmb.Api.Ua.Client.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "stateOrProvince", Required = Newtonsoft.Json.Required.Always)]        
         [System.ComponentModel.DataAnnotations.Required]
-        public Region StateOrProvince { get; set; }
+        public StateOrProvince StateOrProvince { get; set; }
 
         /// <summary>
         /// Postal code
