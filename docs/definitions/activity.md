@@ -12,7 +12,7 @@ Activity information.
 | description | string (len: 100) | Yes | Description. |
 | addressLines | string[] (len: 100) | No | Address lines. |
 | city | string (len: 50) | No | City. |
-| stateOrProvince | [Region](region.md) | No | State/province. |
+| stateOrProvince | [StateOrProvince](../state-or-province.md) | No | State/province. |
 | postalCode | string (len: 9) | No | Postal code. |
 | position | string (len: 100) | No | Position. |
 | department | string (len: 100) | No | Department. |
