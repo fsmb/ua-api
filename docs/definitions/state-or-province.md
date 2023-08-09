@@ -1,6 +1,6 @@
-# Region
+# StateOrProvince
 
-Geographic region.
+State or province
 
 | Name | Type | Required | Description |
 | - | - | - | - |
