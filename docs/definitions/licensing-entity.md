@@ -1,4 +1,4 @@
-# LicenseEntity
+# LicensingEntity
 
 Entity issuing license.
 
