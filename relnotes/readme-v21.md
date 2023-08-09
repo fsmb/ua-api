@@ -4,6 +4,7 @@
 
 - Server infrastructure upgrade.
 - New endpoint added for getting submission by FID and ID.
+- FCVS status, if available, is returned with submissions.
 - Behavior of `pageSize` has been changed.
 - Sample code has been updated.
 
@@ -15,6 +16,10 @@
 ## Practitioner Changes
 
 - Added a new endpoint (`v1/practitioners/me/{fid}/{id}`) to get a specific submission for a FID. This endpoint follows the recommended security guidelines when querying the API based upon user input. It requires two data points to retrieve a submission. It is recommended that clients use this endpoint when using data provided by the end user to avoid accidentally exposing the wrong information. [22579]
+ 
+## Submission Changes
+
+- For FCVS supporting boards the FCVS profile status for a physician is returned as part of the UA submission data. Refer to [Submission](/docs/definitions/submission.md) for more information. [33021]
 
 ## Sample Code Changes
 
