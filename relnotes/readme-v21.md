@@ -28,5 +28,6 @@ The sample code has been updated.
 - The `UaClient.AuthenticationAsync` method incorrectly handled an endpoint with a slash on the end. The code has been fixed to properly detect this case. [33024]
 - A new menu option to get submissions by FID and ID has been added to demonstrate the new endpoint. [22579]
 - Command line processing has been modified to make it easier to override the URL or board being used. [22579]
+- Some type names have been changed to more closely match the OpenAPI definitions.
 
 *Note: .NET 6.0 requires Visual Studio 2022 or higher. If you are using Visual Studio 2019 then you can change the `TargetFrameworks` value in the client project file to use `net5.0` instead.*
