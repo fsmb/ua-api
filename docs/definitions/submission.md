@@ -25,6 +25,8 @@ A submission to a board.
 | pdc | [PdcReport](pdc/pdc-report.md) | No | PDC information, if available. |
 | ama | [AmaReport](ama/ama-report.md) | No | AMA information, if available. |
 | amaReportStatus | string ([AmaReportStatus](ama/ama-report-status.md)) | Yes | Status of AMA report. |
+| fcvs | [FcvsProfileReport](fcvs/fcvs-profile-report.md) | No | FCVS profile information, if available. |
+| fcvsProfileStatus | string ([FcvsProfileStatus](fcvs/fcvs-profile-status.md)) | Yes | FCVS profile status. |
 | addendum | object | No | |
 
 *Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
