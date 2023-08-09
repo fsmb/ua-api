@@ -1,6 +1,6 @@
-# StateProvince
+# ExamStateBoard
 
-State or province.
+State board for exam
 
 | Name | Type | Required | Description |
 | - | - | - | - |
