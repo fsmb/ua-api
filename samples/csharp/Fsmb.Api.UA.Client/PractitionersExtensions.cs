@@ -42,7 +42,7 @@ namespace Fsmb.Api.Ua.Client
             /// </param>
             /// <param name='pageSize'>
             /// </param>
-            public static Submission GetByFid(this IPractitioners operations, string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?))
+            public static IEnumerable<Submission> GetByFid (this IPractitioners operations, string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?))
             {
                 return Task.Factory.StartNew(s => ((IPractitioners)s).GetByFidAsync(board, fid, fromDate, toDate, orderBy, page, pageSize), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
@@ -74,7 +74,7 @@ namespace Fsmb.Api.Ua.Client
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Submission> GetByFidAsync(this IPractitioners operations, string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<Submission>> GetByFidAsync(this IPractitioners operations, string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetByFidWithHttpMessagesAsync(board, fid, fromDate, toDate, orderBy, page, pageSize, null, cancellationToken).ConfigureAwait(false))
                 {

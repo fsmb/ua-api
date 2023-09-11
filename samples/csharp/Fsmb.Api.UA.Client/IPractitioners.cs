@@ -45,7 +45,7 @@ namespace Fsmb.Api.Ua.Client
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<HttpOperationResponse<Submission>> GetByFidWithHttpMessagesAsync(string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<HttpOperationResponse<IEnumerable<Submission>>> GetByFidWithHttpMessagesAsync(string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Gets the current submission for a practitioner.
         /// </summary>

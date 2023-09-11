@@ -75,7 +75,7 @@ namespace Fsmb.Api.Ua.Client
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<HttpOperationResponse<Submission>> GetByFidWithHttpMessagesAsync(string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<HttpOperationResponse<IEnumerable<Submission>>> GetByFidWithHttpMessagesAsync(string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (board == null)
             {
@@ -190,7 +190,7 @@ namespace Fsmb.Api.Ua.Client
                 throw ex;
             }
             // Create Result
-            var _result = new HttpOperationResponse<Submission>();
+            var _result = new HttpOperationResponse<IEnumerable<Submission>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             // Deserialize Response
@@ -199,7 +199,7 @@ namespace Fsmb.Api.Ua.Client
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = SafeJsonConvert.DeserializeObject<Submission>(_responseContent, this.Client.DeserializationSettings);
+                    _result.Body = SafeJsonConvert.DeserializeObject<IEnumerable<Submission>>(_responseContent, this.Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
