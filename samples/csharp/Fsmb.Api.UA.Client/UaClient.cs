@@ -297,9 +297,14 @@ namespace Fsmb.Api.Ua.Client
 
             using (var response = await HttpClient.SendAsync(message, CancellationToken.None).ConfigureAwait(false))
             {
-                response.EnsureSuccessStatusCode();
-
                 var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    response.EnsureSuccessStatusCode();
+                } catch (HttpRequestException e)
+                {
+                    throw new Exception($"Unable to authenticate - {body}", e);
+                }
 
                 var token = JsonConvert.DeserializeObject<BearerToken>(body);
 
