@@ -282,7 +282,9 @@ namespace Fsmb.Api.Ua.Client
             if (String.IsNullOrEmpty(clientSecret))
                 throw new ArgumentException("Client secret is required.", nameof(clientSecret));
 
-            var message = new HttpRequestMessage(HttpMethod.Post, BaseUri + "/connect/token");
+            var _baseUrl = this.BaseUri.AbsoluteUri;
+            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "connect/token").ToString();
+            var message = new HttpRequestMessage(HttpMethod.Post, _url);
             message.Headers.Add("Accept", "application/json");
 
             var request = new List<KeyValuePair<string, string>>() {

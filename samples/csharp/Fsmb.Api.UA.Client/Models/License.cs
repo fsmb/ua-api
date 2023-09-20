@@ -20,7 +20,7 @@ namespace Fsmb.Api.Ua.Client.Models
         /// Entity issuing license
         /// </summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "licensingEntity", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public LicenseEntity LicensingEntity { get; set; }
+        public LicensingEntity LicensingEntity { get; set; }
 
         /// <summary>
         /// License status

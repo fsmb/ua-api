@@ -69,6 +69,18 @@ namespace Fsmb.Apis.UA.Sample
                 WriteSubmission(submission);
         }
 
+        // Gets submissions by a FID and ID
+        private async Task GetSubmissionByFidAndIdAsync ( UaClient client, string fid, long id )
+        {
+            //Call API
+            Terminal.WriteDebug($"Getting submission {id} for FID {fid}");
+            var submission = await client.Practitioners.GetByIdAsync(_options.Board, fid: fid, id: id).ConfigureAwait(false);
+            if (submission == null)
+                Terminal.WriteWarning("No submission found");
+            else
+                WriteSubmission(submission);
+        }
+
         // Gets a submission by its ID
         private async Task GetSubmissionByIdAsync ( UaClient client, int id )
         {
@@ -105,7 +117,7 @@ namespace Fsmb.Apis.UA.Sample
             Terminal.WriteLine($"Submit Date = {submission.SubmitDate}");
 
             //Display some basic data
-            Terminal.WriteLine($"Names = {(submission.Names.Other?.Count() ?? 0) + 1}");
+            Terminal.WriteLine($"Names = {(submission.Names.Other?.Count ?? 0) + 1}");
 
             Terminal.WriteObject("Submission", submission);            
         }        
@@ -122,6 +134,7 @@ namespace Fsmb.Apis.UA.Sample
             Terminal.WriteLine("2) Get a summary of submissions in a date range");
             Terminal.WriteLine("3) Get a submission by ID");
             Terminal.WriteLine("4) Get the submissions for a specific FID");
+            Terminal.WriteLine("5) Get a submission for a specific FID and ID");
             Terminal.WriteLine("0) Quit");
 
             do
@@ -133,6 +146,7 @@ namespace Fsmb.Apis.UA.Sample
                     case '2': return OnSummaryByDateAsync;
                     case '3': return OnSubmissionByIdAsync;
                     case '4': return OnSubmissionByFidAsync;
+                    case '5': return OnSubmissionByFidAndIdAsync;
                 };                
             } while (true);
         }        
@@ -144,6 +158,19 @@ namespace Fsmb.Apis.UA.Sample
             {
                 ShowHelp();
                 return false;
+            };
+
+            //Override defaults
+            if (String.IsNullOrEmpty(options.Url))
+            {
+                var url = Terminal.ReadString($"URL? (press ENTER to use default of {ProgramOptions.DefaultUrl}) ");
+                options.Url = String.IsNullOrEmpty(url) ? ProgramOptions.DefaultUrl : url;
+            };
+
+            if (String.IsNullOrEmpty(options.Board))
+            {
+                var board = Terminal.ReadString($"Board? (press ENTER to use default of {ProgramOptions.DefaultBoard}) ");
+                options.Board = String.IsNullOrEmpty(board) ? ProgramOptions.DefaultBoard : board;
             };
 
             //Verify required values are set            
@@ -193,6 +220,29 @@ namespace Fsmb.Apis.UA.Sample
                     return;
 
                 await GetSubmissionByFidAsync(client, fid).ConfigureAwait(false);
+            } catch (Exception e)
+            {
+                e = e.Unwrap();
+
+                Terminal.WriteError(e.Message);
+            };
+        }
+
+        private async Task OnSubmissionByFidAndIdAsync ( UaClient client )
+        {
+            try
+            {
+                //Get the FID
+                var fid = Terminal.ReadString("FID (or ENTER to cancel)? ", allowEmptyStrings: true);
+                if (String.IsNullOrEmpty(fid))
+                    return;
+
+                //Get the ID
+                var id = Terminal.ReadInt32("Submission ID (or ENTER to cancel)? ", minValue: 1);
+                if (!id.HasValue)
+                    return;
+
+                await GetSubmissionByFidAndIdAsync(client, fid, id.Value).ConfigureAwait(false);
             } catch (Exception e)
             {
                 e = e.Unwrap();

@@ -4,7 +4,7 @@ Malpractice Information.
 
 | Name | Type | Required | Description |
 | - | - | - | - |
-| state | [Region](region.md) | Yes | State/province of malpractice. |
+| state | [StateOrProvince](../state-or-province.md) | Yes | State/province of malpractice. |
 | eventDate | string (date) | Yes | Date of event. |
 | patientName | string (len: 100) | Yes | Name of patient. |
 | courtName | string (len: 100) | Yes | Name of court. |

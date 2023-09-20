@@ -57,7 +57,7 @@ namespace Fsmb.Api.Ua.Client.Models
         /// State/province of birth
         /// </summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "birthStateOrProvince", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public Region BirthStateOrProvince { get; set; }
+        public StateOrProvince BirthStateOrProvince { get; set; }
 
         /// <summary>
         /// Gender

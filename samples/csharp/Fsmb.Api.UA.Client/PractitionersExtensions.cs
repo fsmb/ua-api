@@ -42,7 +42,7 @@ namespace Fsmb.Api.Ua.Client
             /// </param>
             /// <param name='pageSize'>
             /// </param>
-            public static Submission GetByFid(this IPractitioners operations, string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?))
+            public static IEnumerable<Submission> GetByFid (this IPractitioners operations, string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?))
             {
                 return Task.Factory.StartNew(s => ((IPractitioners)s).GetByFidAsync(board, fid, fromDate, toDate, orderBy, page, pageSize), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
@@ -74,7 +74,7 @@ namespace Fsmb.Api.Ua.Client
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Submission> GetByFidAsync(this IPractitioners operations, string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<Submission>> GetByFidAsync(this IPractitioners operations, string board, string fid, DateTime? fromDate = default(DateTime?), DateTime? toDate = default(DateTime?), string orderBy = default(string), int? page = default(int?), int? pageSize = default(int?), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetByFidWithHttpMessagesAsync(board, fid, fromDate, toDate, orderBy, page, pageSize, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -122,5 +122,47 @@ namespace Fsmb.Api.Ua.Client
                 }
             }
 
+            /// <summary>
+            /// Gets the current submission for a practitioner.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='board'>
+            /// Board code
+            /// </param>
+            /// <param name='fid'>
+            /// FID of the practitioner
+            /// </param>
+            public static Submission GetById ( this IPractitioners operations, string board, string fid, long id )
+            {
+                return Task.Factory.StartNew(s => ((IPractitioners)s).GetByIdAsync(board, fid, id), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Gets the current submission for a practitioner.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='board'>
+            /// Board code
+            /// </param>
+            /// <param name='fid'>
+            /// FID of the practitioner
+            /// </param>
+            /// <param name='id'>
+            /// Submission ID
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<Submission> GetByIdAsync ( this IPractitioners operations, string board, string fid, long id, CancellationToken cancellationToken = default(CancellationToken) )
+            {
+                using (var _result = await operations.GetByIdWithHttpMessagesAsync(board, fid, id, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
     }
 }

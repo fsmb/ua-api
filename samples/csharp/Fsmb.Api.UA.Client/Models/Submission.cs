@@ -134,5 +134,16 @@ namespace Fsmb.Api.Ua.Client.Models
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]
         public string AmaReportStatus { get; set; }
 
+        /// <summary>FCVS profile report, if available.</summary>
+        [Newtonsoft.Json.JsonProperty(PropertyName = "fcvsProfile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public FcvsProfileReport FcvsProfile { get; set; }
+
+        /// <summary>
+        /// FCVS profile status
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty(PropertyName = "fcvsProfileStatus", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]
+        public string FcvsProfileStatus { get; set; }
+
     }
 }

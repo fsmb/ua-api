@@ -27,8 +27,8 @@ namespace Fsmb.Apis.UA.Sample
 
         public string ClientSecret { get; set; }
 
-        public string Url { get; set; } = DefaultUrl;
+        public string Url { get; set; }
 
-        public string Board { get; set; } = DefaultBoard;
+        public string Board { get; set; }
     }
 }

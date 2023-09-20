@@ -4,12 +4,12 @@
 
 namespace Fsmb.Api.Ua.Client.Models
 {
-    /// <summary>Entity issuing license</summary>
+    /// <summary>State board for exam</summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.0.22.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class LicenseEntity
-    {        
+    public partial class ExamStateBoard
+    {
         /// <summary>
-        /// Entity code
+        /// State or province code
         /// </summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "code", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]

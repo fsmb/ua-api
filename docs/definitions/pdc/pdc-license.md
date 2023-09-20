@@ -6,7 +6,7 @@ PDC license.
 | - | - | - | - |
 | ReportDate | string (date-time) | Yes | Report date. |
 | LicenseType | string (len: 100) | No | Type of license. |
-| Issuer | [LicenseEntity](../license-entity.md) | Yes | Issuer of license. |
+| Issuer | [LicensingEntity](../licensing-entity.md) | Yes | Issuer of license. |
 | Status | string (len: 100) | No | License status. |
 | LicenseNumber | string (len: 20) | No | License number. |
 | IssueDate | string (date) | No | Issue date. |

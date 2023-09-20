@@ -15,7 +15,7 @@ namespace Fsmb.Api.Ua.Client.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty(PropertyName = "state", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
-        public Region State { get; set; }
+        public StateOrProvince State { get; set; }
 
         /// <summary>
         /// Date of event

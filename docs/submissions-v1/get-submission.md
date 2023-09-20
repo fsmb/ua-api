@@ -19,8 +19,7 @@ GET {baseUrl}/v1/submissions/{board}/{id}
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Submission](/docs/definitions/submission.md) | Success |
-| 204 No Content | | Submission not found |
-| 404 Not Found | | Board code is missing or invalid. |
+| 404 Not Found | | Board code is missing or invalid, or submission not found. |
 
 ## Security
 
@@ -28,7 +27,7 @@ GET {baseUrl}/v1/submissions/{board}/{id}
 
 **Example:** A website collects the submission ID for a UA application from the user. A malicious user goes to the site and starts entering IDs, incrementing by 1, until a successful call is made.
 
-**Solution:** Require at least two pieces of information such as the FID and submission ID. Query for the submission using the ID and then compare the provided FID with the FID on the submission. If they do not match then fail the request. This will make it harder for a malicious user to guess a valid FID or ID.
+**Solution:** Require at least two pieces of information such as the FID and submission ID. Query for the submission using the [Get Submission by Practitioner](/docs/practitioners-v1/get.md) resource that requires both the FID and submission ID. If they do not match then the request will fail. This will make it harder for a malicious user to guess a valid FID or ID.
 
 ### Scopes
 
