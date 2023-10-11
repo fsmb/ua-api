@@ -23,7 +23,7 @@ using Fsmb.Api.Ua.Client.Models;
 namespace Fsmb.Apis.UA.Sample
 {
     class Program
-    {        
+    {
         public Program ()
         {
             _client = new Lazy<UaClient>(CreateClient);
@@ -58,7 +58,7 @@ namespace Fsmb.Apis.UA.Sample
         }
 
         // Gets latest submissions by a FID
-        private async Task GetLatestSubmissionByFidAsync(UaClient client, string fid)
+        private async Task GetLatestSubmissionByFidAsync ( UaClient client, string fid )
         {
             //Call API
             Terminal.WriteDebug($"Getting latest submissions for FID {fid}");
@@ -101,16 +101,16 @@ namespace Fsmb.Apis.UA.Sample
             var results = await client.Submissions.GetSummaryAsync(_options.Board, fromDate: beginDate, toDate: endDate).ConfigureAwait(false);
 
             Terminal.WriteObject("Results", results);
-        }        
+        }
 
-        private static string GetFullName ( Name name ) 
+        private static string GetFullName ( Name name )
                         => String.Join(" ", name.FirstName, name.MiddleName, name.LastName, name.Suffix);
 
         private void WriteSubmission ( Submission submission )
         {
             Terminal.WriteLine($"ID = {submission.Id}");
 
-            var legalName = submission.Names.LegalName;            
+            var legalName = submission.Names.LegalName;
             Terminal.WriteLine($"Name = {GetFullName(legalName)}");
 
             Terminal.WriteLine($"FID = {submission.Fid}");
@@ -119,17 +119,17 @@ namespace Fsmb.Apis.UA.Sample
             //Display some basic data
             Terminal.WriteLine($"Names = {(submission.Names.Other?.Count ?? 0) + 1}");
 
-            Terminal.WriteObject("Submission", submission);            
-        }        
+            Terminal.WriteObject("Submission", submission);
+        }
         #endregion
 
         #region Private Members        
 
-        private Func<UaClient, Task> DisplayMenu ( )
+        private Func<UaClient, Task> DisplayMenu ()
         {
             Terminal.WriteLine("\nUA API Options");
             Terminal.WriteLine("".PadLeft(20, '-'));
-                        
+
             Terminal.WriteLine("1) Get the latest submissions for a specific FID");
             Terminal.WriteLine("2) Get a summary of submissions in a date range");
             Terminal.WriteLine("3) Get a submission by ID");
@@ -147,9 +147,9 @@ namespace Fsmb.Apis.UA.Sample
                     case '3': return OnSubmissionByIdAsync;
                     case '4': return OnSubmissionByFidAsync;
                     case '5': return OnSubmissionByFidAndIdAsync;
-                };                
+                };
             } while (true);
-        }        
+        }
 
         private bool Initialize ( string[] args )
         {
@@ -191,7 +191,7 @@ namespace Fsmb.Apis.UA.Sample
             return Task.CompletedTask;
         }
 
-        private async Task OnLatestSubmissionByFidAsync(UaClient client)
+        private async Task OnLatestSubmissionByFidAsync ( UaClient client )
         {
             try
             {
@@ -201,8 +201,7 @@ namespace Fsmb.Apis.UA.Sample
                     return;
 
                 await GetLatestSubmissionByFidAsync(client, fid).ConfigureAwait(false);
-            }
-            catch (Exception e)
+            } catch (Exception e)
             {
                 e = e.Unwrap();
 
@@ -333,7 +332,7 @@ namespace Fsmb.Apis.UA.Sample
             {
                 Terminal.WriteError("No argument specified");
                 return null;
-            };            
+            };
 
             return options;
         }
@@ -351,12 +350,12 @@ namespace Fsmb.Apis.UA.Sample
                 e = e.Unwrap();
 
                 Terminal.WriteError(e.Message);
-                 throw;
-            };            
+                throw;
+            };
         }
 
         private async Task RunAsync ()
-        {                     
+        {
             do
             {
                 var handler = DisplayMenu();
@@ -378,7 +377,7 @@ namespace Fsmb.Apis.UA.Sample
         private ITerminal Terminal => ConsoleTerminal.Default;
 
         private bool _quit;
-        private ProgramOptions _options;        
+        private ProgramOptions _options;
         #endregion
     }
 }
