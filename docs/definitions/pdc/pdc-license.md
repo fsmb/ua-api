@@ -4,12 +4,12 @@ PDC license.
 
 | Name | Type | Required | Description |
 | - | - | - | - |
-| ReportDate | string (date-time) | Yes | Report date. |
-| LicenseType | string (len: 100) | No | Type of license. |
-| Issuer | [LicensingEntity](../licensing-entity.md) | Yes | Issuer of license. |
-| Status | string (len: 100) | No | License status. |
-| LicenseNumber | string (len: 20) | No | License number. |
-| IssueDate | string (date) | No | Issue date. |
-| ExpirationDate | string (date) | No | Expiration date. |
+| reportDate | string (date-time) | Yes | Report date. |
+| licenseType | string (len: 100) | No | Type of license. |
+| issuer | [LicensingEntity](../licensing-entity.md) | Yes | Issuer of license. |
+| status | string (len: 100) | No | License status. |
+| licenseNumber | string (len: 20) | No | License number. |
+| issueDate | string (date) | No | Issue date. |
+| expirationDate | string (date) | No | Expiration date. |
 
 *Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
