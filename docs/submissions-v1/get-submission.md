@@ -60,13 +60,13 @@ Status code: 200
 {
     "id": 1234,
     "fid": "999999915",
-    "submitDate": "2018-01-23T16:13:17",
+    "submitDate": "2019-01-04T16:13:17",
     "application": {
         "licenseType": "MD",
         "boardName": "Texas Medical Board",
         "licenseSubtypeDetails": {
-           "code": "FULL",
-           "description": "Permanent Medical License"
+            "code": "FULL",
+            "description": "Permanent Medical License"
         }
     },
     "identity": {
@@ -137,11 +137,12 @@ Status code: 200
             "phoneNumber": "8524567856"
         }
     },
+    "pdcReportStatus": "Available",
     "pdc": {
-       "asOfDate": "2019-01-04T12:34:56",
-       "boardActionStatus": "Alerted",
-       "names": {
-          "legal": {
+        "asOfDate": "2019-01-04T12:34:56",
+        "boardActionStatus": "Alerted",
+        "names": {
+            "legal": {
                 "firstName": "Philip",
                 "middleName": "James",
                 "lastName": "Testman",
@@ -235,7 +236,10 @@ Status code: 200
         "aoa": {
             "certifications": []
         }
-    }
+    },
+    "amaReportStatus": "NotAvailable",
+    "fcvsProfileStatus": "NotAvailable",
+    "npdbReportStatus": "NotAvailable"
 }
 ```
 

@@ -145,7 +145,11 @@ Status code: 200
               "phoneType": "Mobile",
               "phoneNumber": "5455555264"
           }
-      }
+      },
+      "pdcReportStatus": "NotAvailable",
+      "amaReportStatus": "NotAvailable",
+      "fcvsProfileStatus": "NotAvailable",
+      "npdbReportStatus": "NotAvailable"
   },
   {
     "id": 5678,
@@ -227,7 +231,11 @@ Status code: 200
             "phoneType": "Mobile",
             "phoneNumber": "5455555264"
         }
-    }
+    },
+    "pdcReportStatus": "NotAvailable",
+    "amaReportStatus": "NotAvailable",
+    "fcvsProfileStatus": "NotAvailable",
+    "npdbReportStatus": "NotAvailable"
   }
 ]
 ```
@@ -328,7 +336,11 @@ Status code: 200
               "phoneType": "Mobile",
               "phoneNumber": "5455555264"
           }
-      }
+      },
+      "pdcReportStatus": "NotAvailable",
+      "amaReportStatus": "NotAvailable",
+      "fcvsProfileStatus": "NotAvailable",
+      "npdbReportStatus": "NotAvailable"
   },
   {
       "id": 1234,
@@ -409,7 +421,11 @@ Status code: 200
               "phoneType": "Mobile",
               "phoneNumber": "8524567856"
           }
-      }
+      },
+      "pdcReportStatus": "NotAvailable",
+      "amaReportStatus": "NotAvailable",
+      "fcvsProfileStatus": "NotAvailable",
+      "npdbReportStatus": "NotAvailable"
   }
 ]
 ```

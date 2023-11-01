@@ -130,7 +130,11 @@ Status code: 200
             "phoneType": "Mobile",
             "phoneNumber": "5455555264"
         }
-    }
+    },
+    "pdcReportStatus": "NotAvailable",
+    "amaReportStatus": "NotAvailable",
+    "fcvsProfileStatus": "NotAvailable",
+    "npdbReportStatus": "NotAvailable"
 }
 ```
 

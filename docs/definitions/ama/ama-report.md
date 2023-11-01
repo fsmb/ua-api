@@ -4,7 +4,7 @@ AMA report.
 
 | Name | Type | Required | Description |
 | - | - | - | - |
-| AsOfDate | string (date-time) | Yes | Date the report was generated. |
+| asOfDate | string (date-time) | Yes | Date the report was generated. |
 | id | integer | Yes | AMA unique ID. |
 | demographics | [AmaDemographics](ama-demographics.md) | No | Demographics information. |
 | medicalSchools | [AmaMedicalSchool[]](ama-medical-school.md) | No | Medical education. |

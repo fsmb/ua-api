@@ -27,6 +27,8 @@ A submission to a board.
 | amaReportStatus | string ([AmaReportStatus](ama/ama-report-status.md)) | Yes | Status of AMA report. |
 | fcvsProfile | [FcvsProfileReport](fcvs/fcvs-profile-report.md) | No | FCVS profile report, if available. |
 | fcvsProfileStatus | string ([FcvsProfileStatus](fcvs/fcvs-profile-status.md)) | Yes | FCVS profile status. |
+| npdbReport | [NpdbReport](npdb/npdb-report.md) | No | NPDB report, if available. |
+| npdbReportStatus | string ([NpdbReportStatus](npdb/npdb-report-status.md)) | Yes | NPDB report status. |
 | addendum | object | No | |
 
 *Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*

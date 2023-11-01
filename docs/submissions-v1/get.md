@@ -61,89 +61,90 @@ Status code: 200
 
 ```json
 [
-  {
-      "id": 1234,
-      "fid": "999999915",
-      "submitDate": "2019-01-04T16:13:17",
-      "application": {
-          "licenseType": "MD",
-          "boardName": "Texas Medical Board",
-          "licenseSubtypeDetails": {
-           "code": "FULL",
-           "description": "Permanent Medical License"
-        }
-      },
-      "identity": {
-          "ssn": "123451111",
-          "ssnLast4": "1111",
-          "birthDate": "1978-08-08T00:00:00",
-          "birthCity": "Houston",
-          "birthStateOrProvince": {
-              "code": "TX",
-              "description": "Texas",
-              "countryCode": "US",
-              "countryDescription": "United States"
-          },
-          "gender": "M"
-      },
-      "names": {
-          "legalName": {
-              "firstName": "Philip",
-              "middleName": "James",
-              "lastName": "Testman"
-          }
-      },
-      "addresses": {
-          "forPublic": {
-              "addressType": "Business",
-              "lines": [
-                  "9665 Greenway Trail",
-              ],
-              "city": "Portland",
-              "stateOrProvince": {
-                  "code": "OR",
-                  "description": "Oregon",
-                  "countryCode": "US",
-                  "countryDescription": "United States"
-              },
-              "postalCode": "89456"
-          },
-          "forBoard": {
-              "addressType": "Business",
-              "lines": [
-                  "9665 Greenway Trail",
-              ],
-              "city": "Portland",
-              "stateOrProvince": {
-                  "code": "OR",
-                  "description": "Oregon",
-                  "countryCode": "US",
-                  "countryDescription": "United States"
-              },
-              "postalCode": "89456"
-          }
-      },
-      "emailAddresses": {
-          "forPublic": {
-              "email": "noreply@fsmb.org"
-          },
-          "forBoard": {
-              "email": "noreply@fsmb.org"
-          }
-      },
-      "phones": {
-          "forPublic": {
-              "phoneType": "Business",
-              "phoneNumber": "8524567856"
-          },
-          "forBoard": {
-              "phoneType": "Mobile",
-              "phoneNumber": "8524567856"
-          }
-      },
-      "pdc": {
-         "asOfDate": "2019-01-04T12:34:56",
-           "boardActionStatus": "Alerted",
+    {
+        "id": 1234,
+        "fid": "999999915",
+        "submitDate": "2019-01-04T16:13:17",
+        "application": {
+            "licenseType": "MD",
+            "boardName": "Texas Medical Board",
+            "licenseSubtypeDetails": {
+                "code": "FULL",
+                "description": "Permanent Medical License"
+            }
+        },
+        "identity": {
+            "ssn": "123451111",
+            "ssnLast4": "1111",
+            "birthDate": "1978-08-08T00:00:00",
+            "birthCity": "Houston",
+            "birthStateOrProvince": {
+                "code": "TX",
+                "description": "Texas",
+                "countryCode": "US",
+                "countryDescription": "United States"
+            },
+            "gender": "M"
+        },
+        "names": {
+            "legalName": {
+                "firstName": "Philip",
+                "middleName": "James",
+                "lastName": "Testman"
+            }
+        },
+        "addresses": {
+            "forPublic": {
+                "addressType": "Business",
+                "lines": [
+                    "9665 Greenway Trail",
+                ],
+                "city": "Portland",
+                "stateOrProvince": {
+                    "code": "OR",
+                    "description": "Oregon",
+                    "countryCode": "US",
+                    "countryDescription": "United States"
+                },
+                "postalCode": "89456"
+            },
+            "forBoard": {
+                "addressType": "Business",
+                "lines": [
+                    "9665 Greenway Trail",
+                ],
+                "city": "Portland",
+                "stateOrProvince": {
+                    "code": "OR",
+                    "description": "Oregon",
+                    "countryCode": "US",
+                    "countryDescription": "United States"
+                },
+                "postalCode": "89456"
+            }
+        },
+        "emailAddresses": {
+            "forPublic": {
+                "email": "noreply@fsmb.org"
+            },
+            "forBoard": {
+                "email": "noreply@fsmb.org"
+            }
+        },
+        "phones": {
+            "forPublic": {
+                "phoneType": "Business",
+                "phoneNumber": "8524567856"
+            },
+            "forBoard": {
+                "phoneType": "Mobile",
+                "phoneNumber": "8524567856"
+            }
+        },
+        "pdcReportStatus": "Available",
+        "pdc": {
+            "asOfDate": "2019-01-04T12:34:56",
+            "boardActionStatus": "Alerted",
             "names": {
                 "legal": {
                     "firstName": "Philip",
@@ -239,89 +240,96 @@ Status code: 200
             "aoa": {
                 "certifications": []
             }
-        }
-  },
-  {
-    "id": 5678,
-    "fid": "999999956",
-    "submitDate": "2019-01-04T16:13:17",
-    "application": {
-        "licenseType": "MD",
-        "boardName": "Texas Medical Board",
-        "licenseSubtypeDetails": {
-           "code": "FULL",
-           "description": "Permanent Medical License"
-        }
-    },
-    "identity": {
-        "ssn": "123456666",
-        "ssnLast4": "6666",
-        "birthDate": "1965-05-09T00:00:00",
-        "birthCity": "Albany",
-        "birthStateOrProvince": {
-            "code": "NY",
-            "description": "New York",
-            "countryCode": "US",
-            "countryDescription": "United States"
         },
-        "gender": "M"
+        "amaReportStatus": "NotAvailable",
+        "fcvsProfileStatus": "NotAvailable",
+        "npdbReportStatus": "NotAvailable"
     },
-    "names": {
-        "legalName": {
-            "firstName": "Jess",
-            "middleName": "Chris",
-            "lastName": "Samphone"
-        }
-    },
-    "addresses": {
-        "forPublic": {
-            "addressType": "Business",
-            "lines": [
-                "6547 Skyline Way",
-            ],
-            "city": "Roanoke",
-            "stateOrProvince": {
-                "code": "VA",
-                "description": "Virginia",
+    {
+        "id": 5678,
+        "fid": "999999956",
+        "submitDate": "2019-01-04T16:13:17",
+        "application": {
+            "licenseType": "MD",
+            "boardName": "Texas Medical Board",
+            "licenseSubtypeDetails": {
+                "code": "FULL",
+                "description": "Permanent Medical License"
+            }
+        },
+        "identity": {
+            "ssn": "123456666",
+            "ssnLast4": "6666",
+            "birthDate": "1965-05-09T00:00:00",
+            "birthCity": "Albany",
+            "birthStateOrProvince": {
+                "code": "NY",
+                "description": "New York",
                 "countryCode": "US",
                 "countryDescription": "United States"
             },
-            "postalCode": "45675"
+            "gender": "M"
         },
-        "forBoard": {
-            "addressType": "Business",
-            "lines": [
-                "6547 Skyline Way",
-            ],
-            "city": "Roanoke",
-            "stateOrProvince": {
-                "code": "VA",
-                "description": "Virginia",
-                "countryCode": "US",
-                "countryDescription": "United States"
+        "names": {
+            "legalName": {
+                "firstName": "Jess",
+                "middleName": "Chris",
+                "lastName": "Samphone"
+            }
+        },
+        "addresses": {
+            "forPublic": {
+                "addressType": "Business",
+                "lines": [
+                    "6547 Skyline Way",
+                ],
+                "city": "Roanoke",
+                "stateOrProvince": {
+                    "code": "VA",
+                    "description": "Virginia",
+                    "countryCode": "US",
+                    "countryDescription": "United States"
+                },
+                "postalCode": "45675"
             },
-            "postalCode": "45675"
-        }
-    },
-    "emailAddresses": {
-        "forPublic": {
-            "email": "noreply@fsmb.org"
+            "forBoard": {
+                "addressType": "Business",
+                "lines": [
+                    "6547 Skyline Way",
+                ],
+                "city": "Roanoke",
+                "stateOrProvince": {
+                    "code": "VA",
+                    "description": "Virginia",
+                    "countryCode": "US",
+                    "countryDescription": "United States"
+                },
+                "postalCode": "45675"
+            }
         },
-        "forBoard": {
-            "email": "noreply@fsmb.org"
-        }
-    },
-    "phones": {
-        "forPublic": {
-            "phoneType": "Business",
-            "phoneNumber": "7418529654"
+        "emailAddresses": {
+            "forPublic": {
+                "email": "noreply@fsmb.org"
+            },
+            "forBoard": {
+                "email": "noreply@fsmb.org"
+            }
         },
-        "forBoard": {
-            "phoneType": "Mobile",
-            "phoneNumber": "7418529654"
-        }
+        "phones": {
+            "forPublic": {
+                "phoneType": "Business",
+                "phoneNumber": "7418529654"
+            },
+            "forBoard": {
+                "phoneType": "Mobile",
+                "phoneNumber": "7418529654"
+            }
+        },
+        "pdcReportStatus": "NotAvailable",
+        "amaReportStatus": "NotAvailable",
+        "fcvsProfileStatus": "NotAvailable",
+        "npdbReportStatus": "NotAvailable"
     }
-  }
 ]
 ```
 
