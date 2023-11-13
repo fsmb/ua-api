@@ -1,6 +1,6 @@
 # Get
 
-Gets the submissions to a board.
+Get a list of submissions meeting a set of criteria.
 
 ```http
 GET {baseUrl}/v1/submissions/{board}?fid={fid}&fromDate={fromDate}&toDate={toDate}
@@ -21,6 +21,8 @@ This resource supports paging and sorting. The following fields can be ordered.
 - `Fid`
 - `Id`
 - `SubmitDate`
+
+Note: If there are many submissions then the results will be paged.
 
 ## Responses
 
