@@ -1,6 +1,6 @@
 # Get All
 
-Gets all the submissions for a practitioner.
+Get all the submissions for a practitioner.
 
 ```HTTP
 GET {baseUrl}/v1/practitioners/{board}/{fid}
