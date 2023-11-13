@@ -22,7 +22,7 @@ GET {baseUrl}/v1/practitioners/{board}/{fid}?fromDate={fromDate}&toDate={toDate}
 | fromDate | query | False | DateTime | The optional start date for submissions. |
 | toDate | query | False | DateTime | The optional end date for submissions.
 
-This resource supports paging and sorting. The following fields can be ordered.
+This resource supports [paging and sorting](https://github.com/fsmb/api-docs/blob/master/docs/paging-sorting.md). The following fields can be ordered.
 
 - `Fid`
 - `Id`
