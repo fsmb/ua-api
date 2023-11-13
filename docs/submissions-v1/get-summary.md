@@ -28,6 +28,8 @@ This resource supports paging and sorting. The following fields can be ordered.
 - `Id`
 - `SubmitDate`
 
+Note: If there are many submissions then the results will be paged.
+
 ## Responses
 
 | Name | Type | Description |
