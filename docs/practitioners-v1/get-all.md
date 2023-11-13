@@ -28,6 +28,8 @@ This resource supports paging and sorting. The following fields can be ordered.
 - `Id`
 - `SubmitDate`
 
+*Note: If there are many submissions then the results will be paged.*
+
 ## Responses
 
 | Name | Type | Description |
@@ -240,8 +242,6 @@ Status code: 200
 ]
 ```
 
-*Note: If there are many submissions then paging is required.*
-
 ### Get All Submissions for 2018
 
 #### Sample Request
@@ -429,7 +429,5 @@ Status code: 200
   }
 ]
 ```
-
-*Note: If there are many submissions then paging is required.*
 
 For more examples go to [samples](/samples/).
