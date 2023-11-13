@@ -1,6 +1,6 @@
 # Get Summary
 
-Gets a summary of submissions to a board.
+Get a summary of the submissions.
 
 ```http
 GET {baseUrl}/v1/submissions/{board}/summary
