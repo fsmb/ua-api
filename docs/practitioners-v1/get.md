@@ -1,6 +1,6 @@
 # Get
 
-Gets a submission, by its unique ID, for a practitioner.
+Get a specific submission, by ID, for a practitioner.
 
 ```HTTP
 GET {baseUrl}/v1/practitioners/{board}/{fid}/{id}
