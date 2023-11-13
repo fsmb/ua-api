@@ -1,6 +1,6 @@
 # Get Current
 
-Gets the current submission for a practitioner.
+Get the current submission for a practitioner.
 
 ```http
 GET {baseUrl}/v1/practitioners/{board}/{fid}/current
