@@ -1,6 +1,6 @@
 # Get Submission
 
-Gets a submission by its unique ID for the board.
+Get a specific submission by its ID.
 
 ```HTTP
 GET {baseUrl}/v1/submissions/{board}/{id}
