@@ -65,6 +65,8 @@ GET {baseUrl}/v1/practitioners/me/999999949
 
 Status code: 200
 
+*Note: Output is elided. Refer to [Submission](/docs/definitions/submission.md) for a complete example.*
+
 ```json
 [
   {
@@ -79,19 +81,6 @@ Status code: 200
             "description": "Permanent Medical License"
           }
       },
-      "identity": {
-          "ssn": "123457777",
-          "ssnLast4": "7777",
-          "birthDate": "1945-01-06T00:00:00",
-          "birthCity": "Seattle",
-          "birthStateOrProvince": {
-              "code": "WA",
-              "description": "Washington",
-              "countryCode": "US",
-              "countryDescription": "United States"
-          },
-          "gender": "M"
-      },
       "names": {
           "legalName": {
               "firstName": "Robert",
@@ -100,58 +89,7 @@ Status code: 200
               "suffix": "Jr"
           }
       },
-      "addresses": {
-          "forPublic": {
-              "addressType": "Home",
-              "lines": [
-                  "741 A Circle",
-              ],
-              "city": "Midtown",
-              "stateOrProvince": {
-                  "code": "IA",
-                  "description": "Iowa",
-                  "countryCode": "US",
-                  "countryDescription": "United States"
-              },
-              "postalCode": "12345"
-          },
-          "forBoard": {
-              "addressType": "Home",
-              "lines": [
-                  "741 A Circle",
-              ],
-              "city": "Midtown",
-              "stateOrProvince": {
-                  "code": "IA",
-                  "description": "Iowa",
-                  "countryCode": "US",
-                  "countryDescription": "United States"
-              },
-              "postalCode": "12345"
-          }
-      },
-      "emailAddresses": {
-          "forPublic": {
-              "email": "noreply@fsmb.org"
-          },
-          "forBoard": {
-              "email": "noreply@fsmb.org"
-          }
-      },
-      "phones": {
-          "forPublic": {
-              "phoneType": "Business",
-              "phoneNumber": "5455555264"
-          },
-          "forBoard": {
-              "phoneType": "Mobile",
-              "phoneNumber": "5455555264"
-          }
-      },
-      "pdcReportStatus": "NotAvailable",
-      "amaReportStatus": "NotAvailable",
-      "fcvsProfileStatus": "NotAvailable",
-      "npdbReportStatus": "NotAvailable"
+      ...
   },
   {
     "id": 5678,
@@ -165,19 +103,6 @@ Status code: 200
            "description": "Permanent Medical License"
         }
     },
-    "identity": {
-        "ssn": "123457777",
-        "ssnLast4": "7777",
-        "birthDate": "1945-01-06T00:00:00",
-        "birthCity": "Seattle",
-        "birthStateOrProvince": {
-            "code": "WA",
-            "description": "Washington",
-            "countryCode": "US",
-            "countryDescription": "United States"
-        },
-        "gender": "M"
-    },
     "names": {
         "legalName": {
             "firstName": "Robert",
@@ -186,58 +111,7 @@ Status code: 200
             "suffix": "Jr"
         }
     },
-    "addresses": {
-        "forPublic": {
-            "addressType": "Home",
-            "lines": [
-                "741 A Circle",
-            ],
-            "city": "Midtown",
-            "stateOrProvince": {
-                "code": "IA",
-                "description": "Iowa",
-                "countryCode": "US",
-                "countryDescription": "United States"
-            },
-            "postalCode": "12345"
-        },
-        "forBoard": {
-            "addressType": "Home",
-            "lines": [
-                "741 A Circle",
-            ],
-            "city": "Midtown",
-            "stateOrProvince": {
-                "code": "IA",
-                "description": "Iowa",
-                "countryCode": "US",
-                "countryDescription": "United States"
-            },
-            "postalCode": "12345"
-        }
-    },
-    "emailAddresses": {
-        "forPublic": {
-            "email": "noreply@fsmb.org"
-        },
-        "forBoard": {
-            "email": "noreply@fsmb.org"
-        }
-    },
-    "phones": {
-        "forPublic": {
-            "phoneType": "Business",
-            "phoneNumber": "5455555264"
-        },
-        "forBoard": {
-            "phoneType": "Mobile",
-            "phoneNumber": "5455555264"
-        }
-    },
-    "pdcReportStatus": "NotAvailable",
-    "amaReportStatus": "NotAvailable",
-    "fcvsProfileStatus": "NotAvailable",
-    "npdbReportStatus": "NotAvailable"
+    ...
   }
 ]
 ```
@@ -254,6 +128,8 @@ GET {baseUrl}/v1/practitioners/me/999999949?fromDate=01/01/2018&toDate=12/31/201
 
 Status code: 200
 
+*Note: Output is elided. Refer to [Submission](/docs/definitions/submission.md) for a complete example.*
+
 ```json
 [
   {
@@ -268,19 +144,6 @@ Status code: 200
               "description": "Permanent Medical License"
           }
       },
-      "identity": {
-          "ssn": "123457777",
-          "ssnLast4": "7777",
-          "birthDate": "1945-01-06T00:00:00",
-          "birthCity": "Seattle",
-          "birthStateOrProvince": {
-              "code": "WA",
-              "description": "Washington",
-              "countryCode": "US",
-              "countryDescription": "United States"
-          },
-          "gender": "M"
-      },
       "names": {
           "legalName": {
               "firstName": "Robert",
@@ -289,58 +152,7 @@ Status code: 200
               "suffix": "Jr"
           }
       },
-      "addresses": {
-          "forPublic": {
-              "addressType": "Home",
-              "lines": [
-                  "741 A Circle",
-              ],
-              "city": "Midtown",
-              "stateOrProvince": {
-                  "code": "IA",
-                  "description": "Iowa",
-                  "countryCode": "US",
-                  "countryDescription": "United States"
-              },
-              "postalCode": "12345"
-          },
-          "forBoard": {
-              "addressType": "Home",
-              "lines": [
-                  "741 A Circle",
-              ],
-              "city": "Midtown",
-              "stateOrProvince": {
-                  "code": "IA",
-                  "description": "Iowa",
-                  "countryCode": "US",
-                  "countryDescription": "United States"
-              },
-              "postalCode": "12345"
-          }
-      },
-      "emailAddresses": {
-          "forPublic": {
-              "email": "noreply@fsmb.org"
-          },
-          "forBoard": {
-              "email": "noreply@fsmb.org"
-          }
-      },
-      "phones": {
-          "forPublic": {
-              "phoneType": "Business",
-              "phoneNumber": "5455555264"
-          },
-          "forBoard": {
-              "phoneType": "Mobile",
-              "phoneNumber": "5455555264"
-          }
-      },
-      "pdcReportStatus": "NotAvailable",
-      "amaReportStatus": "NotAvailable",
-      "fcvsProfileStatus": "NotAvailable",
-      "npdbReportStatus": "NotAvailable"
+      ...
   },
   {
       "id": 1234,
@@ -354,19 +166,6 @@ Status code: 200
              "description": "Permanent Medical License"
           }
       },
-      "identity": {
-          "ssn": "123451111",
-          "ssnLast4": "1111",
-          "birthDate": "1978-08-08T00:00:00",
-          "birthCity": "Houston",
-          "birthStateOrProvince": {
-              "code": "TX",
-              "description": "Texas",
-              "countryCode": "US",
-              "countryDescription": "United States"
-          },
-          "gender": "M"
-      },
       "names": {
           "legalName": {
               "firstName": "Philip",
@@ -374,58 +173,7 @@ Status code: 200
               "lastName": "Testman"
           }
       },
-      "addresses": {
-          "forPublic": {
-              "addressType": "Business",
-              "lines": [
-                  "9665 Greenway Trail",
-              ],
-              "city": "Portland",
-              "stateOrProvince": {
-                  "code": "OR",
-                  "description": "Oregon",
-                  "countryCode": "US",
-                  "countryDescription": "United States"
-              },
-              "postalCode": "89456"
-          },
-          "forBoard": {
-              "addressType": "Business",
-              "lines": [
-                  "9665 Greenway Trail",
-              ],
-              "city": "Portland",
-              "stateOrProvince": {
-                  "code": "OR",
-                  "description": "Oregon",
-                  "countryCode": "US",
-                  "countryDescription": "United States"
-              },
-              "postalCode": "89456"
-          }
-      },
-      "emailAddresses": {
-          "forPublic": {
-              "email": "noreply@fsmb.org"
-          },
-          "forBoard": {
-              "email": "noreply@fsmb.org"
-          }
-      },
-      "phones": {
-          "forPublic": {
-              "phoneType": "Business",
-              "phoneNumber": "8524567856"
-          },
-          "forBoard": {
-              "phoneType": "Mobile",
-              "phoneNumber": "8524567856"
-          }
-      },
-      "pdcReportStatus": "NotAvailable",
-      "amaReportStatus": "NotAvailable",
-      "fcvsProfileStatus": "NotAvailable",
-      "npdbReportStatus": "NotAvailable"
+      ...
   }
 ]
 ```
