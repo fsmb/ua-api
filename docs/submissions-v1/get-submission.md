@@ -54,7 +54,7 @@ GET {baseUrl}/v1/submissions/me/1234
 
 Status code: 200
 
-*Note: Output is ellided. Refer to [Submission](/docs/definitions/submission.md) for a complete example.*
+*Note: Output is elided. Refer to [Submission](/docs/definitions/submission.md) for a complete example.*
 
 ```json
 {
