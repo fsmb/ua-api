@@ -48,6 +48,8 @@ GET {baseUrl}/v1/practitioners/me/999999949/1234
 
 Status code: 200
 
+*Note: Output is elided. Refer to [Submission](/docs/definitions/submission.md) for a complete example.*
+
 ```json
 {
     "id": 1234,
@@ -61,19 +63,6 @@ Status code: 200
           "description": "Permanent Medical License"
         }
     },
-    "identity": {
-        "ssn": "123457777",
-        "ssnLast4": "7777",
-        "birthDate": "1945-01-06T00:00:00",
-        "birthCity": "Seattle",
-        "birthStateOrProvince": {
-            "code": "WA",
-            "description": "Washington",
-            "countryCode": "US",
-            "countryDescription": "United States"
-        },
-        "gender": "M"
-    },
     "names": {
         "legalName": {
             "firstName": "Robert",
@@ -82,58 +71,7 @@ Status code: 200
             "suffix": "Jr"
         }
     },
-    "addresses": {
-        "forPublic": {
-            "addressType": "Home",
-            "lines": [
-                "741 A Circle",
-            ],
-            "city": "Midtown",
-            "stateOrProvince": {
-                "code": "IA",
-                "description": "Iowa",
-                "countryCode": "US",
-                "countryDescription": "United States"
-            },
-            "postalCode": "12345"
-        },
-        "forBoard": {
-            "addressType": "Home",
-            "lines": [
-                "741 A Circle",
-            ],
-            "city": "Midtown",
-            "stateOrProvince": {
-                "code": "IA",
-                "description": "Iowa",
-                "countryCode": "US",
-                "countryDescription": "United States"
-            },
-            "postalCode": "12345"
-        }
-    },
-    "emailAddresses": {
-        "forPublic": {
-            "email": "noreply@fsmb.org"
-        },
-        "forBoard": {
-            "email": "noreply@fsmb.org"
-        }
-    },
-    "phones": {
-        "forPublic": {
-            "phoneType": "Business",
-            "phoneNumber": "5455555264"
-        },
-        "forBoard": {
-            "phoneType": "Mobile",
-            "phoneNumber": "5455555264"
-        }
-    },
-    "pdcReportStatus": "NotAvailable",
-    "amaReportStatus": "NotAvailable",
-    "fcvsProfileStatus": "NotAvailable",
-    "npdbReportStatus": "NotAvailable"
+    ...
 }
 ```
 
