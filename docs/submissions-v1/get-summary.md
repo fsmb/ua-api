@@ -28,7 +28,7 @@ This resource supports [paging and sorting](https://github.com/fsmb/api-docs/blo
 - `Id`
 - `SubmitDate`
 
-Note: If there are many submissions then the results will be paged.
+*Note: If there are many submissions then the results will be paged.*
 
 ## Responses
 
