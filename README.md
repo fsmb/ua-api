@@ -5,7 +5,7 @@ re-enter information when applying for licenses in multiple states. [Participati
 submitted to the board with the goal of facilitating the licensure processes and needs of the board. Click [here](https://www.fsmb.org/uniform-application) for more information.
 
 Refer to the [Getting Started with FSMB APIs](https://github.com/fsmb/api-docs) guide to learn more general information about FSMB APIs, terminology, authentication, FSMB codes and more.
-For more information and to begin using this API please contact FSMB here.
+For more information and to begin using this API please contact FSMB [here](mailto:ua@fsmb.org).
 
 *Note: The error response data is returned using Pascal casing instead of the documented camel casing.*
 
