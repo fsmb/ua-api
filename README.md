@@ -1,6 +1,6 @@
 # Uniform Application API 
 
-The Uniform Application for Licensure (UA) simplifies the licensure process for state boards by providing license portability and eliminating the need for physicians, physician assistance and resident applicants to
+The Uniform Application for Licensure (UA) simplifies the licensure process for state boards by providing license portability and eliminating the need for physicians, physician assistants and resident applicants to
 re-enter information when applying for licenses in multiple states. [Participating boards](https://www.fsmb.org/uniform-application/ua-participating-boards/) can use the UA API to retrieve information about UA applications
 submitted to the board with the goal of facilitating the licensure processes and needs of the board. Click [here](https://www.fsmb.org/uniform-application) for more information.
 
