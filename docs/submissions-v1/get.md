@@ -16,7 +16,7 @@ GET {baseUrl}/v1/submissions/{board}?fid={fid}&fromDate={fromDate}&toDate={toDat
 | fromDate | query | False | DateTime (format: `yyyy-mm-dd`) | The optional start date for submissions. |
 | toDate | query | False | DateTime (format: `yyyy-mm-dd`) | The optional end date for submissions. |
 
-This resource supports paging and sorting. The following fields can be ordered.
+This resource supports [paging and sorting](https://github.com/fsmb/api-docs/blob/master/docs/paging-sorting.md). The following fields can be ordered.
 
 - `Fid`
 - `Id`
