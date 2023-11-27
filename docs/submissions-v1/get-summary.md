@@ -1,6 +1,6 @@
 # Get Summary
 
-Gets a summary of submissions to a board.
+Get a summary of the submissions.
 
 ```http
 GET {baseUrl}/v1/submissions/{board}/summary
@@ -19,14 +19,16 @@ GET {baseUrl}/v1/submissions/{board}/summary?fid={fid}&fromDate={fromDate}&toDat
 | baseUrl | path | True | string | The API URL. |
 | board | path | True | string | The board code or `me`. |
 | fid | query | False | string | The optional FID of the practitioner to filter by. |
-| fromDate | query | False | DateTime | The optional start date for submissions. |
-| toDate | query | False | DateTime | The optional end date for submissions.
+| fromDate | query | False | DateTime (format: `yyyy-mm-dd`) | The optional start date for submissions. |
+| toDate | query | False | DateTime (format: `yyyy-mm-dd`) | The optional end date for submissions.
 
-This resource supports paging and sorting. The following fields can be ordered.
+This resource supports [paging and sorting](https://github.com/fsmb/api-docs/blob/master/docs/paging-sorting.md). The following fields can be ordered.
 
 - `Fid`
 - `Id`
 - `SubmitDate`
+
+*Note: If there are many submissions then the results will be paged.*
 
 ## Responses
 

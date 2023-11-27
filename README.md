@@ -1,8 +1,11 @@
 # Uniform Application API 
 
-This is the source for technical information for the Uniform Application (UA) API. This API can be used by member boards to retrieve information about UA applications submitted to the board.
+The Uniform Application for Licensure (UA) simplifies the licensure process for state boards by providing license portability and eliminating the need for physicians, physician assistants and resident applicants to
+re-enter information when applying for licenses in multiple states. [Participating boards](https://www.fsmb.org/uniform-application/ua-participating-boards/) can use the UA API to retrieve information about UA applications
+submitted to the board with the goal of facilitating the licensure processes and needs of the board. Click [here](https://www.fsmb.org/uniform-application) for more information.
 
-To learn more about FSMB APIs refer to the [Getting Started](https://github.com/fsmb/api-docs) guide. To learn more about this API and to begin using it in your code please contact [FSMB](mailto:ua@fsmb.org).
+Refer to the [Getting Started with FSMB APIs](https://github.com/fsmb/api-docs) guide to learn more general information about FSMB APIs, terminology, authentication, FSMB codes and more.
+For more information and to begin using this API please contact FSMB [here](mailto:ua@fsmb.org).
 
 *Note: The error response data is returned using Pascal casing instead of the documented camel casing.*
 
@@ -17,16 +20,16 @@ To learn more about FSMB APIs refer to the [Getting Started](https://github.com/
 
 ## Change Log
 
-| Version | Date | Release Notes |
-| - | - | - |
-| 2.1 | 13 Oct 2023 | [Release Notes](relnotes/relnotes-10132023.md) |
-| 2.1 | 04 Aug 2023 | [Release Notes](relnotes/readme-v21.md) |
-| 2.0 | 05 Oct 2022 | [Release Notes](relnotes/readme-v20.md) |
-| 1.4 | 03 May 2022 | Added international malpractice. Updated documentation. |
-| 1.3 | 20 Jan 2021 | Updated Medical Education Training definition, sample code, and Postman collection|
-| 1.2 | 17 Dec 2019 | Updated Urls |
-| 1.1 | 11 April 2019 | [Release Notes](relnotes/readme-v11.md) |
-| 1.0 | 22 Nov 2016| Initial version |
+| Date | Release Notes |
+| - | - |
+| 13 Oct 2023 | [Release Notes](relnotes/relnotes-10132023.md) |
+| 04 Aug 2023 | [Release Notes](relnotes/readme-v21.md) |
+| 05 Oct 2022 | [Release Notes](relnotes/readme-v20.md) |
+| 03 May 2022 | Added international malpractice. Updated documentation. |
+| 20 Jan 2021 | Updated Medical Education Training definition, sample code, and Postman collection|
+| 17 Dec 2019 | Updated Urls |
+| 11 Apr 2019 | [Release Notes](relnotes/readme-v11.md) |
+| 22 Nov 2016 | Initial version |
 
 ## Security
 
