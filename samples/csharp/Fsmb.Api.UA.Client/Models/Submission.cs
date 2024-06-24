@@ -156,5 +156,10 @@ namespace Fsmb.Api.Ua.Client.Models
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = false)]
         public string NpdbReportStatus { get; set; }
 
+        /// <summary>
+        /// State addendum
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty(PropertyName = "stateAddendum", Required = Newtonsoft.Json.Required.Default)]
+        public Addendum.StateAddendum StateAddendum { get; set; }
     }
 }

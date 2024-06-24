@@ -64,8 +64,8 @@ namespace Fsmb.Apis.UA
             var count = 0;
             foreach (var item in items)
             {
-                WriteObject($"[{count}]", item);
-                if (++count > _options.MaxItemsLength)
+                WriteObject($"[{count++}]", item);
+                if (_options.MaxItemsLength > 0 && count > _options.MaxItemsLength)
                     break;
             };
 
@@ -82,7 +82,7 @@ namespace Fsmb.Apis.UA
             foreach (var key in dict.Keys)
             {
                 WriteObject($"[{key.ToString()}]", dict[key]);
-                if (++count > _options.MaxItemsLength)
+                if (_options.MaxItemsLength > 0 && ++count > _options.MaxItemsLength)
                     break;
             };
 
