@@ -22,6 +22,7 @@ For more information and to begin using this API please contact FSMB [here](mail
 
 | Date | Release Notes |
 | - | - |
+| 24 Jun 2024 | [Release Notes](relnotes/relnotes-20240624.md) |
 | 13 Oct 2023 | [Release Notes](relnotes/relnotes-10132023.md) |
 | 04 Aug 2023 | [Release Notes](relnotes/readme-v21.md) |
 | 05 Oct 2022 | [Release Notes](relnotes/readme-v20.md) |

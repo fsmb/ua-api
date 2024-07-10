@@ -15,7 +15,7 @@ A submission to a board.
 | phones | [Phones](phones.md) | Yes | Phone numbers. |
 | medicalEducation | [MedicalEducationTraining](medical-education-training.md) | No | Medical education. |
 | medicalEducationTraining | | | **Deprecated**. Use `medicalEducation`. |
-| postGraduateTraining | [PostGraduateTraining](post-graduate-training.md) | No | Postgraduate training. |                    
+| postGraduateTraining | [PostGraduateTraining](post-graduate-training.md) | No | Postgraduate training. |
 | exams | [Exam](exam.md)[] | No | Exams. |
 | licenses | [License](license.md)[] | No | Licenses. |
 | malpractice | [Malpractice](malpractice.md)[] | No | Malpractice information. |
@@ -29,7 +29,7 @@ A submission to a board.
 | fcvsProfileStatus | string ([FcvsProfileStatus](fcvs/fcvs-profile-status.md)) | Yes | FCVS profile status. |
 | npdbReport | [NpdbReport](npdb/npdb-report.md) | No | NPDB report, if available. |
 | npdbReportStatus | string ([NpdbReportStatus](npdb/npdb-report-status.md)) | Yes | NPDB report status. |
-| addendum | object | No | |
+| stateAddendum | [StateAddendum](addendum/addendum-state.md) | No | Available only for boards using Docusign addendums. |
 
 *Note: Any fields marked as deprecated will be removed in a future version of the API. New code should not rely on these fields. Existing code should be updated to use alternative fields.*
 
