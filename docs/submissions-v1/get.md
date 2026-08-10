@@ -29,8 +29,8 @@ Note: If there are many submissions then the results will be paged.
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Submission[]](/docs/definitions/submission.md) | Success |
-| 204 No Content | | No submissions found |
-| 404 Not Found | | Board code is missing or invalid |
+| 400 Bad Request | | Request is bad |
+| 403 Forbidden | | Board code is invalid |
 
 ## Security
 
