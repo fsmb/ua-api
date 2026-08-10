@@ -19,7 +19,9 @@ GET {baseUrl}/v1/submissions/{board}/{id}
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Submission](/docs/definitions/submission.md) | Success |
-| 404 Not Found | | Board code is missing or invalid, or submission not found. |
+| 400 | | ID is invalid |
+| 403 Forbidden | | Board code is invalid |
+| 404 Not Found | | Submission not found |
 
 ## Security
 
