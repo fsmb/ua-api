@@ -7,8 +7,6 @@ submitted to the board with the goal of facilitating the licensure processes and
 Refer to the [Getting Started with FSMB APIs](https://github.com/fsmb/api-docs) guide to learn more general information about FSMB APIs, terminology, authentication, FSMB codes and more.
 For more information and to begin using this API please contact FSMB [here](mailto:ua@fsmb.org).
 
-*Note: The error response data is returned using Pascal casing instead of the documented camel casing.*
-
 - URL
   - Demo: `https://services-ua-demo.fsmb.org/`
   - Production: `https://services-ua.fsmb.org/`
@@ -22,6 +20,7 @@ For more information and to begin using this API please contact FSMB [here](mail
 
 | Date | Release Notes |
 | - | - |
+| 10 Aug 2026 | [Release Notes](relnotes/relnotes-20260810.md) |
 | 24 Jun 2024 | [Release Notes](relnotes/relnotes-20240624.md) |
 | 13 Oct 2023 | [Release Notes](relnotes/relnotes-10132023.md) |
 | 04 Aug 2023 | [Release Notes](relnotes/readme-v21.md) |
