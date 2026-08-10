@@ -11,7 +11,7 @@ The format for reporting errors has changed to align with standard API practices
 ## Singular Names
 
 Support for singular names has been added to the API for physician names. Physicians who have only a last name are considered to have a singular name. 
-To support this the following changes have been made to the physician's [Name](docs/definitions/name.md).
+To support this the following changes have been made to the physician's [Name](/docs/definitions/name.md).
 
 - The `firstName` field is still required. If the physician has a singular name then the field is set to `FNU` which indicates there is no first name.
 - A `isSingularName` field has been added to indicate when the name is singular.
