@@ -20,8 +20,8 @@ GET {baseUrl}/v1/practitioners/{board}/{fid}/{id}
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Submission](/docs/definitions/submission.md) | Success
-| 400 Bad Request | FID or request is invalid |
-| 403 Forbidden | Board code is invalid |
+| 400 Bad Request | | FID or request is invalid |
+| 403 Forbidden | | Board code is invalid |
 | 404 Not Found | | Submission not found |
 
 ## Security
