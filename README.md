@@ -20,16 +20,16 @@ For more information and to begin using this API please contact FSMB [here](mail
 
 | Date | Release Notes |
 | - | - |
-| 10 Aug 2026 | [Release Notes](relnotes/relnotes-20260810.md) |
-| 24 Jun 2024 | [Release Notes](relnotes/relnotes-20240624.md) |
-| 13 Oct 2023 | [Release Notes](relnotes/relnotes-10132023.md) |
-| 04 Aug 2023 | [Release Notes](relnotes/readme-v21.md) |
-| 05 Oct 2022 | [Release Notes](relnotes/readme-v20.md) |
-| 03 May 2022 | Added international malpractice. Updated documentation. |
-| 20 Jan 2021 | Updated Medical Education Training definition, sample code, and Postman collection|
-| 17 Dec 2019 | Updated Urls |
-| 11 Apr 2019 | [Release Notes](relnotes/readme-v11.md) |
-| 22 Nov 2016 | Initial version |
+| Aug 2026 | [Release Notes](relnotes/relnotes-202608.md) |
+| Jun 2024 | [Release Notes](relnotes/relnotes-20240624.md) |
+| Oct 2023 | [Release Notes](relnotes/relnotes-10132023.md) |
+| Aug 2023 | [Release Notes](relnotes/readme-v21.md) |
+| Oct 2022 | [Release Notes](relnotes/readme-v20.md) |
+| May 2022 | Added international malpractice. Updated documentation. |
+| Jan 2021 | Updated Medical Education Training definition, sample code, and Postman collection|
+| Dec 2019 | Updated Urls |
+| Apr 2019 | [Release Notes](relnotes/readme-v11.md) |
+| Nov 2016 | Initial version |
 
 ## Security
 
