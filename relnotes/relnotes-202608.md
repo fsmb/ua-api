@@ -49,4 +49,4 @@ The legacy fields will be removed in a future update.
 Some endpoints have been adjusted to better reflect the data or error being returned.
 
 - Any endpoint accepting a FID now requires an exact 9-digit value. Previously less than 9 digits were allowed but would return no results, e.g. 404 or 204. Now a 400 status is returned to reflect the invalid data.
-- Previously passing an invalid board code to endpoint resulted in a 404. This was confusing since some endpoints return 404s when the request is valid but no data is available. Now passing a board code that is invalid will result in an 403 Forbidden error with a message indicating the code is invalid.
+- Previously passing an invalid board code to any endpoint resulted in a 404. This was confusing since some endpoints return a 404 when the request is valid but no data is available. With this release an invalid board code will result in an 403 Forbidden error with a message indicating the code is invalid.
