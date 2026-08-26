@@ -35,8 +35,8 @@ This resource supports [paging and sorting](https://github.com/fsmb/api-docs/blo
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [SubmissionSummary[]](/docs/definitions/submission-summary.md) | Success |
-| 204 No Content | | No submissions found | 
-| 404 Not Found | | Board code is missing or invalid |
+| 400 Bad Request | | Request is bad |
+| 403 Forbidden | | Board code is invalid |
 
 ## Security
 

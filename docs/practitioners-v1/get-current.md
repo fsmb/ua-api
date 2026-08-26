@@ -20,7 +20,7 @@ GET {baseUrl}/v1/practitioners/{board}/{fid}/current
 | - |-|-|
 | 200 OK | [Submission](/docs/definitions/submission.md) | Success |
 | 204 No Content | | Practitioner has no submissions |
-| 404 Not Found | | Board code is missing or invalid |
+| 403 Forbidden | | Board code is invalid |
 
 ## Security
 
